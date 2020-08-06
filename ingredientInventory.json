@@ -1,0 +1,52 @@
+{
+    "Unknown": {
+        "Name": "Unknown",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Amount": 41
+    },
+    "BlueFlower": {
+        "Name": "Blue Flower",
+        "ImageLocation": "sprites/ingredients/BlueFlower.png",
+        "Amount": 383
+    },
+    "RedFlower": {
+        "Name": "Red Flower",
+        "ImageLocation": "sprites/ingredients/RedFlower.png",
+        "Amount": 400
+    },
+    "Dragonfly": {
+        "Name": "Dragonfly",
+        "ImageLocation": "sprites/ingredients/Dragonfly.png",
+        "Amount": 398
+    },
+    "Honeycomb": {
+        "Name": "Honeycomb",
+        "ImageLocation": "sprites/ingredients/HoneyComb.png",
+        "Amount": 384
+    },
+    "BrownMushroom": {
+        "Name": "Brown Mushroom",
+        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
+        "Amount": 393
+    },
+    "RedMushroom": {
+        "Name": "Red Mushroom",
+        "ImageLocation": "sprites/ingredients/RedMushroom.png",
+        "Amount": 375
+    },
+    "Salt": {
+        "Name": "Salt",
+        "ImageLocation": "sprites/ingredients/Salt.png",
+        "Amount": 399
+    },
+    "Sugar": {
+        "Name": "Sugar",
+        "ImageLocation": "sprites/ingredients/Sugar.png",
+        "Amount": 415
+    },
+    "": {
+        "Name": "",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Amount": 30
+    }
+}
