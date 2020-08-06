@@ -217,10 +217,9 @@ def potionInventory():
             if entNum % 13 == 0:
                 row_x = 0
                 row_y += 1
-            if click[0] == 1:
-                button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/Nothing.png", "sprites/YellowBorder.png",
-                           pot.imgLoc, screen, selectPotion, (pot, row_x, row_y))
-            elif click[2] == 1:
+            button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/Nothing.png", "sprites/YellowBorder.png",
+                        pot.imgLoc, screen, selectPotion, (pot, row_x, row_y))
+            if click[2] == 1:
                 button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/Nothing.png", "sprites/YellowBorder.png",
                                    pot.imgLoc, screen, deselectPotion, pot)
             draw_text_center(pot.name, font16, WHITE, screen, 100 * row_x + 40, 100 * row_y - 10)

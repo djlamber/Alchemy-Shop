@@ -14,13 +14,5 @@
         "Ingredient_2_ID": "Salt",
         "Ingredient_3_ID": "RedMushroom",
         "Value": 17
-    },
-    "0.4532436485828488": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/GreyPotion.png",
-        "Ingredient_1_ID": "BrownMushroom",
-        "Ingredient_2_ID": "BlueFlower",
-        "Ingredient_3_ID": "RedMushroom",
-        "Value": 46
     }
 }
