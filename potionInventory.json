@@ -1,18 +1,82 @@
 {
-    "0.457892846611209": {
+    "0.5135451549574973": {
         "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/WhitePotion.png",
+        "ImageLocation": "sprites/potions/PinkPotion.png",
+        "Ingredient_1_ID": "RedFlower",
+        "Ingredient_2_ID": "Dragonfly",
+        "Ingredient_3_ID": "RedMushroom",
+        "Value": 47
+    },
+    "0.7980746639757554": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/OrangePotion.png",
+        "Ingredient_1_ID": "Dragonfly",
+        "Ingredient_2_ID": "BlueFlower",
+        "Ingredient_3_ID": "Honeycomb",
+        "Value": 6
+    },
+    "0.19499437213831206": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/YellowPotion.png",
         "Ingredient_1_ID": "RedMushroom",
+        "Ingredient_2_ID": "BrownMushroom",
+        "Ingredient_3_ID": "BlueFlower",
+        "Value": 55
+    },
+    "0.8788735648949357": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/BlackPotion.png",
+        "Ingredient_1_ID": "Salt",
+        "Ingredient_2_ID": "Dragonfly",
+        "Ingredient_3_ID": "RedFlower",
+        "Value": 66
+    },
+    "0.17163152979134588": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/GreyPotion.png",
+        "Ingredient_1_ID": "",
+        "Ingredient_2_ID": "Sugar",
+        "Ingredient_3_ID": "Honeycomb",
+        "Value": 63
+    },
+    "0.9432857722179548": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/BluePotion.png",
+        "Ingredient_1_ID": "Sugar",
+        "Ingredient_2_ID": "",
+        "Ingredient_3_ID": "BrownMushroom",
+        "Value": 59
+    },
+    "0.2630029245571156": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/CyanPotion.png",
+        "Ingredient_1_ID": "Salt",
+        "Ingredient_2_ID": "RedMushroom",
+        "Ingredient_3_ID": "BrownMushroom",
+        "Value": 13
+    },
+    "0.7513161387246262": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/RedPotion.png",
+        "Ingredient_1_ID": "RedMushroom",
+        "Ingredient_2_ID": "BlueFlower",
+        "Ingredient_3_ID": "Honeycomb",
+        "Value": 77
+    },
+    "0.4704156800210323": {
+        "Name": "Pot Name",
+        "ImageLocation": "sprites/potions/MagentaPotion.png",
+        "Ingredient_1_ID": "BrownMushroom",
         "Ingredient_2_ID": "RedFlower",
         "Ingredient_3_ID": "Dragonfly",
-        "Value": 37
+        "Value": 70
     },
-    "0.47070344213358584": {
+    "0.15752697752118916": {
         "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/NavyPotion.png",
-        "Ingredient_1_ID": "BrownMushroom",
-        "Ingredient_2_ID": "Salt",
-        "Ingredient_3_ID": "RedMushroom",
-        "Value": 17
+        "ImageLocation": "sprites/potions/GreyPotion.png",
+        "Ingredient_1_ID": "RedMushroom",
+        "Ingredient_2_ID": "BlueFlower",
+        "Ingredient_3_ID": "BrownMushroom",
+        "Value": 42
     }
 }

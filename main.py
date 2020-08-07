@@ -3,22 +3,17 @@ from helpers import *
 
 
 
-def addToEmptySlot(ingredientData):
-    ingredient = ingredientData[0]
-    pos = ingredientData[1]
+def addToEmptySlot(ingredient):
 
     if selectedIngredients[0] == ingredient or selectedIngredients[1] == ingredient or selectedIngredients[2] == ingredient:
         return
     elif selectedIngredients[0] == NoneIngredient:
-        selectedIngredientsBorders[0] = pos
         selectedIngredients[0] = ingredient
         ingredient.amount -= 1
     elif selectedIngredients[1] == NoneIngredient:
-        selectedIngredientsBorders[1] = pos
         selectedIngredients[1] = ingredient
         ingredient.amount -=1
     elif selectedIngredients[2] == NoneIngredient:
-        selectedIngredientsBorders[2] = pos
         selectedIngredients[2] = ingredient
         ingredient.amount -=1
 
@@ -35,27 +30,26 @@ def brewPotion():
 
 def clearPotionSlots():
     selectedIngredients[0] = NoneIngredient
-    selectedIngredientsBorders[0] = (-100, -100)
     selectedIngredients[1] = NoneIngredient
-    selectedIngredientsBorders[1] = (-100, -100)
     selectedIngredients[2] = NoneIngredient
-    selectedIngredientsBorders[2] = (-100, -100)
+
+def removeSlot(Ingredient):
+    for i in range(len(selectedIngredients)):
+        if selectedIngredients[i] == Ingredient:
+            selectedIngredients[i] = NoneIngredient
 
 
 def removeSlot1():
     selectedIngredients[0].amount +=1
     selectedIngredients[0] = NoneIngredient
-    selectedIngredientsBorders[0] = (-100,-100)
 
 def removeSlot2():
     selectedIngredients[1].amount +=1
     selectedIngredients[1] = NoneIngredient
-    selectedIngredientsBorders[1] = (-100, -100)
 
 def removeSlot3():
     selectedIngredients[2].amount +=1
     selectedIngredients[2] = NoneIngredient
-    selectedIngredientsBorders[2] = (-100, -100)
 
 def selectPotion(data):
     click = pygame.mouse.get_pressed()
@@ -98,9 +92,9 @@ def mainMenu():
         screen.fill(Back_Color)
 
         draw_text_center('Alchemy Shop', font48, BLACK, screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 4)
-        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2.5, 80, 40, Back_Color, GREEN, 'Start', font32, BLACK, screen, potionCreation)
-        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 100, 40, Back_Color, BLUE, 'Options', font32, BLACK,screen, None)
-        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 1.67, 60, 40, Back_Color, RED, 'Quit', font32, BLACK, screen, exit)
+        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2.5, 80, 40, Back_Color, GREEN, 'Start', font32, BLACK, screen,LC, potionCreation)
+        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 100, 40, Back_Color, BLUE, 'Options', font32, BLACK,screen,LC, None)
+        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 1.67, 60, 40, Back_Color, RED, 'Quit', font32, BLACK, screen,LC, exit)
 
         pygame.display.flip() # update screen
     pygame.quit()
@@ -128,11 +122,11 @@ def potionCreation():
         screen.fill(Back_Color)
 
         #  buttons to change screens
-        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, screen, mainMenu)
-        button_rect_text((SCREEN_WIDTH) * 11/16 - 24, 0, 140, 40, Back_Color, PURPLE, 'Potion List', font32, WHITE, screen, potionInventory)
+        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, screen,LC, mainMenu)
+        button_rect_text((SCREEN_WIDTH) * 11/16 - 24, 0, 140, 40, Back_Color, PURPLE, 'Potion List', font32, WHITE, screen,LC, potionInventory)
 
         #  button to gather ingredients
-        button_rect_text((SCREEN_WIDTH) * 6 / 16 - 24, 0, 280, 40, Back_Color, MAROON, 'Gather Ingredients (100G)', font32, WHITE, screen, gatherIngredient)
+        button_rect_text((SCREEN_WIDTH) * 6 / 16 - 24, 0, 280, 40, Back_Color, MAROON, 'Gather Ingredients (100G)', font32, WHITE, screen,LC, gatherIngredient)
 
         #  display player gold
         draw_text("Gold: " + str(Player.getGold()), font32, YELLOW, screen, 10, 5)
@@ -142,13 +136,13 @@ def potionCreation():
 
         # display ingredient slots
         button_img_img((SCREEN_WIDTH - 306) * 6 / 8, (SCREEN_HEIGHT - 220) / 2, 80, 80,
-                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[0].imgLoc, screen, removeSlot1, None)
+                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[0].imgLoc, screen, LC,removeSlot1, None)
         button_img_img((SCREEN_WIDTH - 106) * 6 / 8, (SCREEN_HEIGHT - 340) / 2, 80, 80,
-                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[1].imgLoc, screen, removeSlot2, None)
+                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[1].imgLoc, screen, LC,removeSlot2, None)
         button_img_img((SCREEN_WIDTH + 94) * 6 / 8, (SCREEN_HEIGHT - 220) / 2, 80, 80,
-                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[2].imgLoc, screen, removeSlot3, None)
+                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[2].imgLoc, screen, LC,removeSlot3, None)
         if selectedIngredients[0] != NoneIngredient and selectedIngredients[1] != NoneIngredient and selectedIngredients[2] != NoneIngredient:
-            button_rect_text((SCREEN_WIDTH - 130)  * 6 / 8, (SCREEN_HEIGHT + 220) / 2, 120, 80, Back_Color, GREEN, "Brew!", font48, WHITE, screen, brewPotion)
+            button_rect_text((SCREEN_WIDTH - 130)  * 6 / 8, (SCREEN_HEIGHT + 220) / 2, 120, 80, Back_Color, GREEN, "Brew!", font48, WHITE, screen,LC, brewPotion)
 
         entNum = 0
         posX = 0
@@ -159,17 +153,16 @@ def potionCreation():
             if entNum % 4 == 0:
                 posX = 0
                 posY += 1
-            button_img_img(100 * posX, 100 * posY, 80, 80, "sprites/Nothing.png", "sprites/GreenBorder.png",
-                           Ingre.imgLoc, screen, addToEmptySlot, (Ingre, (posX,posY)))
+            if Ingre in selectedIngredients:
+                button_img_img(100 * posX, 100 * posY, 80, 80, "sprites/GreenBorder.png", "sprites/RedBorder.png",
+                               Ingre.imgLoc, screen, RC, removeSlot, Ingre)
+            else:
+                button_img_img(100 * posX, 100 * posY, 80, 80, "sprites/Nothing.png", "sprites/GreenBorder.png",
+                           Ingre.imgLoc, screen,LC, addToEmptySlot, Ingre)
             draw_text_center(Ingre.name, font16, WHITE, screen, 100 * posX + 40, 100 * posY - 10)
             draw_text(str(Ingre.amount), font16, WHITE, screen, 100 * posX + 5, 100 * posY + 65)
             posX += 1
             entNum += 1
-
-        for entry in selectedIngredientsBorders:
-            posX = entry[0]
-            posY = entry[1]
-            draw_image(100 * posX, 100 * posY, 80, 80, "sprites/GreenBorder.png", screen)
 
 
         pygame.display.flip() # update screen
@@ -198,11 +191,11 @@ def potionInventory():
         screen.fill(Back_Color)
 
         #  buttons to change screens
-        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, screen, mainMenu)
-        button_rect_text((SCREEN_WIDTH) * 9 / 16 - 24, 0, 170, 40, Back_Color, PURPLE, 'Potion Creation', font32, WHITE, screen, potionCreation)
+        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, screen,LC, mainMenu)
+        button_rect_text((SCREEN_WIDTH) * 9 / 16 - 24, 0, 170, 40, Back_Color, PURPLE, 'Potion Creation', font32, WHITE, screen,LC, potionCreation)
 
         #  Sell button
-        button_rect_text_center(SCREEN_WIDTH/2, SCREEN_HEIGHT - 40, 60, 40, Back_Color, GREEN, 'Sell', font32, WHITE, screen, sellSelectedPotions)
+        button_rect_text_center(SCREEN_WIDTH/2, SCREEN_HEIGHT - 40, 60, 40, Back_Color, GREEN, 'Sell', font32, WHITE, screen,LC, sellSelectedPotions)
 
         # Display Player Gold
         draw_text("Gold: "+ str(Player.getGold()), font32, YELLOW, screen, 10, 5)
@@ -217,21 +210,17 @@ def potionInventory():
             if entNum % 13 == 0:
                 row_x = 0
                 row_y += 1
-            button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/Nothing.png", "sprites/YellowBorder.png",
-                        pot.imgLoc, screen, selectPotion, (pot, row_x, row_y))
-            if click[2] == 1:
+            if pot in selectedPotions.keys():
+                button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/GreenBorder.png", "sprites/RedBorder.png",
+                                   pot.imgLoc, screen, RC, deselectPotion, pot)
+            else:
                 button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/Nothing.png", "sprites/YellowBorder.png",
-                                   pot.imgLoc, screen, deselectPotion, pot)
+                               pot.imgLoc, screen, LC, selectPotion, (pot, row_x, row_y))
+
             draw_text_center(pot.name, font16, WHITE, screen, 100 * row_x + 40, 100 * row_y - 10)
             draw_text(str(pot.value), font16, WHITE, screen, 100 * row_x + 5, 100 * row_y + 65)
             row_x += 1
             entNum += 1
-
-        for entry in selectedPotions.items():
-            data = entry[1]
-            posX = data[0]
-            posY = data[1]
-            draw_image(100 * posX, 100 * posY, 80, 80, "sprites/GreenBorder.png", screen)
 
         pygame.display.flip()  # update screen
     pygame.quit()
@@ -272,9 +261,8 @@ Player = InitPlayer()  # initalize player
 savePlayer(Player)
 
 selectedPotions = {}
-NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png", 0 )
+NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png", 0, "None", "None", "None" )
 selectedIngredients = [NoneIngredient, NoneIngredient, NoneIngredient]
-selectedIngredientsBorders = [(-100,-100),(-100,-100),(-100,-100)]
 
 font = pygame.font.SysFont(None, 40)
 font16 = pygame.font.SysFont(None, 16)

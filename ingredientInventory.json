@@ -2,51 +2,81 @@
     "Unknown": {
         "Name": "Unknown",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Amount": 41
+        "Amount": 156,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "BlueFlower": {
         "Name": "Blue Flower",
         "ImageLocation": "sprites/ingredients/BlueFlower.png",
-        "Amount": 383
+        "Amount": 500,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "RedFlower": {
         "Name": "Red Flower",
         "ImageLocation": "sprites/ingredients/RedFlower.png",
-        "Amount": 400
+        "Amount": 503,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "Dragonfly": {
         "Name": "Dragonfly",
         "ImageLocation": "sprites/ingredients/Dragonfly.png",
-        "Amount": 398
+        "Amount": 498,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "Honeycomb": {
         "Name": "Honeycomb",
         "ImageLocation": "sprites/ingredients/HoneyComb.png",
-        "Amount": 384
+        "Amount": 481,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "BrownMushroom": {
         "Name": "Brown Mushroom",
         "ImageLocation": "sprites/ingredients/BrownMushroom.png",
-        "Amount": 393
+        "Amount": 491,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "RedMushroom": {
         "Name": "Red Mushroom",
         "ImageLocation": "sprites/ingredients/RedMushroom.png",
-        "Amount": 375
+        "Amount": 472,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "Salt": {
         "Name": "Salt",
         "ImageLocation": "sprites/ingredients/Salt.png",
-        "Amount": 399
+        "Amount": 491,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "Sugar": {
         "Name": "Sugar",
         "ImageLocation": "sprites/ingredients/Sugar.png",
-        "Amount": 415
+        "Amount": 512,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     },
     "": {
         "Name": "",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Amount": 30
+        "Amount": 135,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     }
 }

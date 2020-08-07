@@ -33,11 +33,14 @@ def savePlayer(Player):
         json.dump(data, f, indent=4)
 
 class Ingredient:
-    def __init__(self, ID, name, img, amount):
+    def __init__(self, ID, name, img, amount, effect1, effect2, effect3):
         self.ID = ID
         self.name = name
         self.imgLoc = img
         self.amount = amount
+        self.effect_1 = effect1
+        self.effect_2 = effect2
+        self.effect_3 = effect3
 
     def getID(self):
         return self.ID
@@ -47,6 +50,13 @@ class Ingredient:
         return self.imgLoc
     def getAmount(self):
         return self.amount
+    def getEffect1(self):
+        return self.effect_1
+    def getEffect2(self):
+        return self.effect_2
+    def getEffect3(self):
+        return self.effect_3
+
     def setAmount(self, newAmount):
         self.amount = newAmount
     def addAmount(self, addVal):
@@ -60,9 +70,13 @@ def InitIngredients():
         IngredientJson = json.load(f)  # load data as dict
     for ingre in IngredientJson.items():
         newIngre = Ingredient(ingre[0],
-                   ingre[1].get("Name"),
-                   ingre[1].get("ImageLocation"),
-                   ingre[1].get("Amount"))
+                              ingre[1].get("Name"),
+                              ingre[1].get("ImageLocation"),
+                              ingre[1].get("Amount"),
+                              ingre[1].get("Effect1"),
+                              ingre[1].get("Effect2"),
+                              ingre[1].get("Effect3"))
+
         Ingredients.append(newIngre)
     return Ingredients
 
@@ -71,7 +85,10 @@ def saveIngredients(Ingredients):
     for ingre in Ingredients:
         newData = {"Name": ingre.getName(),  # create list
                    "ImageLocation": ingre.getImgLoc(),
-                   "Amount": ingre.getAmount()}
+                   "Amount": ingre.getAmount(),
+                   "Effect1": ingre.getEffect1(),
+                   "Effect2": ingre.getEffect2(),
+                   "Effect3": ingre.getEffect3()}
         prepareData[ingre.getID()] = newData  # Add list data to dict
     with open("ingredientInventory.json", "w") as f: #  write to json
         json.dump(prepareData, f, indent=4)
