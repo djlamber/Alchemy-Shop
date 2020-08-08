@@ -1,8 +1,5 @@
 from helpers import *
 
-
-
-
 def addToEmptySlot(ingredient):
 
     if selectedIngredients[0] == ingredient or selectedIngredients[1] == ingredient or selectedIngredients[2] == ingredient:
@@ -16,6 +13,11 @@ def addToEmptySlot(ingredient):
     elif selectedIngredients[2] == NoneIngredient:
         selectedIngredients[2] = ingredient
         ingredient.amount -=1
+
+def removeSlot(Ingredient):
+    for i in range(len(selectedIngredients)):
+        if selectedIngredients[i] == Ingredient:
+            selectedIngredients[i] = NoneIngredient
 
 def brewPotion():
     # TODO: add variation in potion brewing based on ingredients
@@ -33,23 +35,8 @@ def clearPotionSlots():
     selectedIngredients[1] = NoneIngredient
     selectedIngredients[2] = NoneIngredient
 
-def removeSlot(Ingredient):
-    for i in range(len(selectedIngredients)):
-        if selectedIngredients[i] == Ingredient:
-            selectedIngredients[i] = NoneIngredient
 
 
-def removeSlot1():
-    selectedIngredients[0].amount +=1
-    selectedIngredients[0] = NoneIngredient
-
-def removeSlot2():
-    selectedIngredients[1].amount +=1
-    selectedIngredients[1] = NoneIngredient
-
-def removeSlot3():
-    selectedIngredients[2].amount +=1
-    selectedIngredients[2] = NoneIngredient
 
 def selectPotion(data):
     click = pygame.mouse.get_pressed()
@@ -136,11 +123,11 @@ def potionCreation():
 
         # display ingredient slots
         button_img_img((SCREEN_WIDTH - 306) * 6 / 8, (SCREEN_HEIGHT - 220) / 2, 80, 80,
-                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[0].imgLoc, screen, LC,removeSlot1, None)
+                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[0].imgLoc, screen, LC,removeSlot, selectedIngredients[0])
         button_img_img((SCREEN_WIDTH - 106) * 6 / 8, (SCREEN_HEIGHT - 340) / 2, 80, 80,
-                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[1].imgLoc, screen, LC,removeSlot2, None)
+                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[1].imgLoc, screen, LC,removeSlot, selectedIngredients[1])
         button_img_img((SCREEN_WIDTH + 94) * 6 / 8, (SCREEN_HEIGHT - 220) / 2, 80, 80,
-                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[2].imgLoc, screen, LC,removeSlot3, None)
+                       "sprites/BlueBorder.png", "sprites/YellowBorder.png", selectedIngredients[2].imgLoc, screen, LC,removeSlot, selectedIngredients[2])
         if selectedIngredients[0] != NoneIngredient and selectedIngredients[1] != NoneIngredient and selectedIngredients[2] != NoneIngredient:
             button_rect_text((SCREEN_WIDTH - 130)  * 6 / 8, (SCREEN_HEIGHT + 220) / 2, 120, 80, Back_Color, GREEN, "Brew!", font48, WHITE, screen,LC, brewPotion)
 
