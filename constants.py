@@ -1,4 +1,5 @@
 
+
 #Screen Info
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
@@ -7,6 +8,14 @@ SCREEN_HEIGHT = 720
 LC = (1,0,0)
 MC = (0,1,0)
 RC = (0,0,1)
+
+#Font Sizes
+font = 40
+font16 = 16
+font20 = 20
+font24 = 24
+font32 = 32
+font48 = 48
 
 #Colors
 WHITE = (255, 255, 255)
@@ -25,5 +34,3 @@ BLUE = (0, 0, 255)
 NAVY = (0,0,128)
 FUCHSIA = (255,0,255)
 PURPLE = (128,0,128)
-
-

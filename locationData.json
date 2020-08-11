@@ -1,0 +1,40 @@
+{
+  "Backyard": {
+        "Name": "Backyard Garden",
+        "ImageLocation": "sprites/UnknownBlack.png",
+        "Categories": [
+            "Plant",
+            "Fruit",
+            "Vegetable"
+        ],
+        "Prereq1": {
+          "Gold": 500
+        },
+        "Prereq2": {
+          "Potion": {
+            "Name": "Potion Name",
+            "ImageLocation": "sprites/potions/RedPotion.png"
+          }
+        },
+        "Prereq3": "None"
+    },
+  "Field": {
+        "Name": "Local farm",
+        "ImageLocation": "sprites/ingredients/Wheat.png",
+        "Categories": [
+            "Plant",
+            "Fruit",
+            "Vegetable"
+        ],
+        "Prereq1": {
+          "Gold": 1000
+        },
+        "Prereq2": {
+          "Potion": {
+            "Name": "Potion Name",
+            "ImageLocation": "sprites/potions/BluePotion.png"
+          }
+        },
+        "Prereq3": "None"
+    }
+}

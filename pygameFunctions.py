@@ -1,17 +1,18 @@
 import pygame
+import config
 from pygame.locals import *
 from constants import *
 
 mouseRelease = 0
 
-def draw_text(text, font, color, surface, x, y):
-    textobj = font.render(text, 1, color)
+def draw_text(text, fon, color, surface, x, y):
+    textobj = pygame.font.SysFont(None, fon).render(text, 1, color)
     textrect = textobj.get_rect()
     textrect.topleft = (x,y)
     surface.blit(textobj, textrect)
 
-def draw_text_center(text, font, color, surface, x, y):
-    textobj = font.render(text, 1, color)
+def draw_text_center(text, fon, color, surface, x, y):
+    textobj = pygame.font.SysFont(None, fon).render(text, 1, color)
     textrect = textobj.get_rect()
     textrect.center = (x,y)
     surface.blit(textobj, textrect)
@@ -26,38 +27,36 @@ def draw_image_center(x, y, width, height, imagePNG, surface):
     img.set_colorkey(BLACK, RLEACCEL)
     surface.blit(img, (x-width/2,y-height/2))
 
-def button(MInfo, action=None, param = None):
+def button(Mbutton, action=None, param = None):
         #MInfo Format: ((X,Y,Z),(Boolean)) X,Y,Z = mouse click info, Boolean is MUP (MouseUP) info to prevent hold clicks
-        Mbutton = MInfo[0]
-        MUP = MInfo[1]
         click = pygame.mouse.get_pressed()
-        if MUP is None or MUP[0]:
+        if config.MUP is None or config.MUP:
             if Mbutton[0] == 1:
                 if click[0] == Mbutton[0] and action != None and param == None:
-                    if MUP is not None:
-                        MUP[0] = False
+                    if config.MUP is not None:
+                        config.MUP = False
                     return action()
                 elif click[0] == Mbutton[0] and action != None and param != None:
-                    if MUP is not None:
-                        MUP[0] = False
+                    if config.MUP is not None:
+                        config.MUP = False
                     return action(param)
             if Mbutton[1] == 1:
                 if click[1] == Mbutton[1] and action != None and param == None :
-                    if MUP is not None:
-                        MUP[0] = False
+                    if config.MUP is not None:
+                        config.MUP = False
                     return action()
                 elif click[1] == Mbutton[1] and action != None and param != None:
-                    if MUP is not None:
-                        MUP[0] = False
+                    if config.MUP is not None:
+                        config.MUP = False
                     return action(param)
             if Mbutton[2] == 1:
                 if click[2] == Mbutton[2] and action != None and param == None:
-                    if MUP is not None:
-                        MUP[0] = False
+                    if config.MUP is not None:
+                        config.MUP = False
                     return action()
                 elif click[2] == Mbutton[2] and action != None and param != None:
-                    if MUP is not None:
-                        MUP[0] = FalseMUP[0] = False
+                    if config.MUP is not None:
+                        config.MUP = False
                     return action(param)
 
 

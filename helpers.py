@@ -4,7 +4,7 @@ from constants import *
 from pygameFunctions import *
 from random import *
 from time import *
-
+import config
 #Stupid functions made to increment through file and function
 def IncreaseVal(num):
     num[0] +=1
@@ -12,6 +12,13 @@ def IncreaseVal(num):
 def DecreaseVal(num):
     num[0] -=1
     return num
+
+def checkEvents():
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+        if event.type == pygame.MOUSEBUTTONUP:
+            config.MUP = True
 
 class Player:
     def __init__(self, gold):
@@ -162,6 +169,62 @@ def savePotions(PotionList):
                    "Value" : pot.getValue()}
         prepareData[pot.getID()] = newData  # Add list data to dict
     with open("potionInventory.json", "w") as f: #  write to json
+        json.dump(prepareData, f, indent=4)
+
+
+#Location Objects
+class Location:
+    def __init__(self, name, imgLoc, Categories, pre1, pre2, pre3):
+        self.Name = name
+        self.imgLoc = imgLoc
+        self.Categories = Categories,
+        self.Prerequisite1 = pre1,
+        self.Prerequisite2 = pre2,
+        self.Prerequisite3 = pre3
+
+
+    def getName(self):
+        return self.Name
+    def getImgLoc(self):
+        return self.imgLoc
+    def getCategories(self):
+        return self.Categories
+    def getPrereq1(self):
+        return self.Prerequisite1
+    def getPrereq2(self):
+        return self.Prerequisite2
+    def getPrereq3(self):
+        return self.Prerequisite3
+
+
+def InitLocations():
+    Locations = []
+    with open("locationData.json") as f:
+        locJson = json.load(f)  # load data as dict
+        print(locJson)
+    for data in locJson.items():
+        location = Location(data[1].get("Name"),
+                            data[1].get("ImageLocation"),
+                            data[1].get("Categories"),
+                            data[1].get("Prereq1"),
+                            data[1].get("Prereq2"),
+                            data[1].get("Prereq3"),
+                            )
+        Locations.append(location)
+    return Locations
+
+def saveLocation(Locations):
+    prepareData = {}
+    for loc in Locations:
+        newData = {"Name": loc.getName(),  # create list
+                   "ImageLocation": loc.getImgLoc(),
+                   "Categories": loc.getCategories(),
+                   "Prereq1": loc.getPrereq1(),
+                   "Prereq2": loc.getPrereq2(),
+                   "Prereq3": loc.getPrereq3()
+                    }
+        prepareData[loc.getID()] = newData  # Add list data to dict
+    with open("potionInventory.json", "w") as f:  # write to json
         json.dump(prepareData, f, indent=4)
 
 def randomPotionColor():
