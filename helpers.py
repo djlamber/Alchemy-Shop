@@ -3,6 +3,15 @@ import json
 from constants import *
 from pygameFunctions import *
 from random import *
+from time import *
+
+#Stupid functions made to increment through file and function
+def IncreaseVal(num):
+    num[0] +=1
+    return num
+def DecreaseVal(num):
+    num[0] -=1
+    return num
 
 class Player:
     def __init__(self, gold):
@@ -33,10 +42,11 @@ def savePlayer(Player):
         json.dump(data, f, indent=4)
 
 class Ingredient:
-    def __init__(self, ID, name, img, amount, effect1, effect2, effect3):
+    def __init__(self, ID, name, img, category, amount, effect1, effect2, effect3):
         self.ID = ID
         self.name = name
         self.imgLoc = img
+        self.category = category
         self.amount = amount
         self.effect_1 = effect1
         self.effect_2 = effect2
@@ -48,6 +58,8 @@ class Ingredient:
         return self.name
     def getImgLoc(self):
         return self.imgLoc
+    def getCategory(self):
+        return self.category
     def getAmount(self):
         return self.amount
     def getEffect1(self):
@@ -72,12 +84,13 @@ def InitIngredients():
         newIngre = Ingredient(ingre[0],
                               ingre[1].get("Name"),
                               ingre[1].get("ImageLocation"),
+                              ingre[1].get("Category"),
                               ingre[1].get("Amount"),
                               ingre[1].get("Effect1"),
                               ingre[1].get("Effect2"),
                               ingre[1].get("Effect3"))
 
-        Ingredients.append(newIngre)
+        Ingredients.append(newIngre) #add data to list
     return Ingredients
 
 def saveIngredients(Ingredients):
@@ -85,10 +98,12 @@ def saveIngredients(Ingredients):
     for ingre in Ingredients:
         newData = {"Name": ingre.getName(),  # create list
                    "ImageLocation": ingre.getImgLoc(),
+                   "Category": sorted(ingre.getCategory()),
                    "Amount": ingre.getAmount(),
                    "Effect1": ingre.getEffect1(),
                    "Effect2": ingre.getEffect2(),
-                   "Effect3": ingre.getEffect3()}
+                   "Effect3": ingre.getEffect3()
+                   }
         prepareData[ingre.getID()] = newData  # Add list data to dict
     with open("ingredientInventory.json", "w") as f: #  write to json
         json.dump(prepareData, f, indent=4)

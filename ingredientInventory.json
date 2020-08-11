@@ -1,64 +1,270 @@
 {
-    "Unknown": {
-        "Name": "Unknown",
+    "": {
+        "Name": "",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Amount": 156,
+        "Category": [
+            "A",
+            "Z"
+        ],
+        "Amount": 0,
+        "Effect1": "",
+        "Effect2": "",
+        "Effect3": ""
+    },
+    "Blood": {
+        "Name": "Blood",
+        "ImageLocation": "sprites/ingredients/Blood.png",
+        "Category": [
+            "Animal",
+            "Base"
+        ],
+        "Amount": 55,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "BlueFlower": {
-        "Name": "Blue Flower",
-        "ImageLocation": "sprites/ingredients/BlueFlower.png",
-        "Amount": 500,
+    "Chicken_Egg": {
+        "Name": "Chicken_Egg",
+        "ImageLocation": "sprites/ingredients/Chicken_Egg.png",
+        "Category": [
+            "Animal",
+            "Food"
+        ],
+        "Amount": 68,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "RedFlower": {
-        "Name": "Red Flower",
-        "ImageLocation": "sprites/ingredients/RedFlower.png",
-        "Amount": 503,
+    "Animal_Meat": {
+        "Name": "Animal_Meat",
+        "ImageLocation": "sprites/ingredients/Animal_Meat.png",
+        "Category": [
+            "Animal",
+            "Food"
+        ],
+        "Amount": 184,
+        "Effect1": "Heal",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Vinegar": {
+        "Name": "Vinegar",
+        "ImageLocation": "sprites/ingredients/Vinegar.png",
+        "Category": [
+            "Base"
+        ],
+        "Amount": 58,
         "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Oil": {
+        "Name": "Oil",
+        "ImageLocation": "sprites/ingredients/Oil.png",
+        "Category": [
+            "Base"
+        ],
+        "Amount": 73,
+        "Effect1": "Fire Vulnerability",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Ichor": {
+        "Name": "Ichor",
+        "ImageLocation": "sprites/ingredients/Ichor.png",
+        "Category": [
+            "Base"
+        ],
+        "Amount": 199,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Olive_Oil": {
+        "Name": "Olive Oil",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Base",
+            "Food"
+        ],
+        "Amount": 85,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Salt": {
+        "Name": "Water - Salt",
+        "ImageLocation": "sprites/ingredients/Water_Salt.png",
+        "Category": [
+            "Base",
+            "Mineral",
+            "Water"
+        ],
+        "Amount": 222,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Slime": {
+        "Name": "Slime",
+        "ImageLocation": "sprites/ingredients/Slime.png",
+        "Category": [
+            "Base",
+            "Monster"
+        ],
+        "Amount": 111,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_River": {
+        "Name": "Water - River",
+        "ImageLocation": "sprites/ingredients/Water_River.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 105,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Filtered": {
+        "Name": "Water - Filtered",
+        "ImageLocation": "sprites/ingredients/Water_Filtered.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 185,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Distilled": {
+        "Name": "Water - Distilled",
+        "ImageLocation": "sprites/ingredients/Water_Distilled.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 200,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Dirty": {
+        "Name": "Water - Dirty",
+        "ImageLocation": "sprites/ingredients/Water_Dirty.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 223,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Frozen_Powder": {
+        "Name": "Frozen Powder",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Cold",
+            "Elemental"
+        ],
+        "Amount": 107,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Firefly": {
+        "Name": "Firefly",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Critter"
+        ],
+        "Amount": 238,
+        "Effect1": "Illumination",
         "Effect2": "None",
         "Effect3": "None"
     },
     "Dragonfly": {
         "Name": "Dragonfly",
         "ImageLocation": "sprites/ingredients/Dragonfly.png",
-        "Amount": 498,
+        "Category": [
+            "Critter"
+        ],
+        "Amount": 597,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Honeycomb": {
-        "Name": "Honeycomb",
-        "ImageLocation": "sprites/ingredients/HoneyComb.png",
-        "Amount": 481,
+    "Butterfly": {
+        "Name": "Butterfly",
+        "ImageLocation": "sprites/ingredients/Butterfly.png",
+        "Category": [
+            "Critter"
+        ],
+        "Amount": 193,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "BrownMushroom": {
-        "Name": "Brown Mushroom",
-        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
-        "Amount": 491,
+    "Fire_Powder": {
+        "Name": "Fire Powder",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Elemental",
+            "Fire"
+        ],
+        "Amount": 110,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "RedMushroom": {
-        "Name": "Red Mushroom",
-        "ImageLocation": "sprites/ingredients/RedMushroom.png",
-        "Amount": 472,
+    "Neutral_Powder": {
+        "Name": "Neutral Powder",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Elemental",
+            "Mineral"
+        ],
+        "Amount": 127,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Salt": {
-        "Name": "Salt",
-        "ImageLocation": "sprites/ingredients/Salt.png",
-        "Amount": 491,
+    "Noxious_Powder": {
+        "Name": "Noxious Powder",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Elemental",
+            "Poision"
+        ],
+        "Amount": 109,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Static_Powder": {
+        "Name": "Static Powder",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Elemental",
+            "Shock"
+        ],
+        "Amount": 100,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Wheat": {
+        "Name": "Wheat",
+        "ImageLocation": "sprites/ingredients/Wheat.png",
+        "Category": [
+            "Food"
+        ],
+        "Amount": 218,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -66,15 +272,304 @@
     "Sugar": {
         "Name": "Sugar",
         "ImageLocation": "sprites/ingredients/Sugar.png",
-        "Amount": 512,
+        "Category": [
+            "Food"
+        ],
+        "Amount": 554,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "": {
-        "Name": "",
+    "Pepper": {
+        "Name": "Pepper",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Food"
+        ],
+        "Amount": 93,
+        "Effect1": "Fire Resistance",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Honeycomb": {
+        "Name": "Honeycomb",
+        "ImageLocation": "sprites/ingredients/HoneyComb.png",
+        "Category": [
+            "Food"
+        ],
+        "Amount": 586,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Salt": {
+        "Name": "Salt",
+        "ImageLocation": "sprites/ingredients/Salt.png",
+        "Category": [
+            "Food",
+            "Mineral"
+        ],
+        "Amount": 600,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Seaweed": {
+        "Name": "Seaweed",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Food",
+            "Plant",
+            "Underwater"
+        ],
+        "Amount": 105,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Clam": {
+        "Name": "Clam",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Food",
+            "Underwater"
+        ],
+        "Amount": 119,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Carrot": {
+        "Name": "Carrot",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Food",
+            "Veggie"
+        ],
         "Amount": 135,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Red_Mushroom": {
+        "Name": "Red Mushroom",
+        "ImageLocation": "sprites/ingredients/RedMushroom.png",
+        "Category": [
+            "Fungi"
+        ],
+        "Amount": 522,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Brown_Mushroom": {
+        "Name": "Brown Mushroom",
+        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
+        "Category": [
+            "Fungi"
+        ],
+        "Amount": 572,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Sulfur": {
+        "Name": "Sulfur",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 117,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Sand": {
+        "Name": "Sand",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 120,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Rust_Flakes": {
+        "Name": "Rusty Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 124,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Metal_Flakes": {
+        "Name": "Metal Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 121,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Gold_Flakes": {
+        "Name": "Gold Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 132,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Clear_Crystal": {
+        "Name": "Clear Crystal",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 81,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Powdered_Pearl": {
+        "Name": "Powdered Pearl",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral",
+            "Underwater"
+        ],
+        "Amount": 129,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Wax": {
+        "Name": "Wax",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "None"
+        ],
+        "Amount": 124,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Tallow": {
+        "Name": "Tallow",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "None"
+        ],
+        "Amount": 113,
+        "Effect1": "Fire Weakness",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Tree_Sap": {
+        "Name": "Tree Sap",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 107,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Red_Flower": {
+        "Name": "Red Flower",
+        "ImageLocation": "sprites/ingredients/RedFlower.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 549,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Herbs": {
+        "Name": "Herbs",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 109,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Blue_Flower": {
+        "Name": "Blue Flower",
+        "ImageLocation": "sprites/ingredients/BlueFlower.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 485,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Biomass": {
+        "Name": "Biomass",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 120,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Aloe": {
+        "Name": "Aloe",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 126,
+        "Effect1": "Heal",
+        "Effect2": "Burn Resist",
+        "Effect3": "None"
+    },
+    "Lilypad": {
+        "Name": "Lilypad",
+        "ImageLocation": "sprites/ingredients/Lilypad.png",
+        "Category": [
+            "Plant",
+            "Underwater"
+        ],
+        "Amount": 207,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Algae": {
+        "Name": "Algae",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant",
+            "Underwater"
+        ],
+        "Amount": 117,
+        "Effect1": "Water Breathing",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Coral": {
+        "Name": "Coral",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Underwater"
+        ],
+        "Amount": 116,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"

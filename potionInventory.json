@@ -1,82 +1,162 @@
 {
-    "0.5135451549574973": {
-        "Name": "Pot Name",
+    "0.31454366785604293": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/OlivePotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 81
+    },
+    "0.3840313263419701": {
+        "Name": "Potion Name",
         "ImageLocation": "sprites/potions/PinkPotion.png",
-        "Ingredient_1_ID": "RedFlower",
-        "Ingredient_2_ID": "Dragonfly",
-        "Ingredient_3_ID": "RedMushroom",
-        "Value": 47
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 84
     },
-    "0.7980746639757554": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/OrangePotion.png",
-        "Ingredient_1_ID": "Dragonfly",
-        "Ingredient_2_ID": "BlueFlower",
-        "Ingredient_3_ID": "Honeycomb",
-        "Value": 6
+    "0.3172278315894146": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/PurplePotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 34
     },
-    "0.19499437213831206": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/YellowPotion.png",
-        "Ingredient_1_ID": "RedMushroom",
-        "Ingredient_2_ID": "BrownMushroom",
-        "Ingredient_3_ID": "BlueFlower",
-        "Value": 55
-    },
-    "0.8788735648949357": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/BlackPotion.png",
-        "Ingredient_1_ID": "Salt",
-        "Ingredient_2_ID": "Dragonfly",
-        "Ingredient_3_ID": "RedFlower",
-        "Value": 66
-    },
-    "0.17163152979134588": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/GreyPotion.png",
-        "Ingredient_1_ID": "",
-        "Ingredient_2_ID": "Sugar",
-        "Ingredient_3_ID": "Honeycomb",
-        "Value": 63
-    },
-    "0.9432857722179548": {
-        "Name": "Pot Name",
+    "0.0678546638749894": {
+        "Name": "Potion Name",
         "ImageLocation": "sprites/potions/BluePotion.png",
-        "Ingredient_1_ID": "Sugar",
-        "Ingredient_2_ID": "",
-        "Ingredient_3_ID": "BrownMushroom",
-        "Value": 59
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 62
     },
-    "0.2630029245571156": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/CyanPotion.png",
-        "Ingredient_1_ID": "Salt",
-        "Ingredient_2_ID": "RedMushroom",
-        "Ingredient_3_ID": "BrownMushroom",
-        "Value": 13
+    "0.5615297339596554": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/NavyPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 84
     },
-    "0.7513161387246262": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/RedPotion.png",
-        "Ingredient_1_ID": "RedMushroom",
-        "Ingredient_2_ID": "BlueFlower",
-        "Ingredient_3_ID": "Honeycomb",
-        "Value": 77
+    "0.9940942611945742": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/OlivePotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 19
     },
-    "0.4704156800210323": {
-        "Name": "Pot Name",
+    "0.19503043660641306": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/OlivePotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 71
+    },
+    "0.3426099070901818": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 95
+    },
+    "0.3227095214879222": {
+        "Name": "Potion Name",
         "ImageLocation": "sprites/potions/MagentaPotion.png",
-        "Ingredient_1_ID": "BrownMushroom",
-        "Ingredient_2_ID": "RedFlower",
-        "Ingredient_3_ID": "Dragonfly",
-        "Value": 70
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 67
     },
-    "0.15752697752118916": {
-        "Name": "Pot Name",
-        "ImageLocation": "sprites/potions/GreyPotion.png",
-        "Ingredient_1_ID": "RedMushroom",
-        "Ingredient_2_ID": "BlueFlower",
-        "Ingredient_3_ID": "BrownMushroom",
-        "Value": 42
+    "0.9879211760170796": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/RedPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 92
+    },
+    "0.4495332249028282": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/YellowPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 76
+    },
+    "0.8767456902327251": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 5
+    },
+    "0.8668683021739848": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/CyanPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 18
+    },
+    "0.2897933471621229": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/BluePotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 87
+    },
+    "0.22988966068703953": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/CyanPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 98
+    },
+    "0.7948996731310318": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/YellowPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 1
+    },
+    "0.6257315972969723": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/WhitePotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 1
+    },
+    "0.6203550113651141": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 10
+    },
+    "0.8440217275191074": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 94
+    },
+    "0.1160558850412392": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/YellowPotion.png",
+        "Ingredient_1_ID": "Slime",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Water_Filtered",
+        "Value": 40
     }
 }

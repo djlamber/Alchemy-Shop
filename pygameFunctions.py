@@ -26,23 +26,39 @@ def draw_image_center(x, y, width, height, imagePNG, surface):
     img.set_colorkey(BLACK, RLEACCEL)
     surface.blit(img, (x-width/2,y-height/2))
 
-def button(Mbutton, action=None, param = None):
+def button(MInfo, action=None, param = None):
+        #MInfo Format: ((X,Y,Z),(Boolean)) X,Y,Z = mouse click info, Boolean is MUP (MouseUP) info to prevent hold clicks
+        Mbutton = MInfo[0]
+        MUP = MInfo[1]
         click = pygame.mouse.get_pressed()
-        if Mbutton[0] == 1:
-            if click[0] == Mbutton[0] and action != None and param == None:
-                action()
-            elif click[0] == Mbutton[0] and action != None and param != None:
-                action(param)
-        if Mbutton[1] == 1:
-            if click[1] == Mbutton[1] and action != None and param == None:
-                action()
-            elif click[1] == Mbutton[1] and action != None and param != None:
-                action(param)
-        if Mbutton[2] == 1:
-            if click[2] == Mbutton[2] and action != None and param == None:
-                action()
-            elif click[2] == Mbutton[2] and action != None and param != None:
-                action(param)
+        if MUP is None or MUP[0]:
+            if Mbutton[0] == 1:
+                if click[0] == Mbutton[0] and action != None and param == None:
+                    if MUP is not None:
+                        MUP[0] = False
+                    return action()
+                elif click[0] == Mbutton[0] and action != None and param != None:
+                    if MUP is not None:
+                        MUP[0] = False
+                    return action(param)
+            if Mbutton[1] == 1:
+                if click[1] == Mbutton[1] and action != None and param == None :
+                    if MUP is not None:
+                        MUP[0] = False
+                    return action()
+                elif click[1] == Mbutton[1] and action != None and param != None:
+                    if MUP is not None:
+                        MUP[0] = False
+                    return action(param)
+            if Mbutton[2] == 1:
+                if click[2] == Mbutton[2] and action != None and param == None:
+                    if MUP is not None:
+                        MUP[0] = False
+                    return action()
+                elif click[2] == Mbutton[2] and action != None and param != None:
+                    if MUP is not None:
+                        MUP[0] = FalseMUP[0] = False
+                    return action(param)
 
 
 def button_rect(x,y,width,height,surface, activeColor, inactiveColor, Mbutton, action=None, param = None):
@@ -77,15 +93,13 @@ def button_rect_text_center(x, y, width, height, inactiveColor, activeColor, tex
 
 def button_img(x, y, width, height, inactiveImage, activeImage, surface, Mbutton, action=None, param = None):
     mouse = pygame.mouse.get_pos()
-    actImg = pygame.transform.scale(pygame.image.load(activeImage).convert_alpha(), (width, height))
-    inactImg = pygame.transform.scale(pygame.image.load(inactiveImage).convert_alpha(), (width, height))
 
     if x+width > mouse[0] > x and y+height > mouse[1] > y:
-        draw_image(x, y, width, height, actImg, surface)
+        draw_image(x, y, width, height, activeImage, surface)
         #surface.blit(actImg, (x, y))
         button(Mbutton, action, param)
     else:
-        draw_image(x, y, width, height, inactImg, surface)
+        draw_image(x, y, width, height, inactiveImage, surface)
         #surface.blit(inactImg, (x, y))
 
 def button_img_center(x, y, width, height, inactiveImage, activeImage, surface, Mbutton, action=None, param = None):
@@ -107,6 +121,27 @@ def button_img_img(x, y, width, height, inactiveImage, activeImage, displayImage
         draw_image(x, y, width, height, inactiveImage, surface)
 
     draw_image(x, y, width, height, displayImage, surface)
+
+def hoverover_text(x,y,width,height,backgroundColor,surface,text,font,color, xDrawOffset=None, yDrawOffset = None, side = None ):
+    mouse = pygame.mouse.get_pos()
+    if xDrawOffset == None:
+        xDrawOffset = 0
+    if yDrawOffset == None:
+        yDrawOffset = 0
+
+    txtlen = len(text)
+    drawWidth = txtlen * 12
+    drawHeight = 20
+
+    if x + width > mouse[0] > x and y + height > mouse[1] > y:
+        xMouse = mouse[0]
+        yMouse = mouse[1]
+        if side == "Left":
+            pygame.draw.rect(surface, backgroundColor, (xMouse -drawWidth + xDrawOffset, yMouse + yDrawOffset, drawWidth, drawHeight))
+            draw_text_center(text,font,color,surface,xMouse-drawWidth/2 + xDrawOffset,yMouse+drawHeight/2 + yDrawOffset)
+        else:
+            pygame.draw.rect(surface, backgroundColor, (xMouse + xDrawOffset, yMouse + yDrawOffset, drawWidth, drawHeight))
+            draw_text_center(text, font, color, surface, xMouse + drawWidth / 2 + xDrawOffset, yMouse + drawHeight / 2 + yDrawOffset)
 
 
 
