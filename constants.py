@@ -1,16 +1,18 @@
 
+#Screen Info
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 
+#Click data
 LC = (1,0,0)
 MC = (0,1,0)
 RC = (0,0,1)
 
+#Colors
 WHITE = (255, 255, 255)
 SILVER = (192,192,192)
 GRAY = (128,128,128)
 BLACK = (0, 0, 0)
-
 RED = (255, 0, 0)
 MAROON = (128,0,0)
 YELLOW = (255,255,0)

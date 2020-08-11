@@ -143,20 +143,44 @@
         "Ingredient_3_ID": "Water_Filtered",
         "Value": 10
     },
-    "0.8440217275191074": {
+    "0.3837129713290337": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/BlackPotion.png",
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Ichor",
+        "Value": 45
+    },
+    "0.39264016950757974": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/PurplePotion.png",
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Ichor",
+        "Value": 61
+    },
+    "0.20533224472280842": {
         "Name": "Potion Name",
         "ImageLocation": "sprites/potions/GreenPotion.png",
-        "Ingredient_1_ID": "Slime",
-        "Ingredient_2_ID": "Water_River",
-        "Ingredient_3_ID": "Water_Filtered",
-        "Value": 94
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Ichor",
+        "Value": 35
     },
-    "0.1160558850412392": {
+    "0.7908698128340433": {
         "Name": "Potion Name",
         "ImageLocation": "sprites/potions/YellowPotion.png",
-        "Ingredient_1_ID": "Slime",
-        "Ingredient_2_ID": "Water_River",
-        "Ingredient_3_ID": "Water_Filtered",
-        "Value": 40
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Ichor",
+        "Value": 90
+    },
+    "0.7045255898251233": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Ichor",
+        "Value": 3
     }
 }
