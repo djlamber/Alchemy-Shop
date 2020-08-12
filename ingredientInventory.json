@@ -18,20 +18,8 @@
             "Animal",
             "Base"
         ],
-        "Amount": 40,
+        "Amount": 0,
         "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Animal_Meat": {
-        "Name": "Animal_Meat",
-        "ImageLocation": "sprites/ingredients/Animal_Meat.png",
-        "Category": [
-            "Animal",
-            "Food"
-        ],
-        "Amount": 184,
-        "Effect1": "Heal",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -42,18 +30,30 @@
             "Animal",
             "Food"
         ],
-        "Amount": 68,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Ichor": {
-        "Name": "Ichor",
-        "ImageLocation": "sprites/ingredients/Ichor.png",
+    "Animal_Meat": {
+        "Name": "Animal Meat",
+        "ImageLocation": "sprites/ingredients/Animal_Meat.png",
+        "Category": [
+            "Animal",
+            "Food"
+        ],
+        "Amount": 0,
+        "Effect1": "Heal",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Vinegar": {
+        "Name": "Vinegar",
+        "ImageLocation": "sprites/ingredients/Vinegar.png",
         "Category": [
             "Base"
         ],
-        "Amount": 189,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -64,18 +64,18 @@
         "Category": [
             "Base"
         ],
-        "Amount": 68,
+        "Amount": 1,
         "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Vinegar": {
-        "Name": "Vinegar",
-        "ImageLocation": "sprites/ingredients/Vinegar.png",
+    "Ichor": {
+        "Name": "Ichor",
+        "ImageLocation": "sprites/ingredients/Ichor.png",
         "Category": [
             "Base"
         ],
-        "Amount": 48,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -87,7 +87,7 @@
             "Base",
             "Food"
         ],
-        "Amount": 85,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -100,7 +100,7 @@
             "Mineral",
             "Water"
         ],
-        "Amount": 222,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -112,43 +112,7 @@
             "Base",
             "Monster"
         ],
-        "Amount": 111,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Water_Dirty": {
-        "Name": "Water - Dirty",
-        "ImageLocation": "sprites/ingredients/Water_Dirty.png",
-        "Category": [
-            "Base",
-            "Water"
-        ],
-        "Amount": 223,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Water_Distilled": {
-        "Name": "Water - Distilled",
-        "ImageLocation": "sprites/ingredients/Water_Distilled.png",
-        "Category": [
-            "Base",
-            "Water"
-        ],
-        "Amount": 185,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Water_Filtered": {
-        "Name": "Water - Filtered",
-        "ImageLocation": "sprites/ingredients/Water_Filtered.png",
-        "Category": [
-            "Base",
-            "Water"
-        ],
-        "Amount": 185,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -160,7 +124,43 @@
             "Base",
             "Water"
         ],
-        "Amount": 99,
+        "Amount": 60,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Filtered": {
+        "Name": "Water - Filtered",
+        "ImageLocation": "sprites/ingredients/Water_Filtered.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Distilled": {
+        "Name": "Water - Distilled",
+        "ImageLocation": "sprites/ingredients/Water_Distilled.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Water_Dirty": {
+        "Name": "Water - Dirty",
+        "ImageLocation": "sprites/ingredients/Water_Dirty.png",
+        "Category": [
+            "Base",
+            "Water"
+        ],
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -172,19 +172,20 @@
             "Cold",
             "Elemental"
         ],
-        "Amount": 107,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Dragonfly": {
-        "Name": "Dragonfly",
-        "ImageLocation": "sprites/ingredients/Dragonfly.png",
+    "Cold_Flower": {
+        "Name": "Hollycrass",
+        "ImageLocation": "sprites/UnknownWhite.png",
         "Category": [
-            "Critter"
+            "Cold",
+            "Plant"
         ],
-        "Amount": 467,
-        "Effect1": "None",
+        "Amount": 0,
+        "Effect1": "Frost Resist",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -194,8 +195,19 @@
         "Category": [
             "Critter"
         ],
-        "Amount": 237,
+        "Amount": 0,
         "Effect1": "Illumination",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Dragonfly": {
+        "Name": "Dragonfly",
+        "ImageLocation": "sprites/ingredients/Dragonfly.png",
+        "Category": [
+            "Critter"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -205,7 +217,7 @@
         "Category": [
             "Critter"
         ],
-        "Amount": 193,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -217,7 +229,7 @@
             "Elemental",
             "Fire"
         ],
-        "Amount": 110,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -229,7 +241,7 @@
             "Elemental",
             "Mineral"
         ],
-        "Amount": 126,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -241,7 +253,7 @@
             "Elemental",
             "Poision"
         ],
-        "Amount": 109,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -253,29 +265,7 @@
             "Elemental",
             "Shock"
         ],
-        "Amount": 100,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Sugar": {
-        "Name": "Sugar",
-        "ImageLocation": "sprites/ingredients/Sugar.png",
-        "Category": [
-            "Food"
-        ],
-        "Amount": 554,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Honeycomb": {
-        "Name": "Honeycomb",
-        "ImageLocation": "sprites/ingredients/HoneyComb.png",
-        "Category": [
-            "Food"
-        ],
-        "Amount": 456,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -286,7 +276,18 @@
         "Category": [
             "Food"
         ],
-        "Amount": 218,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Sugar": {
+        "Name": "Sugar",
+        "ImageLocation": "sprites/ingredients/Sugar.png",
+        "Category": [
+            "Food"
+        ],
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -297,8 +298,31 @@
         "Category": [
             "Food"
         ],
-        "Amount": 93,
+        "Amount": 0,
         "Effect1": "Fire Resistance",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Honeycomb": {
+        "Name": "Honeycomb",
+        "ImageLocation": "sprites/ingredients/HoneyComb.png",
+        "Category": [
+            "Food"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Apple": {
+        "Name": "Apple",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            "Food",
+            "Fruit"
+        ],
+        "Amount": 10,
+        "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -309,7 +333,7 @@
             "Food",
             "Mineral"
         ],
-        "Amount": 470,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -322,7 +346,7 @@
             "Plant",
             "Underwater"
         ],
-        "Amount": 105,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -334,7 +358,7 @@
             "Food",
             "Underwater"
         ],
-        "Amount": 119,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -346,18 +370,7 @@
             "Food",
             "Veggie"
         ],
-        "Amount": 135,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Brown_Mushroom": {
-        "Name": "Brown Mushroom",
-        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
-        "Category": [
-            "Fungi"
-        ],
-        "Amount": 572,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -368,40 +381,41 @@
         "Category": [
             "Fungi"
         ],
-        "Amount": 522,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Gold_Flakes": {
-        "Name": "Gold Flakes",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+    "Brown_Mushroom": {
+        "Name": "Brown Mushroom",
+        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
         "Category": [
-            "Mineral"
+            "Fungi"
         ],
-        "Amount": 132,
+        "Amount": 7,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Rust_Flakes": {
-        "Name": "Rusty Flakes",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+    "Cactus": {
+        "Name": "Cactus",
+        "ImageLocation": "sprites/UnknownWhite.png",
         "Category": [
-            "Mineral"
+            "Hot",
+            "Plant"
         ],
-        "Amount": 124,
-        "Effect1": "None",
+        "Amount": 0,
+        "Effect1": "Heal",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Metal_Flakes": {
-        "Name": "Metal Flakes",
+    "Sulfur": {
+        "Name": "Sulfur",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
         "Category": [
             "Mineral"
         ],
-        "Amount": 121,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -412,18 +426,40 @@
         "Category": [
             "Mineral"
         ],
-        "Amount": 120,
+        "Amount": 14,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Sulfur": {
-        "Name": "Sulfur",
+    "Rust_Flakes": {
+        "Name": "Rusty Flakes",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
         "Category": [
             "Mineral"
         ],
-        "Amount": 117,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Metal_Flakes": {
+        "Name": "Metal Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Gold_Flakes": {
+        "Name": "Gold Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -434,7 +470,7 @@
         "Category": [
             "Mineral"
         ],
-        "Amount": 81,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -446,7 +482,7 @@
             "Mineral",
             "Underwater"
         ],
-        "Amount": 129,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -457,7 +493,7 @@
         "Category": [
             "None"
         ],
-        "Amount": 124,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -468,8 +504,19 @@
         "Category": [
             "None"
         ],
-        "Amount": 113,
+        "Amount": 0,
         "Effect1": "Fire Weakness",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Tree_Sap": {
+        "Name": "Tree Sap",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -479,40 +526,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 549,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Blue_Flower": {
-        "Name": "Blue Flower",
-        "ImageLocation": "sprites/ingredients/BlueFlower.png",
-        "Category": [
-            "Plant"
-        ],
-        "Amount": 485,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Aloe": {
-        "Name": "Aloe",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Plant"
-        ],
-        "Amount": 126,
-        "Effect1": "Heal",
-        "Effect2": "Burn Resist",
-        "Effect3": "None"
-    },
-    "Biomass": {
-        "Name": "Biomass",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Plant"
-        ],
-        "Amount": 120,
+        "Amount": 4,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -523,20 +537,42 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 109,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Tree_Sap": {
-        "Name": "Tree Sap",
+    "Blue_Flower": {
+        "Name": "Blue Flower",
+        "ImageLocation": "sprites/ingredients/BlueFlower.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Biomass": {
+        "Name": "Biomass",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
         "Category": [
             "Plant"
         ],
-        "Amount": 107,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Aloe": {
+        "Name": "Aloe",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Plant"
+        ],
+        "Amount": 0,
+        "Effect1": "Heal",
+        "Effect2": "Burn Resist",
         "Effect3": "None"
     },
     "Lilypad": {
@@ -546,7 +582,7 @@
             "Plant",
             "Underwater"
         ],
-        "Amount": 207,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -558,7 +594,7 @@
             "Plant",
             "Underwater"
         ],
-        "Amount": 117,
+        "Amount": 0,
         "Effect1": "Water Breathing",
         "Effect2": "None",
         "Effect3": "None"
@@ -569,7 +605,7 @@
         "Category": [
             "Underwater"
         ],
-        "Amount": 116,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"

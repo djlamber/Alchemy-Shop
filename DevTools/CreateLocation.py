@@ -48,6 +48,7 @@ Ingredients.sort(key=lambda k: k.getName())
 Running = True
 while(Running):
     ID = input("Input ID: ")
+    ID = helpers.IDFormat(ID)
     setContinue = False
     for I in Locations:
         if I.getID() == ID:
@@ -57,6 +58,7 @@ while(Running):
     if setContinue:
         continue
     name = input("Input Name:")
+    name = helpers.NameFormat(name)
     img = input("Input Image directory: ")
     if not os.path.exists(img):
         print("Path does not exist, setting default")
@@ -66,7 +68,6 @@ while(Running):
         print("Color not recognized, setting to default")
         color = "WHITE"
     while True:
-        # TODO: work on list command for listing all ingredient
         ingredients = input("Input Ingredients, separated by a comma - [ing1, ing2]\nType \"list\" for a list of ingredients: ")
         if ingredients == "list":
             igList = ""
@@ -83,16 +84,59 @@ while(Running):
         else:
             break
 
-    ingreList = ingredients.split(", ")
+    dropRates = []
+    ingreList = ingredients.split(",")
+    for i in range(len(ingreList)):
+        ingreList[i] = helpers.IDFormat(ingreList[i])
+        if ingreList[i] == "_":
+            continue
+        while True:
+            dropRate = input(str(ingreList[i]) + "\'s drop rate (0-1): ")
+            if dropRate == "":
+                dropRate = 0.5
+            try:
+                dropRate = float(dropRate)
+            except ValueError:
+                print("That is not a float")
+            if type(dropRate) == float:
+                if dropRate < 0:
+                    dropRate = 0.5
+                break;
+
+        while True:
+            dropAmount = input(str(ingreList[i]) + "\'s drop amount: ")
+            if dropAmount == "":
+                dropAmount = 1
+            try:
+                dropAmount = int(dropAmount)
+            except ValueError:
+                print("That is not a int")
+            if type(dropAmount) == int:
+                if dropAmount < 0:
+                    dropAmount = 1
+                break;
+        dropRates.append([dropRate, dropAmount])
     prereqs = []
     for i in range(3):
         Type = input("Input prerequisite "+str(i+1)+" options:\n (Gold) (Potion) (None): ")
-        if Type.upper() == "GOLD":
-            Value = int(input("Value: "))
+        if Type.upper() == "GOLD" or Type.upper() == "G":
+            while(True):
+                Value = input("Value: ")
+                if Value == "":
+                    Value = 1
+                try:
+                    Value = int(Value)
+                except ValueError:
+                    print("That is not a integer")
+                if type(Value) == int:
+                    if Value < 0:
+                        Value = 1
+                    break;
             prereqs.append({"Gold":Value})
 
-        elif Type.upper() == "POTION":
+        elif Type.upper() == "POTION" or Type.upper() == "P" or Type.upper() == "POT":
             potName = input("Potion Name: ")
+            potName = helpers.NameFormat(potName)
             potImg = input("Potion Color/directory: ")
             #if not checkColor()
             if not os.path.exists(potImg):
@@ -101,7 +145,7 @@ while(Running):
             prereqs.append({"Potion":{"Name":potName, "ImageLocation":potImg}})
         else:
             prereqs.append("None")
-    newLoc = helpers.Location(ID, name, img, color, ingreList, prereqs[0], prereqs[1], prereqs[2])
+    newLoc = helpers.Location(ID, name, img, color, ingreList, dropRates, prereqs[0], prereqs[1], prereqs[2])
     Locations.append(newLoc)
     ans = input("Sucessfully added to list, continue? (y/n): ")
     if ans == 'n':

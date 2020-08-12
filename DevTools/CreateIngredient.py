@@ -7,7 +7,8 @@ import os.path
 Ingredients = helpers.InitIngredients()
 Running = True
 while(Running):
-    ID = input("Input ID:")
+    ID = input("Input ID: ")
+    ID = helpers.IDFormat(ID)
     setContinue = False
     for I in Ingredients:
         if I.getID() == ID:
@@ -16,21 +17,41 @@ while(Running):
             break
     if setContinue:
         continue
-    name = input("Input Name:")
-    img = input("Input Image directory")
+    name = input("Input Name: ")
+    name = helpers.NameFormat(name)
+    img = input("Input Image directory: ")
     if not os.path.exists(img):
         print("Path does not exist, setting default")
         img = "sprites/UnknownWhite.png"
-    category = input("Input Categories, separated by a comma:")
-    amount = input("Input Amount")
-    if int(amount) < 0:
-        amount = 1
-    effect1 = input("Input Effect 1:")
-    effect2 = input("Input Effect 2:")
-    effect3 = input("Input Effect 3:")
-    newIngre = helpers.Ingredient(ID, name, img, category, int(amount), effect1, effect2, effect3)
+    category = input("Input Categories, separated by a comma: ")
+    categoryList = category.split(",")
+    for i in range(len(categoryList)):
+        if categoryList[i] == " ":
+            continue
+        categoryList[i] = helpers.NameFormat(categoryList[i])
+    while (True):
+        amount = input("Input Amount: ")
+        if amount == "":
+            amount = 0
+            break
+        try:
+            amount = int(amount)
+        except ValueError:
+            print("That is not a integer")
+        if type(amount) == int:
+            if amount < 0:
+                amount = 0
+            break;
+    effects = []
+    for i in range(3):
+        effect = input("Input Effect "+str(i) + ": ")
+        effect = helpers.NameFormat(effect)
+        if effect == "" or effect == " " or effect == "N":
+            effect = "None"
+        effects.append(effect)
+    newIngre = helpers.Ingredient(ID, name, img, categoryList, int(amount), effects[0], effects[1], effects[2])
     Ingredients.append(newIngre)
-    ans = input("Sucessfully added to list, continue? (y/n)")
+    ans = input("Sucessfully added to list, continue? (y/n): ")
     if ans == 'n':
         Running = False
 helpers.saveIngredients(Ingredients)

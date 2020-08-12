@@ -8,6 +8,20 @@
             "Red_Flower",
             "Brown_Mushroom"
         ],
+        "DropRates": [
+            [
+                2.0,
+                10
+            ],
+            [
+                2.0,
+                2
+            ],
+            [
+                1.0,
+                1
+            ]
+        ],
         "Prereq1": "None",
         "Prereq2": "None",
         "Prereq3": "None"
@@ -20,6 +34,20 @@
             "Animal_Meat",
             "Wheat",
             "Carrot"
+        ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                2.0,
+                2
+            ],
+            [
+                0.5,
+                1
+            ]
         ],
         "Prereq1": {
             "Gold": 1000
@@ -39,6 +67,16 @@
         "Ingredients": [
             "Metal_Flakes",
             "Neutral_Powder"
+        ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                2.0,
+                2
+            ]
         ],
         "Prereq1": {
             "Gold": 2000
@@ -60,6 +98,20 @@
             "Clam",
             "Seaweed"
         ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                2.0,
+                2
+            ],
+            [
+                0.5,
+                1
+            ]
+        ],
         "Prereq1": {
             "Gold": 1000
         },
@@ -80,6 +132,20 @@
             "Purified_Water",
             "Dragonfly"
         ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                2.0,
+                2
+            ],
+            [
+                0.5,
+                1
+            ]
+        ],
         "Prereq1": {
             "Gold": 3500
         },
@@ -89,6 +155,67 @@
                 "ImageLocation": "sprites/potions/CyanPotion.png"
             }
         },
+        "Prereq3": "None"
+    },
+    "Tundra": {
+        "Name": "Frozen Forest",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": "WHITE",
+        "Ingredients": [
+            "Cold_Flower",
+            "Ice",
+            "Frozen_Powder"
+        ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                2.0,
+                2
+            ],
+            [
+                0.5,
+                1
+            ]
+        ],
+        "Prereq1": {
+            "Gold": 4500
+        },
+        "Prereq2": {
+            "Potion": {
+                "Name": "Frost Resistance",
+                "ImageLocation": "sprites/potions/BrownPotion.png"
+            }
+        },
+        "Prereq3": "None"
+    },
+    "Desert": {
+        "Name": "Sandy Dunes",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": "WHITE",
+        "Ingredients": [
+            "Sand",
+            "Fire_Powder",
+            "Oil"
+        ],
+        "DropRates": [
+            [
+                0.9,
+                5
+            ],
+            [
+                0.3,
+                2
+            ],
+            [
+                0.5,
+                6
+            ]
+        ],
+        "Prereq1": "None",
+        "Prereq2": "None",
         "Prereq3": "None"
     }
 }

@@ -6,6 +6,60 @@ from random import *
 from time import *
 import config
 #Stupid functions made to increment through file and function
+def IDFormat(ID):
+    if ID == "":
+        return ID
+    ID = ID.lower()
+    ID = ID.replace(" ", "_")
+    ID = ID.replace(",", "_")
+    ID = ID.replace("-", "_")
+    lastID = ""
+    while lastID != ID:
+        lastID = ID
+        ID = ID.replace("__", "_")
+    if ID[-1] == "_":
+        ID = ID[:-1]
+    if ID == "":
+        return ID
+    if ID[0] == "_":
+        ID = ID[1:]
+    indexes = [i for i, ltr in enumerate(ID) if ltr == "_"]
+    strIndex = 1
+    formattedID = ID[0].upper()
+    for i in indexes:
+        formattedID = formattedID + ID[strIndex:i+1] + ID[i+1].upper()
+        strIndex = i+2
+    formattedID = formattedID + ID[strIndex:]
+    return formattedID
+
+def NameFormat(Name):
+    if Name == "":
+        return Name
+    Name = Name.lower()
+    Name = Name.replace("_", " ")
+    Name = Name.replace(",", " ")
+    lastName = ""
+    while lastName != Name:
+        lastName = Name
+        Name = Name.replace("  ", " ")
+    if Name[-1] == " ":
+        Name = Name[:-1]
+    if Name == "":
+        return Name
+    if Name[0] == " ":
+        Name = Name[1:]
+    indexes = [i for i, ltr in enumerate(Name) if ltr == " "]
+    strIndex = 1
+    formattedName = Name[0].upper()
+    for i in indexes:
+        formattedName = formattedName + Name[strIndex:i+1] + Name[i+1].upper()
+        strIndex = i+2
+    formattedName = formattedName + Name[strIndex:]
+    return formattedName
+
+
+
+
 def IncreaseVal(num):
     num[0] +=1
     return num
@@ -174,12 +228,13 @@ def savePotions(PotionList):
 
 #Location Objects
 class Location:
-    def __init__(self,ID, name, imgLoc, color, ingredients, pre1, pre2, pre3):
+    def __init__(self,ID, name, imgLoc, color, ingredients, dropRates, pre1, pre2, pre3):
         self.ID = ID
         self.Name = name
         self.imgLoc = imgLoc
         self.color = color
-        self.ingredients = ingredients
+        self.ingredients = ingredients #IngredientID
+        self.dropRates = dropRates
         self.Prerequisite1 = pre1
         self.Prerequisite2 = pre2
         self.Prerequisite3 = pre3
@@ -192,6 +247,8 @@ class Location:
         return self.imgLoc
     def getIngredients(self):
         return self.ingredients
+    def getDropRates(self):
+        return self.dropRates
     def getPrereq1(self):
         return self.Prerequisite1
     def getPrereq2(self):
@@ -210,6 +267,7 @@ def InitLocations():
                             data[1].get("ImageLocation"),
                             data[1].get("Color"),
                             data[1].get("Ingredients"),
+                            data[1].get("DropRates"),
                             data[1].get("Prereq1"),
                             data[1].get("Prereq2"),
                             data[1].get("Prereq3"),
@@ -224,6 +282,7 @@ def saveLocations(Locations):
                    "ImageLocation": loc.getImgLoc(),
                    "Color": "WHITE",
                    "Ingredients": loc.getIngredients(),
+                   "DropRates": loc.getDropRates(),
                    "Prereq1": loc.getPrereq1(),
                    "Prereq2": loc.getPrereq2(),
                    "Prereq3": loc.getPrereq3()

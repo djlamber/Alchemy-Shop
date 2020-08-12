@@ -23,6 +23,7 @@ def removeSlot(ingredient):
 
 def brewPotion(startTime):
     # TODO: add variation in potion brewing based on ingredients
+    # Idea: bad potions can be made that take up space in inventory and have to be sold
     if len(config.PotionList)<65:
         newPotion = Potion(str(random()), "Potion Name", "sprites/potions/"+randomPotionColor(), config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), int(random() * 100) )
         config.PotionList.append(newPotion)
@@ -78,7 +79,7 @@ def mainMenu():
 #################### potionCreation Screen ####################
 def potionCreation():
     pageNum = [0]
-    ingSortTypes = [ "Category", "Category R","Amount R", "Amount", "Name", "Name R"]
+    ingSortTypes = [ "Category", "Category R","Amount R", "Amount", "Name", "Name R", "Index", "Index R"]
     start_time = [0]
     while True:
         # check events
@@ -162,10 +163,10 @@ def potionCreation():
             config.Ingredients.sort(key=lambda k: k.getAmount())
         elif ingSortTypes[0] == "Amount R":
             config.Ingredients.sort(reverse = True, key=lambda k: k.getAmount())
-        elif ingSortTypes[0] == "Index": #Not implemented
-            config.Ingredients.sort(key=lambda k: k.getCategory())
-        elif ingSortTypes[0] == "Index R": #Not implemented
-            config.Ingredients.sort(reverse=True, key=lambda k: k.getCategory())
+        elif ingSortTypes[0] == "Index":
+            config.Ingredients.sort(key=lambda k: k.getID())
+        elif ingSortTypes[0] == "Index R":
+            config.Ingredients.sort(reverse=True, key=lambda k: k.getID())
 
 
         for ingredient in config.Ingredients: # display ingredients
@@ -304,13 +305,29 @@ def potionInventory():
 
 def gatherIngredient():
     if config.Player.getGold() > 100:
-        for i in config.Ingredients:
-            i.addAmount(int(randrange(1,10)))
-        config.Player.subGold(100)
+        for i in range(len(config.CurrentLocation.getIngredients())):
+            ingre = config.CurrentLocation.getIngredients()[i]
+            dropRates = config.CurrentLocation.getDropRates()[i]
+            print(str(ingre) + " " + str(dropRates))
+            found = 0
+            for ing in config.Ingredients:
+                print(ing.getID())
+                print(ingre)
+                if ing.getID() == ingre:
+                    for i in range(dropRates[1]):
+                        if random() < dropRates[0]:
+                            found +=1
+                            print(found)
+                    print(found)
+                    ing.addAmount(found)
+                    break
+                continue
+
+
 
 def selectLocation(data):
     location = data[0]
-    config.currentLocation = location
+    config.CurrentLocation = location
     reqs = data[1] #add location prereqs to prereqs list
     reqs[0] = location.getPrereq1()
     reqs[1] = location.getPrereq2()
@@ -323,7 +340,7 @@ def selectLocation(data):
     config.gatherDisplayList = catIngres
 
 def deselectLocation(data):
-    config.currentLocation = None
+    config.CurrentLocation = None
     data[0] = [None,None,None]
     config.gatherDisplayList = []
 
@@ -337,7 +354,6 @@ def ingredientGather():
         # check events
         checkEvents()
         #TODO: expand upon function to gather ingredients
-        #TODO: expand upon specific areas to gather specific ingredients
         #TODO: show screen of all gathered Ingredients
         #TODO: expand upon areas that require specific prereqs
         Back_Color = GRAY
@@ -349,7 +365,11 @@ def ingredientGather():
 
         #  display player gold
         draw_text("Gold: " + str(config.Player.getGold()), font32, YELLOW, config.screen, 10, 5)
-        button_rect_text(SCREEN_WIDTH * 6 / 16 - 24, 0, 280, 40, Back_Color, MAROON, 'Gather Ingredients', font32, WHITE, config.screen, LC, gatherIngredient)
+
+        #display gather button
+        #print(config.CurrentLocation)
+        if config.CurrentLocation is not None:
+            button_rect_text_center(SCREEN_WIDTH/2, SCREEN_HEIGHT-40, 280, 40, Back_Color, MAROON, 'Gather Ingredients', font32, WHITE, config.screen, LC, gatherIngredient)
 
         x = 0
 
