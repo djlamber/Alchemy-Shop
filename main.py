@@ -1,5 +1,17 @@
 from helpers import *
 
+import sys
+import os
+
+def resource_path(relative_path):
+    try:
+    # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 def addToEmptySlot(ingredient):
 
     if config.selectedIngredients[0] == ingredient or config.selectedIngredients[1] == ingredient or config.selectedIngredients[2] == ingredient:
@@ -303,25 +315,56 @@ def potionInventory():
 
 ###########################################################
 
+def checkPrereqs():
+    #TODO: expand upon showing what reqs are not met
+    if config.CurrentLocation is None:
+        return False
+    prereqs = [None, None, None]
+    prereqs[0] = config.CurrentLocation.getPrereq1()
+    prereqs[1] = config.CurrentLocation.getPrereq2()
+    prereqs[2] = config.CurrentLocation.getPrereq3()
+    for i in range(3):
+
+        req = prereqs[i]
+        if req == "None": # prereq = none
+            continue
+        if list(req.keys())[0] == "Gold": # prereq = gold
+            if config.Player.getGold() < req.get(list(req.keys())[0]):
+                return False
+        if list(req.keys())[0] == "Potion":  # prereq = potion
+            continue
+    return True
+
+
 def gatherIngredient():
-    if config.Player.getGold() > 100:
-        for i in range(len(config.CurrentLocation.getIngredients())):
-            ingre = config.CurrentLocation.getIngredients()[i]
-            dropRates = config.CurrentLocation.getDropRates()[i]
-            print(str(ingre) + " " + str(dropRates))
-            found = 0
-            for ing in config.Ingredients:
-                print(ing.getID())
-                print(ingre)
-                if ing.getID() == ingre:
-                    for i in range(dropRates[1]):
-                        if random() < dropRates[0]:
-                            found +=1
-                            print(found)
-                    print(found)
-                    ing.addAmount(found)
-                    break
-                continue
+    #remove prereqs from player
+    prereqs = [None, None, None]
+    prereqs[0] = config.CurrentLocation.getPrereq1()
+    prereqs[1] = config.CurrentLocation.getPrereq2()
+    prereqs[2] = config.CurrentLocation.getPrereq3()
+    for i in range(3):
+        req = prereqs[i]
+        if req == "None":  # prereq = none
+            continue
+        if list(req.keys())[0] == "Gold":  # prereq = gold
+            config.Player.subGold(req.get(list(req.keys())[0]))
+        if list(req.keys())[0] == "Potion":  # prereq = potion
+            continue
+
+
+    for i in range(len(config.CurrentLocation.getIngredients())):
+        ingre = config.CurrentLocation.getIngredients()[i]
+        dropRates = config.CurrentLocation.getDropRates()[i]
+        print(str(ingre) + " " + str(dropRates))
+        found = 0
+        for ing in config.Ingredients:
+            if ing.getID() == ingre:
+                for i in range(dropRates[1]):
+                    if random() < dropRates[0]:
+                        found +=1
+                ing.addAmount(found)
+                break
+            continue
 
 
 
@@ -368,7 +411,7 @@ def ingredientGather():
 
         #display gather button
         #print(config.CurrentLocation)
-        if config.CurrentLocation is not None:
+        if checkPrereqs():
             button_rect_text_center(SCREEN_WIDTH/2, SCREEN_HEIGHT-40, 280, 40, Back_Color, MAROON, 'Gather Ingredients', font32, WHITE, config.screen, LC, gatherIngredient)
 
         x = 0

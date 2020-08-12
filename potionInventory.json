@@ -1,1 +1,83 @@
-{}
+{
+    "0.0034685368950480022": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/BrownPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 93
+    },
+    "0.08051853711075785": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/YellowPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 69
+    },
+    "0.9787835795022294": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 22
+    },
+    "0.305458271772466": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/PurplePotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 16
+    },
+    "0.32172786950771326": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/BrownPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 92
+    },
+    "0.8037047244804668": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/PinkPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 7
+    },
+    "0.521081705788817": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/WhitePotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 18
+    },
+    "0.5414707485756595": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/GreenPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 25
+    },
+    "0.9403692597761287": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/PinkPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+      "Effect": "Fire resistance",
+        "Value": 38
+    },
+    "0.6763572927401252": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/BluePotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Red_Flower",
+        "Value": 47
+    }
+}
