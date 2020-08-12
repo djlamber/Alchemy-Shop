@@ -121,6 +121,17 @@ def button_img_img(x, y, width, height, inactiveImage, activeImage, displayImage
 
     draw_image(x, y, width, height, displayImage, surface)
 
+def button_img_text(x, y, width, height, inactiveImage, activeImage, text, font, color, surface, Mbutton, action=None, param = None):
+    mouse = pygame.mouse.get_pos()
+
+    if x+width > mouse[0] > x and y+height > mouse[1] > y:
+        draw_image(x, y, width, height, activeImage, surface)
+        button(Mbutton, action, param)
+    else:
+        draw_image(x, y, width, height, inactiveImage, surface)
+
+    draw_text_center(text, font, color, surface, x+width/2, y+height/2)
+
 def hoverover_text(x,y,width,height,backgroundColor,surface,text,font,color, xDrawOffset=None, yDrawOffset = None, side = None ):
     mouse = pygame.mouse.get_pos()
     if xDrawOffset == None:

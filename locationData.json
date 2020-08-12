@@ -1,39 +1,93 @@
 {
-  "Backyard": {
+    "Backyard": {
         "Name": "Backyard Garden",
         "ImageLocation": "sprites/UnknownBlack.png",
-        "Categories": [
-            "Plant",
-            "Fruit",
-            "Vegetable"
+        "Color": "WHITE",
+        "Ingredients": [
+            "Water_River",
+            "Red_Flower",
+            "Brown_Mushroom"
+        ],
+        "Prereq1": "None",
+        "Prereq2": "None",
+        "Prereq3": "None"
+    },
+    "Field": {
+        "Name": "Local farm",
+        "ImageLocation": "sprites/ingredients/Wheat.png",
+        "Color": "WHITE",
+        "Ingredients": [
+            "Animal_Meat",
+            "Wheat",
+            "Carrot"
         ],
         "Prereq1": {
-          "Gold": 500
+            "Gold": 1000
         },
         "Prereq2": {
-          "Potion": {
-            "Name": "Potion Name",
-            "ImageLocation": "sprites/potions/RedPotion.png"
-          }
+            "Potion": {
+                "Name": "Potion Name",
+                "ImageLocation": "sprites/potions/BluePotion.png"
+            }
         },
         "Prereq3": "None"
     },
-  "Field": {
-        "Name": "Local farm",
-        "ImageLocation": "sprites/ingredients/Wheat.png",
-        "Categories": [
-            "Plant",
-            "Fruit",
-            "Vegetable"
+    "Mountain": {
+        "Name": "Craggy Pass",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": "WHITE",
+        "Ingredients": [
+            "Metal_Flakes",
+            "Neutral_Powder"
         ],
         "Prereq1": {
-          "Gold": 1000
+            "Gold": 2000
+        },
+        "Prereq2": "None",
+        "Prereq3": {
+            "Potion": {
+                "Name": "Hollycrass",
+                "ImageLocation": "sprites/UnknownWhite.png"
+            }
+        }
+    },
+    "Ocean": {
+        "Name": "Sandy Beach",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": "WHITE",
+        "Ingredients": [
+            "Algae",
+            "Clam",
+            "Seaweed"
+        ],
+        "Prereq1": {
+            "Gold": 1000
         },
         "Prereq2": {
-          "Potion": {
-            "Name": "Potion Name",
-            "ImageLocation": "sprites/potions/BluePotion.png"
-          }
+            "Potion": {
+                "Name": "Fire Resistance",
+                "ImageLocation": "sprites/potions/PinkPotion.png"
+            }
+        },
+        "Prereq3": "None"
+    },
+    "Jungle": {
+        "Name": "Rainforest Depths",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": "WHITE",
+        "Ingredients": [
+            "Coconut",
+            "Purified_Water",
+            "Dragonfly"
+        ],
+        "Prereq1": {
+            "Gold": 3500
+        },
+        "Prereq2": {
+            "Potion": {
+                "Name": "Bugspray",
+                "ImageLocation": "sprites/potions/CyanPotion.png"
+            }
         },
         "Prereq3": "None"
     }

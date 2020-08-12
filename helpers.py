@@ -174,21 +174,24 @@ def savePotions(PotionList):
 
 #Location Objects
 class Location:
-    def __init__(self, name, imgLoc, Categories, pre1, pre2, pre3):
+    def __init__(self,ID, name, imgLoc, color, ingredients, pre1, pre2, pre3):
+        self.ID = ID
         self.Name = name
         self.imgLoc = imgLoc
-        self.Categories = Categories,
-        self.Prerequisite1 = pre1,
-        self.Prerequisite2 = pre2,
+        self.color = color
+        self.ingredients = ingredients
+        self.Prerequisite1 = pre1
+        self.Prerequisite2 = pre2
         self.Prerequisite3 = pre3
 
-
+    def getID(self):
+        return self.ID
     def getName(self):
         return self.Name
     def getImgLoc(self):
         return self.imgLoc
-    def getCategories(self):
-        return self.Categories
+    def getIngredients(self):
+        return self.ingredients
     def getPrereq1(self):
         return self.Prerequisite1
     def getPrereq2(self):
@@ -201,11 +204,12 @@ def InitLocations():
     Locations = []
     with open("locationData.json") as f:
         locJson = json.load(f)  # load data as dict
-        print(locJson)
     for data in locJson.items():
-        location = Location(data[1].get("Name"),
+        location = Location(data[0],
+                            data[1].get("Name"),
                             data[1].get("ImageLocation"),
-                            data[1].get("Categories"),
+                            data[1].get("Color"),
+                            data[1].get("Ingredients"),
                             data[1].get("Prereq1"),
                             data[1].get("Prereq2"),
                             data[1].get("Prereq3"),
@@ -213,18 +217,19 @@ def InitLocations():
         Locations.append(location)
     return Locations
 
-def saveLocation(Locations):
+def saveLocations(Locations):
     prepareData = {}
     for loc in Locations:
         newData = {"Name": loc.getName(),  # create list
                    "ImageLocation": loc.getImgLoc(),
-                   "Categories": loc.getCategories(),
+                   "Color": "WHITE",
+                   "Ingredients": loc.getIngredients(),
                    "Prereq1": loc.getPrereq1(),
                    "Prereq2": loc.getPrereq2(),
                    "Prereq3": loc.getPrereq3()
                     }
         prepareData[loc.getID()] = newData  # Add list data to dict
-    with open("potionInventory.json", "w") as f:  # write to json
+    with open("locationData.json", "w") as f:  # write to json
         json.dump(prepareData, f, indent=4)
 
 def randomPotionColor():
@@ -244,6 +249,7 @@ def randomPotionColor():
                     "WhitePotion.png",
                     "YellowPotion.png"]
     return listOfSprites[randrange(0,len(listOfSprites))]
+
 
 
 

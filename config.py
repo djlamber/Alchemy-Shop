@@ -9,3 +9,5 @@ selectedIngredients = None
 MUP = True
 runningTotal = 0
 Locations = None
+CurrentLocation = None
+gatherDisplayList = []

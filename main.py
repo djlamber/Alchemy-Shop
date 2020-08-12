@@ -310,27 +310,36 @@ def gatherIngredient():
 
 def selectLocation(data):
     location = data[0]
-    reqs = data[1]
+    config.currentLocation = location
+    reqs = data[1] #add location prereqs to prereqs list
     reqs[0] = location.getPrereq1()
     reqs[1] = location.getPrereq2()
     reqs[2] = location.getPrereq3()
+    catIngres = []
+    for locIngre in location.getIngredients():
+        for ingre in config.Ingredients:
+            if ingre.getID() == locIngre:
+                catIngres.append(ingre)
+    config.gatherDisplayList = catIngres
+
+def deselectLocation(data):
+    config.currentLocation = None
+    data[0] = [None,None,None]
+    config.gatherDisplayList = []
 
 #################### Basic Screen ####################
 def ingredientGather():
     prereqs = [None, None, None] #[Prereq1, Prereq2, Prereq3]
-    DisplayList = []
     pageNum = [0]
     displayAmount = False
 
-    for ingredient in config.Ingredients:  # display ingredients
-        DisplayList.append(ingredient)
     while True:
         # check events
         checkEvents()
         #TODO: expand upon function to gather ingredients
-        #TODO: add specific areas to gather specific ingredients
+        #TODO: expand upon specific areas to gather specific ingredients
         #TODO: show screen of all gathered Ingredients
-        #TODO: create areas that require specific types of potions
+        #TODO: expand upon areas that require specific prereqs
         Back_Color = GRAY
         config.screen.fill(Back_Color)
 
@@ -360,30 +369,31 @@ def ingredientGather():
                 y_off = 80
             if req is None:
                 continue
-            if req == "None":
+            elif req == "None":
                 draw_image_center(SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + y_off, 80, 80, "sprites/Nothing.png", config.screen)
                 draw_text_center("Nothing", font20, BLACK, config.screen, SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + 40 + y_off)
-            elif req[0].get("Gold"):
+            elif req.get("Gold"):
                 draw_image_center(SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + y_off, 80, 80, "sprites/UnknownBlack.png", config.screen)
-                draw_text_center(str(req[0].get("Gold"))+" Gold", font20, BLACK,config.screen, SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + 40 + y_off )
-            elif req[0].get("Potion"):
-                draw_image_center(SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + y_off, 80, 80, req[0].get("Potion").get("ImageLocation"), config.screen)
-                draw_text_center(req[0].get("Potion").get("Name"), font20, BLACK, config.screen, SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + 40 + y_off)
+                draw_text_center(str(req.get("Gold"))+" Gold", font20, BLACK,config.screen, SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + 40 + y_off )
+            elif req.get("Potion"):
+                draw_image_center(SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + y_off, 80, 80, req.get("Potion").get("ImageLocation"), config.screen)
+                draw_text_center(req.get("Potion").get("Name"), font20, BLACK, config.screen, SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + 40 + y_off)
             i +=1
 
         #display locations
         for location in config.Locations:
-            button_rect_text(0, x*40 +100, 280, 40, Back_Color, MAROON, location.getName(), font32, WHITE, config.screen, LC, selectLocation, [location,prereqs])
+            if location == config.CurrentLocation:
+                button_img_text(0, x * 40 + 100, 280, 40, "sprites/GreenBorder.png", "sprites/RedBorder.png", location.getName(), font32, WHITE, config.screen, RC, deselectLocation, [prereqs])
+            else:
+                button_img_text(0, x*40 +100, 280, 40, "sprites/Nothing.png", "sprites/GreenBorder.png", location.getName(), font32, WHITE, config.screen, LC, selectLocation, [location,prereqs])
             x+=1
-
-
         entNum = 0
         posX = 0
         posY = 0
         itemNum = 0
 
         #up and down arrows
-        amountItems = len(DisplayList)
+        amountItems = len(config.gatherDisplayList)
         numPages = int((amountItems - 1) / 24)  # get num of pages
         if pageNum[0] > numPages:  # only allow visit pages with something in it
             pageNum[0] = numPages
@@ -392,7 +402,7 @@ def ingredientGather():
         if pageNum[0] < numPages:
             button_img(SCREEN_WIDTH - 260, 675, 160, 40, "sprites/WideArrowDown.png", "sprites/WideArrowDown.png", config.screen, LC, IncreaseVal, pageNum)
 
-        for item in DisplayList: #Displays Display list of ingredients
+        for item in config.gatherDisplayList: #Displays Display list of ingredients
             itemNum +=1
             if itemNum < pageNum[0] * 24 +1:
                 continue
@@ -404,7 +414,7 @@ def ingredientGather():
             draw_image(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, item.imgLoc, config.screen)
             draw_text_center(item.name, font16, WHITE, config.screen,SCREEN_WIDTH - 400 + (100 * posX) + 40, 100 * posY + 70)
             if displayAmount is True:
-                draw_text(str(ingredient.amount), font16, WHITE, config.screen,SCREEN_WIDTH - 400 +  (100 * posX)+ 5, 100 * posY + 45)
+                draw_text(str(item.amount), font16, WHITE, config.screen,SCREEN_WIDTH - 400 +  (100 * posX)+ 5, 100 * posY + 45)
 
             hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_1, font20, BLACK,10,0, "Left")
             hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_2, font20, BLACK,10,20, "Left")
@@ -425,6 +435,8 @@ config.Ingredients = InitIngredients()  # initialize ingredients
 config.PotionList = InitPotionList()  # initialize potions
 config.Player = InitPlayer()  # initialize player
 config.Locations = InitLocations() #initalize locations
+
+saveLocations(config.Locations)
 
 config.NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png",["None"], 0, "None", "None", "None" )
 config.selectedIngredients = [config.NoneIngredient, config.NoneIngredient, config.NoneIngredient]
