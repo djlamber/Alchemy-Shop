@@ -15,4 +15,5 @@ while(True):
         continue
     if option == "CREATELOCATION" or option == "LOCATION" or option == "CL":
         createLocation()
+    #TODO: add edit options
         continue
