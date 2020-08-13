@@ -267,7 +267,6 @@ def potionInventory():
     while True:
         # check events
         checkEvents()
-        #TODO: running total for selling selected potions
         #TODO: look at potion stats/info when hovering over with mouse
 
         # draw on screen
@@ -398,7 +397,6 @@ def ingredientGather():
     while True:
         # check events
         checkEvents()
-        #TODO: expand upon function to gather ingredients
         #TODO: show screen of all gathered Ingredients
         #TODO: expand upon areas that require specific prereqs
         Back_Color = GRAY

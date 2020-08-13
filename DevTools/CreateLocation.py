@@ -4,52 +4,21 @@ import os.path
 
 #This is a tool that uses the terminal to add new ingredients
 
-def checkColor(color):
-    if type(color) == str:
-        if color == "WHITE":
-            return True
-        if color == "SILVER":
-            return True
-        if color == "GRAY":
-            return True
-        if color == "BLACK":
-            return True
-        if color == "RED":
-            return True
-        if color == "MAROON":
-            return True
-        if color == "YELLOW":
-            return True
-        if color == "OLIVE":
-            return True
-        if color == "LIME":
-            return True
-        if color == "GREEN":
-            return True
-        if color == "AQUA":
-            return True
-        if color == "TEAL":
-            return True
-        if color == "BLUE":
-            return True
-        if color == "NAVY":
-            return True
-        if color == "FUCHSIA":
-            return True
-        if color == "PURPLE":
-            return True
-    else:
-        RGB = color.split(",")
-    return True # color is equal
+
 def createLocation():
     Locations = helpers.InitLocations()
     Ingredients = helpers.InitIngredients()
     Ingredients.sort(key=lambda k: k.getName())
     Running = True
     print("=====Create Location=====")
-    while(Running):
+    while Running:
+        print("Type q to quit")
         ID = input("Input ID: ")
         ID = helpers.IDFormat(ID)
+        option = ID.upper()
+        if option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END":
+            Running = False
+            break
         setContinue = False
         for I in Locations:
             if I.getID() == ID:
@@ -65,12 +34,12 @@ def createLocation():
             print("Path does not exist, setting default")
             img = "sprites/UnknownWhite.png"
         color = input("Input Color: ")
-        if not checkColor(color.upper()):
+        if not helpers.checkColor(color.upper()):
             print("Color not recognized, setting to default")
             color = "WHITE"
         while True:
             ingredients = input("Input Ingredients, separated by a comma - [ing1, ing2]\nType \"list\" for a list of ingredients: ")
-            if ingredients == "list":
+            if ingredients.upper == "LIST":
                 igList = ""
                 x = 0
                 for i in Ingredients:
@@ -149,7 +118,7 @@ def createLocation():
         newLoc = helpers.Location(ID, name, img, color, ingreList, dropRates, prereqs[0], prereqs[1], prereqs[2])
         Locations.append(newLoc)
         ans = input("Sucessfully added to list, continue? (y/n): ")
-        if ans == 'n':
+        if ans.upper() != 'Y':
             Running = False
     helpers.saveLocations(Locations)
 

@@ -57,7 +57,43 @@ def NameFormat(Name):
     formattedName = formattedName + Name[strIndex:]
     return formattedName
 
-
+def checkColor(color):
+    if type(color) == str:
+        if color == "WHITE":
+            return True
+        if color == "SILVER":
+            return True
+        if color == "GRAY":
+            return True
+        if color == "BLACK":
+            return True
+        if color == "RED":
+            return True
+        if color == "MAROON":
+            return True
+        if color == "YELLOW":
+            return True
+        if color == "OLIVE":
+            return True
+        if color == "LIME":
+            return True
+        if color == "GREEN":
+            return True
+        if color == "AQUA":
+            return True
+        if color == "TEAL":
+            return True
+        if color == "BLUE":
+            return True
+        if color == "NAVY":
+            return True
+        if color == "FUCHSIA":
+            return True
+        if color == "PURPLE":
+            return True
+    else:
+        RGB = color.split(",")
+    return True # color is equal
 
 
 def IncreaseVal(num):

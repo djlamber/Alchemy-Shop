@@ -7,9 +7,14 @@ def createIngredient():
     Ingredients = helpers.InitIngredients()
     Running = True
     print("=====Create Ingredient=====")
-    while(Running):
+    while Running:
+        print("Type q to quit")
         ID = input("Input ID: ")
         ID = helpers.IDFormat(ID)
+        option = ID.upper()
+        if option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END":
+            Running = False
+            break
         setContinue = False
         for I in Ingredients:
             if I.getID() == ID:
@@ -30,7 +35,7 @@ def createIngredient():
             if categoryList[i] == " ":
                 continue
             categoryList[i] = helpers.NameFormat(categoryList[i])
-        while (True):
+        while True:
             amount = input("Input Amount: ")
             if amount == "":
                 amount = 0
@@ -53,7 +58,7 @@ def createIngredient():
         newIngre = helpers.Ingredient(ID, name, img, categoryList, int(amount), effects[0], effects[1], effects[2])
         Ingredients.append(newIngre)
         ans = input("Sucessfully added to list, continue? (y/n): ")
-        if ans == 'n':
+        if ans.upper() != 'Y':
             Running = False
     helpers.saveIngredients(Ingredients)
 

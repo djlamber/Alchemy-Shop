@@ -6,7 +6,7 @@
             "A",
             "Z"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "",
         "Effect2": "",
         "Effect3": ""
@@ -18,7 +18,7 @@
             "Animal",
             "Base"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -30,7 +30,7 @@
             "Animal",
             "Food"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -42,8 +42,20 @@
             "Animal",
             "Food"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "Heal",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Soup": {
+        "Name": "Chicken Noodle Soup",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            "Animal",
+            "Food"
+        ],
+        "Amount": 15,
+        "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -53,7 +65,7 @@
         "Category": [
             "Base"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -64,7 +76,7 @@
         "Category": [
             "Base"
         ],
-        "Amount": 1,
+        "Amount": 15,
         "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
@@ -75,7 +87,7 @@
         "Category": [
             "Base"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -87,7 +99,7 @@
             "Base",
             "Food"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -100,7 +112,7 @@
             "Mineral",
             "Water"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -112,7 +124,7 @@
             "Base",
             "Monster"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -124,7 +136,7 @@
             "Base",
             "Water"
         ],
-        "Amount": 60,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -136,7 +148,7 @@
             "Base",
             "Water"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -148,7 +160,7 @@
             "Base",
             "Water"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -160,7 +172,7 @@
             "Base",
             "Water"
         ],
-        "Amount": 0,
+        "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -184,7 +196,7 @@
             "Cold",
             "Plant"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "Frost Resist",
         "Effect2": "None",
         "Effect3": "None"
@@ -195,7 +207,7 @@
         "Category": [
             "Critter"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "Illumination",
         "Effect2": "None",
         "Effect3": "None"
@@ -206,7 +218,7 @@
         "Category": [
             "Critter"
         ],
-        "Amount": 0,
+        "Amount": 5,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -229,7 +241,7 @@
             "Elemental",
             "Fire"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -241,7 +253,7 @@
             "Elemental",
             "Mineral"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -253,7 +265,7 @@
             "Elemental",
             "Poision"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -265,7 +277,7 @@
             "Elemental",
             "Shock"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -276,7 +288,7 @@
         "Category": [
             "Food"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -287,7 +299,7 @@
         "Category": [
             "Food"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -321,7 +333,7 @@
             "Food",
             "Fruit"
         ],
-        "Amount": 10,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -333,7 +345,7 @@
             "Food",
             "Mineral"
         ],
-        "Amount": 0,
+        "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -392,7 +404,7 @@
         "Category": [
             "Fungi"
         ],
-        "Amount": 7,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -415,7 +427,7 @@
         "Category": [
             "Mineral"
         ],
-        "Amount": 0,
+        "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -426,7 +438,7 @@
         "Category": [
             "Mineral"
         ],
-        "Amount": 14,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -448,7 +460,7 @@
         "Category": [
             "Mineral"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -459,7 +471,7 @@
         "Category": [
             "Mineral"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -482,7 +494,7 @@
             "Mineral",
             "Underwater"
         ],
-        "Amount": 0,
+        "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -493,7 +505,7 @@
         "Category": [
             "None"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -504,7 +516,7 @@
         "Category": [
             "None"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "Fire Weakness",
         "Effect2": "None",
         "Effect3": "None"
@@ -515,7 +527,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -526,7 +538,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 4,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -537,7 +549,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -548,7 +560,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -559,7 +571,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 0,
+        "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -570,7 +582,7 @@
         "Category": [
             "Plant"
         ],
-        "Amount": 0,
+        "Amount": 14,
         "Effect1": "Heal",
         "Effect2": "Burn Resist",
         "Effect3": "None"
@@ -605,7 +617,7 @@
         "Category": [
             "Underwater"
         ],
-        "Amount": 0,
+        "Amount": 1,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
