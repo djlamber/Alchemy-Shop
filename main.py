@@ -392,6 +392,8 @@ def ingredientGather():
     prereqs = [None, None, None] #[Prereq1, Prereq2, Prereq3]
     pageNum = [0]
     displayAmount = False
+    config.gatherDisplayList = []
+    config.CurrentLocation = None
 
     while True:
         # check events

@@ -1,0 +1,4 @@
+C:\Users\Daniel\.temp_venvs\AS\Scripts\python.exe -m PyInstaller "E:\PyCharm Projects\Alchemy Shop\main.py" --workpath C:\Users\Daniel\.temp_venvs\AS\dist_cache --specpath C:\Users\Daniel\.temp_venvs\AS\dist_cache --name "Alchemy Shop" --noconfirm --windowed
+
+
+"E:\PyCharm Projects\Alchemy Shop\venv\Scripts\python.exe" -m PyInstaller "E:\PyCharm Projects\Alchemy Shop\main.py" --workpath "E:\Pycharm Projects\AS" --specpath "E:\Pycharm Projects\AS" --name "Alchemy Shop" --noconfirm --windowed
