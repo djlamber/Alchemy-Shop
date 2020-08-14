@@ -11,7 +11,7 @@ while(True):
     print("Select an option, q to quit")
     print("CreateIngredient [CI] | CreateLocation [CL]| EditIngredient [EI] | EditLocation [EL]")
     option = input().upper()
-    if option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END":
+    if option == "" or option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END":
         exit()
     if option == "CREATEINGREDIENT"  or option == "CI":
         createIngredient()

@@ -90,13 +90,19 @@
         }
     },
     "Ocean": {
-        "Name": "Sandy Beach",
+        "Name": "Sandy Shores",
         "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": "WHITE",
+        "Color": [
+            0,
+            0,
+            255
+        ],
         "Ingredients": [
             "Algae",
             "Clam",
-            "Seaweed"
+            "Seaweed",
+            "Water_Salt",
+            "Coral"
         ],
         "DropRates": [
             [
@@ -104,12 +110,20 @@
                 1
             ],
             [
-                2.0,
+                0.2,
                 2
             ],
             [
                 0.5,
                 1
+            ],
+            [
+                1.0,
+                10
+            ],
+            [
+                0.3,
+                4
             ]
         ],
         "Prereq1": {
@@ -128,15 +142,10 @@
         "ImageLocation": "sprites/UnknownWhite.png",
         "Color": "WHITE",
         "Ingredients": [
-            "Coconut",
             "Purified_Water",
             "Dragonfly"
         ],
         "DropRates": [
-            [
-                0.5,
-                1
-            ],
             [
                 2.0,
                 2
@@ -163,8 +172,8 @@
         "Color": "WHITE",
         "Ingredients": [
             "Cold_Flower",
-            "Ice",
-            "Frozen_Powder"
+            "Frozen_Powder",
+            "Ice"
         ],
         "DropRates": [
             [
@@ -172,12 +181,12 @@
                 1
             ],
             [
-                2.0,
-                2
-            ],
-            [
                 0.5,
                 1
+            ],
+            [
+                0.85,
+                5
             ]
         ],
         "Prereq1": {
@@ -214,8 +223,15 @@
                 6
             ]
         ],
-        "Prereq1": "None",
-        "Prereq2": "None",
+        "Prereq1": {
+            "Gold": 1000
+        },
+        "Prereq2": {
+            "Potion": {
+                "Name": "Heavy Water",
+                "ImageLocation": "sprites/potions/CyanPotion.png"
+            }
+        },
         "Prereq3": "None"
     }
 }

@@ -5,96 +5,8 @@ from pygameFunctions import *
 from random import *
 from time import *
 import config
+
 #Stupid functions made to increment through file and function
-def IDFormat(ID):
-    if ID == "":
-        return ID
-    ID = ID.lower()
-    ID = ID.replace(" ", "_")
-    ID = ID.replace(",", "_")
-    ID = ID.replace("-", "_")
-    lastID = ""
-    while lastID != ID:
-        lastID = ID
-        ID = ID.replace("__", "_")
-    if ID[-1] == "_":
-        ID = ID[:-1]
-    if ID == "":
-        return ID
-    if ID[0] == "_":
-        ID = ID[1:]
-    indexes = [i for i, ltr in enumerate(ID) if ltr == "_"]
-    strIndex = 1
-    formattedID = ID[0].upper()
-    for i in indexes:
-        formattedID = formattedID + ID[strIndex:i+1] + ID[i+1].upper()
-        strIndex = i+2
-    formattedID = formattedID + ID[strIndex:]
-    return formattedID
-
-def NameFormat(Name):
-    if Name == "":
-        return Name
-    Name = Name.lower()
-    Name = Name.replace("_", " ")
-    Name = Name.replace(",", " ")
-    lastName = ""
-    while lastName != Name:
-        lastName = Name
-        Name = Name.replace("  ", " ")
-    if Name[-1] == " ":
-        Name = Name[:-1]
-    if Name == "":
-        return Name
-    if Name[0] == " ":
-        Name = Name[1:]
-    indexes = [i for i, ltr in enumerate(Name) if ltr == " "]
-    strIndex = 1
-    formattedName = Name[0].upper()
-    for i in indexes:
-        formattedName = formattedName + Name[strIndex:i+1] + Name[i+1].upper()
-        strIndex = i+2
-    formattedName = formattedName + Name[strIndex:]
-    return formattedName
-
-def checkColor(color):
-    if type(color) == str:
-        if color == "WHITE":
-            return True
-        if color == "SILVER":
-            return True
-        if color == "GRAY":
-            return True
-        if color == "BLACK":
-            return True
-        if color == "RED":
-            return True
-        if color == "MAROON":
-            return True
-        if color == "YELLOW":
-            return True
-        if color == "OLIVE":
-            return True
-        if color == "LIME":
-            return True
-        if color == "GREEN":
-            return True
-        if color == "AQUA":
-            return True
-        if color == "TEAL":
-            return True
-        if color == "BLUE":
-            return True
-        if color == "NAVY":
-            return True
-        if color == "FUCHSIA":
-            return True
-        if color == "PURPLE":
-            return True
-    else:
-        RGB = color.split(",")
-    return True # color is equal
-
 
 def IncreaseVal(num):
     num[0] +=1
@@ -139,11 +51,13 @@ def savePlayer(Player):
         json.dump(data, f, indent=4)
 
 class Ingredient:
-    def __init__(self, ID, name, img, category, amount, effect1, effect2, effect3):
+    def __init__(self, ID, name, img, category, color, value, amount, effect1, effect2, effect3):
         self.ID = ID
         self.name = name
         self.imgLoc = img
         self.category = category
+        self.color = color
+        self.value = value
         self.amount = amount
         self.effect_1 = effect1
         self.effect_2 = effect2
@@ -157,6 +71,10 @@ class Ingredient:
         return self.imgLoc
     def getCategory(self):
         return self.category
+    def getColor(self):
+        return self.color
+    def getValue(self):
+        return self.value
     def getAmount(self):
         return self.amount
     def getEffect1(self):
@@ -182,6 +100,8 @@ def InitIngredients():
                               ingre[1].get("Name"),
                               ingre[1].get("ImageLocation"),
                               ingre[1].get("Category"),
+                              ingre[1].get("Color"),
+                              ingre[1].get("Value"),
                               ingre[1].get("Amount"),
                               ingre[1].get("Effect1"),
                               ingre[1].get("Effect2"),
@@ -196,6 +116,8 @@ def saveIngredients(Ingredients):
         newData = {"Name": ingre.getName(),  # create list
                    "ImageLocation": ingre.getImgLoc(),
                    "Category": sorted(ingre.getCategory()),
+                   "Color": ingre.getColor(),
+                   "Value": ingre.getValue(),
                    "Amount": ingre.getAmount(),
                    "Effect1": ingre.getEffect1(),
                    "Effect2": ingre.getEffect2(),
@@ -281,6 +203,8 @@ class Location:
         return self.Name
     def getImgLoc(self):
         return self.imgLoc
+    def getColor(self):
+        return self.color
     def getIngredients(self):
         return self.ingredients
     def getDropRates(self):
@@ -316,7 +240,7 @@ def saveLocations(Locations):
     for loc in Locations:
         newData = {"Name": loc.getName(),  # create list
                    "ImageLocation": loc.getImgLoc(),
-                   "Color": "WHITE",
+                   "Color": loc.getColor(),
                    "Ingredients": loc.getIngredients(),
                    "DropRates": loc.getDropRates(),
                    "Prereq1": loc.getPrereq1(),

@@ -501,7 +501,7 @@ config.Locations = InitLocations() #initalize locations
 
 saveLocations(config.Locations)
 
-config.NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png",["None"], 0, "None", "None", "None" )
+config.NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png",["None"], WHITE, 0, 0, "None", "None", "None" )
 config.selectedIngredients = [config.NoneIngredient, config.NoneIngredient, config.NoneIngredient]
 
 mainMenu()  # start main menu Screen

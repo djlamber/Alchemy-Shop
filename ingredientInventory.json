@@ -6,6 +6,12 @@
             "A",
             "Z"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "",
         "Effect2": "",
@@ -18,6 +24,12 @@
             "Animal",
             "Base"
         ],
+        "Color": [
+            255,
+            0,
+            0
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -30,6 +42,12 @@
             "Animal",
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -42,6 +60,12 @@
             "Animal",
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "Heal",
         "Effect2": "None",
@@ -54,6 +78,12 @@
             "Animal",
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -65,6 +95,12 @@
         "Category": [
             "Base"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -76,6 +112,12 @@
         "Category": [
             "Base"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "Fire Vulnerability",
         "Effect2": "None",
@@ -87,6 +129,12 @@
         "Category": [
             "Base"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -99,6 +147,12 @@
             "Base",
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -112,6 +166,12 @@
             "Mineral",
             "Water"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -124,6 +184,12 @@
             "Base",
             "Monster"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -136,6 +202,12 @@
             "Base",
             "Water"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -148,6 +220,12 @@
             "Base",
             "Water"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -160,6 +238,12 @@
             "Base",
             "Water"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -172,6 +256,12 @@
             "Base",
             "Water"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
@@ -184,6 +274,12 @@
             "Cold",
             "Elemental"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -196,6 +292,12 @@
             "Cold",
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "Frost Resist",
         "Effect2": "None",
@@ -207,6 +309,12 @@
         "Category": [
             "Critter"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "Illumination",
         "Effect2": "None",
@@ -218,6 +326,12 @@
         "Category": [
             "Critter"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 5,
         "Effect1": "None",
         "Effect2": "None",
@@ -229,6 +343,12 @@
         "Category": [
             "Critter"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -241,6 +361,12 @@
             "Elemental",
             "Fire"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -253,6 +379,12 @@
             "Elemental",
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -265,6 +397,12 @@
             "Elemental",
             "Poision"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -277,6 +415,12 @@
             "Elemental",
             "Shock"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -288,6 +432,12 @@
         "Category": [
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -299,6 +449,12 @@
         "Category": [
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -310,6 +466,12 @@
         "Category": [
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "Fire Resistance",
         "Effect2": "None",
@@ -321,6 +483,12 @@
         "Category": [
             "Food"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -333,6 +501,12 @@
             "Food",
             "Fruit"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -345,6 +519,12 @@
             "Food",
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
@@ -358,6 +538,12 @@
             "Plant",
             "Underwater"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -370,6 +556,12 @@
             "Food",
             "Underwater"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -382,6 +574,12 @@
             "Food",
             "Veggie"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -393,6 +591,12 @@
         "Category": [
             "Fungi"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -404,6 +608,12 @@
         "Category": [
             "Fungi"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -416,6 +626,12 @@
             "Hot",
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "Heal",
         "Effect2": "None",
@@ -427,6 +643,12 @@
         "Category": [
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
@@ -438,6 +660,12 @@
         "Category": [
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -449,6 +677,12 @@
         "Category": [
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -460,6 +694,12 @@
         "Category": [
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -471,6 +711,12 @@
         "Category": [
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -482,6 +728,12 @@
         "Category": [
             "Mineral"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -494,6 +746,12 @@
             "Mineral",
             "Underwater"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 10,
         "Effect1": "None",
         "Effect2": "None",
@@ -505,6 +763,12 @@
         "Category": [
             "None"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -516,6 +780,12 @@
         "Category": [
             "None"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "Fire Weakness",
         "Effect2": "None",
@@ -527,6 +797,12 @@
         "Category": [
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -538,6 +814,12 @@
         "Category": [
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -549,6 +831,12 @@
         "Category": [
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -560,6 +848,12 @@
         "Category": [
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
         "Effect1": "None",
         "Effect2": "None",
@@ -571,8 +865,14 @@
         "Category": [
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 15,
-        "Effect1": "None",
+        "Effect1": "Energize",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -582,6 +882,12 @@
         "Category": [
             "Plant"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 14,
         "Effect1": "Heal",
         "Effect2": "Burn Resist",
@@ -594,6 +900,12 @@
             "Plant",
             "Underwater"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
@@ -606,6 +918,12 @@
             "Plant",
             "Underwater"
         ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
         "Amount": 0,
         "Effect1": "Water Breathing",
         "Effect2": "None",
@@ -617,9 +935,32 @@
         "Category": [
             "Underwater"
         ],
+        "Color": [
+            192,
+            192,
+            192
+        ],
+        "Value": 10,
         "Amount": 1,
         "Effect1": "None",
         "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Ice": {
+        "Name": "Ice",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            ""
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 15,
+        "Amount": 10,
+        "Effect1": "Fire Resistance",
+        "Effect2": "Burn Heal",
         "Effect3": "None"
     }
 }
