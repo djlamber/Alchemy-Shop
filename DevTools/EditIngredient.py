@@ -23,8 +23,22 @@ def editIngreImgLoc(ingre, img):
             else:
                 return newImg
 
-def editIngreCategory(ingre):
-    True
+def editIngreCategory(ingre, categoryList):
+    while(True):
+        print("\nCurrent categories for [" + str(ingre.getID()) + "] : \n"+ str(categoryList))
+        print("Type null to go back, select an option:")
+        selection = input("Add | Remove\n").upper()
+        if selection == "" or selection == "Q" or selection == "EXIT" or selection == "QUIT" or selection == "STOP" or selection == "END":
+            return categoryList
+        if selection == "ADD" or selection == "A":
+            cat = DevHelpers.IDFormat(input("Type in new category:\n"))
+            categoryList.append(cat)
+        if selection == "REMOVE" or selection == "R" or selection == "DELETE" or selection == "D":
+            cat = DevHelpers.IDFormat(input("Type in category to delete:\n"))
+            try:
+                categoryList.remove(cat)
+            except:
+                print("Category does not exist")
 
 def editIngreColor(ingre, color):
     while True:
