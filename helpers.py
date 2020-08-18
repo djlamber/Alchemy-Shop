@@ -129,13 +129,15 @@ def saveIngredients(Ingredients):
         json.dump(prepareData, f, indent=4)
 
 class Potion:
-    def __init__(self, ID, name, img, ing1, ing2, ing3, value):
+    def __init__(self, ID, name, img, ing1, ing2, ing3, effect, color, value):
         self.ID = ID
         self.name = name
         self.imgLoc = img
         self.ingredient_1_ID = ing1
         self.ingredient_2_ID = ing2
         self.ingredient_3_ID = ing3
+        self.effect = effect
+        self.color = color
         self.value = value
 
     def getID(self):
@@ -150,6 +152,10 @@ class Potion:
         return self.ingredient_2_ID
     def getIngredient_3_ID(self):
         return self.ingredient_3_ID
+    def getEffect(self):
+        return self.effect
+    def getColor(self):
+        return self.color
     def getValue(self):
         return self.value
 
@@ -167,6 +173,8 @@ def InitPotionList():
                             DevHelpers.NameFormat(pot[1].get("Ingredient_1_ID")),
                             DevHelpers.NameFormat(pot[1].get("Ingredient_2_ID")),
                             DevHelpers.NameFormat(pot[1].get("Ingredient_3_ID")),
+                            pot[1].get("Effect"),
+                            pot[1].get("Color"),
                             pot[1].get("Value"))
         PotionList.append(newPotion)
     return PotionList
@@ -179,6 +187,8 @@ def savePotions(PotionList):
                    "Ingredient_1_ID": pot.getIngredient_1_ID(),
                    "Ingredient_2_ID": pot.getIngredient_2_ID(),
                    "Ingredient_3_ID": pot.getIngredient_3_ID(),
+                   "Effect": pot.getEffect(),
+                   "Color": pot.getColor(),
                    "Value" : pot.getValue()}
         prepareData[pot.getID()] = newData  # Add list data to dict
     with open("potionInventory.json", "w") as f: #  write to json

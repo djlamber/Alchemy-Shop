@@ -162,7 +162,7 @@ def editLocDropRates(loc, value):
                     leaveFirst = False
                     index = i
                     break
-        print("Select \'rate\' dropped or \'amount\' dropped for [" + str(locIngs[index])+ "] : [" + str(value[index][1]) + "|" + str(value[index][1]) + "]")
+        print("Select \'rate\' dropped or \'amount\' dropped for [" + str(locIngs[index])+ "] : [" + str(value[index][0]) + "|" + str(value[index][1]) + "]")
         print("Type null to go back: ")
         opt = input().upper()
         if opt == "":
@@ -246,27 +246,25 @@ def editLocation():
     while Running:
         print("\n=====Edit Location=====")
         while(Running):
-            print("Type \'list\' to see all Locations")
             print("Type q to quit")
             print("Select Location ID to Edit:")
+            DevHelpers.printLocations(Locations)
             entry = input()
             option = entry.upper()
             if option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END" or option == "":
                 Running = False
                 break
-            if option.upper() == "LIST":
-                DevHelpers.printLocations(Locations)
-            else:
-                setToBreak = False
-                locID = DevHelpers.IDFormat(option)
-                for i in Locations:
-                    if i.getID() == locID:
-                        loc = i
-                        setToBreak = True
-                        break
-                if setToBreak:
+
+            setToBreak = False
+            locID = DevHelpers.IDFormat(option)
+            for i in Locations:
+                if i.getID() == locID:
+                    loc = i
+                    setToBreak = True
                     break
-                print("Location not found")
+            if setToBreak:
+                break
+            print("Location not found")
         if not Running:
             break
 

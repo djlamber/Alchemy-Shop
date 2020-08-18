@@ -101,7 +101,7 @@
             0
         ],
         "Value": 39,
-        "Amount": 1,
+        "Amount": 0,
         "Effect1": "Heal",
         "Effect2": "Defense Up",
         "Effect3": "None"
@@ -225,7 +225,7 @@
             255
         ],
         "Value": 0,
-        "Amount": 39,
+        "Amount": 664,
         "Effect1": "Restore Stamina",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -472,7 +472,7 @@
             0
         ],
         "Value": 20,
-        "Amount": 3,
+        "Amount": 0,
         "Effect1": "Increase Stamina",
         "Effect2": "Restore Stamina",
         "Effect3": "Speed Up"
@@ -597,7 +597,7 @@
             255
         ],
         "Value": 28,
-        "Amount": 1,
+        "Amount": 0,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "Night Vision"
@@ -614,7 +614,7 @@
             255
         ],
         "Value": 7,
-        "Amount": 3,
+        "Amount": 0,
         "Effect1": "Restore Stamina",
         "Effect2": "Heal",
         "Effect3": "None"
@@ -820,7 +820,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 3,
+        "Amount": 71,
         "Effect1": "Heal",
         "Effect2": "Poison Resistance",
         "Effect3": "None"

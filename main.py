@@ -38,7 +38,12 @@ def brewPotion(startTime):
     # Idea: bad potions can be made that take up space in inventory and have to be sold
     if len(config.PotionList)<65:
         potVal = int((config.selectedIngredients[0].getValue() * 0.3 + config.selectedIngredients[1].getValue() * 0.6 + config.selectedIngredients[2].getValue() * 0.9) * (random()+1)  )
-        newPotion = Potion(str(random()), "Potion Name", "sprites/potions/"+randomPotionColor(), config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), potVal)
+        effect = "None"
+        color = [(config.selectedIngredients[0].getColor()[0] + config.selectedIngredients[0].getColor()[1] + config.selectedIngredients[0].getColor()[2])/3,
+                 (config.selectedIngredients[1].getColor()[0] + config.selectedIngredients[1].getColor()[1] + config.selectedIngredients[1].getColor()[2]) / 3,
+                 (config.selectedIngredients[2].getColor()[0] + config.selectedIngredients[2].getColor()[1] + config.selectedIngredients[2].getColor()[2]) / 3
+                 ]
+        newPotion = Potion(str(random()), "Potion Name", "sprites/potions/"+randomPotionColor(), config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), effect, color, potVal)
         config.PotionList.append(newPotion)
         savePotions(config.PotionList)
         saveIngredients(config.Ingredients)
@@ -332,6 +337,23 @@ def potionInventory():
 
             draw_text_center(pot.name, font16, WHITE, config.screen, 100 * row_x + 40, 100 * row_y - 10)
             draw_text(str(pot.value), font16, WHITE, config.screen, 100 * row_x + 5, 100 * row_y + 65)
+            row_x += 1
+            entNum += 1
+
+
+        row_x = 0
+        row_y = 0
+        entNum = 0
+        for pot in config.PotionList:
+            if entNum % 13 == 0:
+                row_x = 0
+                row_y += 1
+            if pot.effect != "None":
+                if row_x > 6:
+                    hoverover_text(100 * row_x, 100 * row_y - 20, 80, 80, SILVER, config.screen, pot.effect, font20, BLACK, 0, 0, "Left")
+                else:
+                    hoverover_text(100 * row_x, 100 * row_y - 20, 80, 80, SILVER, config.screen, pot.effect, font20, BLACK, 10, 0)
+
             row_x += 1
             entNum += 1
 

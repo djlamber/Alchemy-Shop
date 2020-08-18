@@ -14,11 +14,11 @@
         ],
         "DropRates": [
             [
-                2.0,
-                10
+                0.9,
+                5
             ],
             [
-                2.0,
+                0.5,
                 2
             ],
             [
@@ -58,14 +58,9 @@
             ]
         ],
         "Prereq1": {
-            "Gold": 1000
+            "Gold": 100
         },
-        "Prereq2": {
-            "Potion": {
-                "Name": "Potion Name",
-                "ImageLocation": "sprites/potions/BluePotion.png"
-            }
-        },
+        "Prereq2": "None",
         "Prereq3": "None"
     },
     "Mountain": {
