@@ -37,7 +37,8 @@ def brewPotion(startTime):
     # TODO: add variation in potion brewing based on ingredients
     # Idea: bad potions can be made that take up space in inventory and have to be sold
     if len(config.PotionList)<65:
-        newPotion = Potion(str(random()), "Potion Name", "sprites/potions/"+randomPotionColor(), config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), int(random() * 100) )
+        potVal = int((config.selectedIngredients[0].getValue() * 0.3 + config.selectedIngredients[1].getValue() * 0.6 + config.selectedIngredients[2].getValue() * 0.9) * (random()+1)  )
+        newPotion = Potion(str(random()), "Potion Name", "sprites/potions/"+randomPotionColor(), config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), potVal)
         config.PotionList.append(newPotion)
         savePotions(config.PotionList)
         saveIngredients(config.Ingredients)
@@ -200,12 +201,36 @@ def potionCreation():
                            ingredient.imgLoc, config.screen, LC, addToEmptySlot, ingredient)
             draw_text_center(ingredient.name, font16, WHITE, config.screen, 100 * posX + 40, 100 * posY + 70)
             draw_text(str(ingredient.amount), font16, WHITE, config.screen, 100 * posX + 5, 100 * posY + 45)
-            hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_1, font20, BLACK,10,0)
-            hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_2, font20, BLACK,10,20)
-            hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_3, font20, BLACK,10,40)
+
+
             posX += 1
             entNum += 1
+        #display ingredient effects
+        entNum = 0
+        posX = 0
+        posY = 0
+        displayIngredientNum = 0
+        for ingredient in config.Ingredients:
+            if ingredient.amount < 1:
+                continue
+            displayIngredientNum += 1
+            if displayIngredientNum < pageNum[0] * 24 + 1:
+                continue
+            if displayIngredientNum > pageNum[0] * 24 + 24:
+                continue
+            if entNum % 4 == 0:
+                posX = 0
+                posY += 1
 
+            textlen = max(len(ingredient.effect_1) * 12, len(ingredient.effect_2) * 12, len(ingredient.effect_3) * 12)
+            if ingredient.effect_1 != "None":
+                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_1, font20, BLACK, 10, 0, setWidth=textlen)
+            if ingredient.effect_2 != "None":
+                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_2, font20, BLACK, 10, 20, setWidth=textlen)
+            if ingredient.effect_3 != "None":
+                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_3, font20, BLACK, 10, 40, setWidth=textlen)
+            posX += 1
+            entNum += 1
         pygame.display.flip() # update screen
 
 #########################################################
@@ -331,6 +356,7 @@ def checkPrereqs():
             if config.Player.getGold() < req.get(list(req.keys())[0]):
                 return False
         if list(req.keys())[0] == "Potion":  # prereq = potion
+            #TODO: Add how potions are checked
             continue
     return True
 
@@ -364,7 +390,9 @@ def gatherIngredient():
                 ing.addAmount(found)
                 break
             continue
-
+    saveIngredients(config.Ingredients)
+    savePlayer(config.Player)
+    savePotions(config.PotionList)
 
 
 def selectLocation(data):
@@ -382,15 +410,20 @@ def selectLocation(data):
     config.gatherDisplayList = catIngres
 
 def deselectLocation(data):
+    config.location = None
     config.CurrentLocation = None
-    data[0] = [None,None,None]
+    data[1] = [None,None,None]
     config.gatherDisplayList = []
+    reqs = data[1]
+    reqs[0] = None
+    reqs[1] = None
+    reqs[2] = None
+
 
 #################### Basic Screen ####################
 def ingredientGather():
     prereqs = [None, None, None] #[Prereq1, Prereq2, Prereq3]
     pageNum = [0]
-    displayAmount = False
     config.gatherDisplayList = []
     config.CurrentLocation = None
 
@@ -445,10 +478,17 @@ def ingredientGather():
 
         #display locations
         for location in config.Locations:
+            locColor = location.getColor()
+            textColor = [0,0,0]
+            pygame.draw.rect(config.screen, locColor, (0, x * 40 + 100, 280, 40))
+            if locColor == [0,0,0]:
+                textColor = [255, 255, 255]
+
             if location == config.CurrentLocation:
-                button_img_text(0, x * 40 + 100, 280, 40, "sprites/GreenBorder.png", "sprites/RedBorder.png", location.getName(), font32, WHITE, config.screen, RC, deselectLocation, [prereqs])
+                button_img_text(0, x * 40 + 100, 280, 40, "sprites/GreenBorder.png", "sprites/RedBorder.png", location.getName(), font32, textColor, config.screen, RC, deselectLocation, [location, prereqs])
+
             else:
-                button_img_text(0, x*40 +100, 280, 40, "sprites/Nothing.png", "sprites/GreenBorder.png", location.getName(), font32, WHITE, config.screen, LC, selectLocation, [location,prereqs])
+                button_img_text(0, x*40 +100, 280, 40, "sprites/Nothing.png", "sprites/GreenBorder.png", location.getName(), font32, textColor, config.screen, LC, selectLocation, [location,prereqs])
             x+=1
         entNum = 0
         posX = 0
@@ -465,23 +505,29 @@ def ingredientGather():
         if pageNum[0] < numPages:
             button_img(SCREEN_WIDTH - 260, 675, 160, 40, "sprites/WideArrowDown.png", "sprites/WideArrowDown.png", config.screen, LC, IncreaseVal, pageNum)
 
-        for item in config.gatherDisplayList: #Displays Display list of ingredients
+        # Displays Display list of ingredients
+        for item in config.gatherDisplayList:
+            itemDropRate = config.CurrentLocation.getDropRates()[entNum]
             itemNum +=1
-            if itemNum < pageNum[0] * 24 +1:
+            if itemNum < pageNum[0] * 20 +1:
                 continue
-            if itemNum > pageNum[0] * 24 + 24:
+            if itemNum > pageNum[0] * 20 + 20:
                 continue
             if entNum % 4 == 0:
                 posX = 0
-                posY += 1
+                posY += 1.2
             draw_image(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, item.imgLoc, config.screen)
             draw_text_center(item.name, font16, WHITE, config.screen,SCREEN_WIDTH - 400 + (100 * posX) + 40, 100 * posY + 70)
-            if displayAmount is True:
-                draw_text(str(item.amount), font16, WHITE, config.screen,SCREEN_WIDTH - 400 +  (100 * posX)+ 5, 100 * posY + 45)
-
-            hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_1, font20, BLACK,10,0, "Left")
-            hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_2, font20, BLACK,10,20, "Left")
-            hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_3, font20, BLACK,10,40, "Left")
+            draw_text(str(item.amount), font16, WHITE, config.screen,SCREEN_WIDTH - 400 +  (100 * posX)+ 5, 100 * posY + 45)
+            draw_text_center("(" + str(itemDropRate[0]*100) + "%|" + str(itemDropRate[1]) + ")", font16, WHITE, config.screen, SCREEN_WIDTH - 400 + (100 * posX) + 40, 100 * posY + 83)
+            #hoverover text
+            textlen = max(len(item.effect_1) * 12, len(item.effect_2) * 12, len(item.effect_3) * 12)
+            if item.effect_1 != "None":
+                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_1, font20, BLACK,10,0, "Left", textlen)
+            if item.effect_2 != "None":
+                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_2, font20, BLACK,10,20, "Left",textlen)
+            if item.effect_3 != "None":
+                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_3, font20, BLACK,10,40, "Left",textlen)
             posX += 1
             entNum += 1
 

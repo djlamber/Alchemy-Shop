@@ -1,1 +1,10 @@
-{}
+{
+    "0.8104321670912976": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/WhitePotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Water River",
+        "Ingredient_3_ID": "Wheat",
+        "Value": 47
+    }
+}

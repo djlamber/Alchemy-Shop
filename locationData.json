@@ -2,7 +2,11 @@
     "Backyard": {
         "Name": "Backyard Garden",
         "ImageLocation": "sprites/UnknownBlack.png",
-        "Color": "WHITE",
+        "Color": [
+            0,
+            128,
+            0
+        ],
         "Ingredients": [
             "Water_River",
             "Red_Flower",
@@ -29,7 +33,11 @@
     "Field": {
         "Name": "Local farm",
         "ImageLocation": "sprites/ingredients/Wheat.png",
-        "Color": "WHITE",
+        "Color": [
+            128,
+            128,
+            0
+        ],
         "Ingredients": [
             "Animal_Meat",
             "Wheat",
@@ -63,7 +71,11 @@
     "Mountain": {
         "Name": "Craggy Pass",
         "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": "WHITE",
+        "Color": [
+            128,
+            128,
+            128
+        ],
         "Ingredients": [
             "Metal_Flakes",
             "Neutral_Powder"
@@ -140,7 +152,11 @@
     "Jungle": {
         "Name": "Rainforest Depths",
         "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": "WHITE",
+        "Color": [
+            0,
+            255,
+            0
+        ],
         "Ingredients": [
             "Purified_Water",
             "Dragonfly"
@@ -169,7 +185,11 @@
     "Tundra": {
         "Name": "Frozen Forest",
         "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": "WHITE",
+        "Color": [
+            255,
+            255,
+            255
+        ],
         "Ingredients": [
             "Cold_Flower",
             "Frozen_Powder",
@@ -203,7 +223,11 @@
     "Desert": {
         "Name": "Sandy Dunes",
         "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": "WHITE",
+        "Color": [
+            255,
+            255,
+            0
+        ],
         "Ingredients": [
             "Sand",
             "Fire_Powder",

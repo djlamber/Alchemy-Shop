@@ -41,15 +41,12 @@ def editIngreColor(ingre, color):
 
 def editIngreValue(ingre, value):
     while True:
-        print("Current name for [" + str(ingre.getID()) + "] : " + str(value))
-        newValue = input("Input new Image location or null to go back: ")
+        print("Current value for [" + str(ingre.getID()) + "] : " + str(value))
+        newValue = input("Input new Value or null to go back: ")
         if newValue == "":
             return value
         else:
-            if not os.path.exists(newValue):
-                print("Path does not exist")
-            else:
-                return newValue
+            return int(newValue)
 
 def editIngreEffect(ingre, effects):
     while True:
@@ -62,9 +59,9 @@ def editIngreEffect(ingre, effects):
             if selection == "1" or selection == "EFFECT1" or selection == "EFFECT 1":
                 effects[0] = changeEffect(ingre, effects[0])
             if selection == "2" or selection == "EFFECT2" or selection == "EFFECT 2":
-                effects[2] = changeEffect(ingre, effects[1])
+                effects[1] = changeEffect(ingre, effects[1])
             if selection == "3" or selection == "EFFECT3" or selection == "EFFECT 3":
-                effects[1] = changeEffect(ingre, effects[2])
+                effects[2] = changeEffect(ingre, effects[2])
 
 def changeEffect(ingre, effect):
     print("\nEnter new effect for [" + str(ingre.getID()) + "]")

@@ -1,5 +1,6 @@
 import json
 
+from DevTools import DevHelpers
 from constants import *
 from pygameFunctions import *
 from random import *
@@ -103,9 +104,9 @@ def InitIngredients():
                               ingre[1].get("Color"),
                               ingre[1].get("Value"),
                               ingre[1].get("Amount"),
-                              ingre[1].get("Effect1"),
-                              ingre[1].get("Effect2"),
-                              ingre[1].get("Effect3"))
+                              DevHelpers.NameFormat(ingre[1].get("Effect1")),
+                              DevHelpers.NameFormat(ingre[1].get("Effect2")),
+                              DevHelpers.NameFormat(ingre[1].get("Effect3")))
 
         Ingredients.append(newIngre) #add data to list
     return Ingredients
@@ -161,12 +162,12 @@ def InitPotionList():
         PotionJson = json.load(f)  # load data as dict
     for pot in PotionJson.items():
         newPotion = Potion(pot[0],
-                   pot[1].get("Name"),
-                   pot[1].get("ImageLocation"),
-                   pot[1].get("Ingredient_1_ID"),
-                           pot[1].get("Ingredient_2_ID"),
-                           pot[1].get("Ingredient_3_ID"),
-                        pot[1].get("Value"))
+                            pot[1].get("Name"),
+                            pot[1].get("ImageLocation"),
+                            DevHelpers.NameFormat(pot[1].get("Ingredient_1_ID")),
+                            DevHelpers.NameFormat(pot[1].get("Ingredient_2_ID")),
+                            DevHelpers.NameFormat(pot[1].get("Ingredient_3_ID")),
+                            pot[1].get("Value"))
         PotionList.append(newPotion)
     return PotionList
 

@@ -1,4 +1,21 @@
 {
+    "Ice": {
+        "Name": "Ice",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            ""
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 4,
+        "Amount": 0,
+        "Effect1": "Fire Resistance",
+        "Effect2": "Burn Heal",
+        "Effect3": "None"
+    },
     "": {
         "Name": "",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
@@ -12,7 +29,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "",
         "Effect2": "",
         "Effect3": ""
@@ -30,7 +47,25 @@
             0
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Soup": {
+        "Name": "Chicken Noodle Soup",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            "Animal",
+            "Food"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -48,7 +83,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -62,21 +97,20 @@
         ],
         "Color": [
             255,
-            255,
-            255
+            0,
+            0
         ],
-        "Value": 10,
-        "Amount": 15,
+        "Value": 39,
+        "Amount": 1,
         "Effect1": "Heal",
-        "Effect2": "None",
+        "Effect2": "Defense Up",
         "Effect3": "None"
     },
-    "Soup": {
-        "Name": "Chicken Noodle Soup",
-        "ImageLocation": "sprites/UnknownWhite.png",
+    "Oil": {
+        "Name": "Oil",
+        "ImageLocation": "sprites/ingredients/Oil.png",
         "Category": [
-            "Animal",
-            "Food"
+            "Base"
         ],
         "Color": [
             255,
@@ -84,8 +118,8 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
+        "Amount": 0,
+        "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -101,25 +135,8 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Oil": {
-        "Name": "Oil",
-        "ImageLocation": "sprites/ingredients/Oil.png",
-        "Category": [
-            "Base"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -135,7 +152,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -153,7 +170,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -172,7 +189,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -190,7 +207,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -203,14 +220,14 @@
             "Water"
         ],
         "Color": [
-            255,
-            255,
+            0,
+            0,
             255
         ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
-        "Effect2": "None",
+        "Value": 0,
+        "Amount": 39,
+        "Effect1": "Restore Stamina",
+        "Effect2": "Refresh",
         "Effect3": "None"
     },
     "Water_Filtered": {
@@ -226,7 +243,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -244,7 +261,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -262,7 +279,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 10,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -298,25 +315,8 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "Frost Resist",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Firefly": {
-        "Name": "Firefly",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Critter"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "Illumination",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -332,8 +332,25 @@
             255
         ],
         "Value": 10,
-        "Amount": 5,
+        "Amount": 0,
         "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Firefly": {
+        "Name": "Firefly",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Critter"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
+        "Effect1": "Illumination",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -367,7 +384,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -385,7 +402,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -403,7 +420,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -421,24 +438,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Wheat": {
-        "Name": "Wheat",
-        "ImageLocation": "sprites/ingredients/Wheat.png",
-        "Category": [
-            "Food"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -455,10 +455,27 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
+    },
+    "Wheat": {
+        "Name": "Wheat",
+        "ImageLocation": "sprites/ingredients/Wheat.png",
+        "Category": [
+            "Food"
+        ],
+        "Color": [
+            255,
+            255,
+            0
+        ],
+        "Value": 20,
+        "Amount": 3,
+        "Effect1": "Increase Stamina",
+        "Effect2": "Restore Stamina",
+        "Effect3": "Speed Up"
     },
     "Pepper": {
         "Name": "Pepper",
@@ -507,7 +524,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -525,7 +542,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 10,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -579,15 +596,15 @@
             255,
             255
         ],
-        "Value": 10,
-        "Amount": 0,
-        "Effect1": "None",
+        "Value": 28,
+        "Amount": 1,
+        "Effect1": "Restore Stamina",
         "Effect2": "None",
-        "Effect3": "None"
+        "Effect3": "Night Vision"
     },
-    "Red_Mushroom": {
-        "Name": "Red Mushroom",
-        "ImageLocation": "sprites/ingredients/RedMushroom.png",
+    "Brown_Mushroom": {
+        "Name": "Brown Mushroom",
+        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
         "Category": [
             "Fungi"
         ],
@@ -596,15 +613,15 @@
             255,
             255
         ],
-        "Value": 10,
-        "Amount": 0,
-        "Effect1": "None",
-        "Effect2": "None",
+        "Value": 7,
+        "Amount": 3,
+        "Effect1": "Restore Stamina",
+        "Effect2": "Heal",
         "Effect3": "None"
     },
-    "Brown_Mushroom": {
-        "Name": "Brown Mushroom",
-        "ImageLocation": "sprites/ingredients/BrownMushroom.png",
+    "Red_Mushroom": {
+        "Name": "Red Mushroom",
+        "ImageLocation": "sprites/ingredients/RedMushroom.png",
         "Category": [
             "Fungi"
         ],
@@ -637,6 +654,23 @@
         "Effect2": "None",
         "Effect3": "None"
     },
+    "Gold_Flakes": {
+        "Name": "Gold Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
     "Sulfur": {
         "Name": "Sulfur",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
@@ -649,7 +683,24 @@
             255
         ],
         "Value": 10,
-        "Amount": 10,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Metal_Flakes": {
+        "Name": "Metal Flakes",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -688,40 +739,6 @@
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Metal_Flakes": {
-        "Name": "Metal Flakes",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Mineral"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Gold_Flakes": {
-        "Name": "Gold Flakes",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Mineral"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
     "Clear_Crystal": {
         "Name": "Clear Crystal",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
@@ -752,24 +769,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 10,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Wax": {
-        "Name": "Wax",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "None"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -786,13 +786,47 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "Fire Weakness",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Tree_Sap": {
-        "Name": "Tree Sap",
+    "Wax": {
+        "Name": "Wax",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "None"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Red_Flower": {
+        "Name": "Red Flower",
+        "ImageLocation": "sprites/ingredients/RedFlower.png",
+        "Category": [
+            "Plant"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 3,
+        "Effect1": "Heal",
+        "Effect2": "Poison Resistance",
+        "Effect3": "None"
+    },
+    "Biomass": {
+        "Name": "Biomass",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
         "Category": [
             "Plant"
@@ -803,14 +837,14 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
+        "Amount": 0,
+        "Effect1": "Energize",
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Red_Flower": {
-        "Name": "Red Flower",
-        "ImageLocation": "sprites/ingredients/RedFlower.png",
+    "Tree_Sap": {
+        "Name": "Tree Sap",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
         "Category": [
             "Plant"
         ],
@@ -837,42 +871,8 @@
             255
         ],
         "Value": 10,
-        "Amount": 15,
+        "Amount": 0,
         "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Blue_Flower": {
-        "Name": "Blue Flower",
-        "ImageLocation": "sprites/ingredients/BlueFlower.png",
-        "Category": [
-            "Plant"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Biomass": {
-        "Name": "Biomass",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Plant"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 15,
-        "Effect1": "Energize",
         "Effect2": "None",
         "Effect3": "None"
     },
@@ -888,9 +888,26 @@
             255
         ],
         "Value": 10,
-        "Amount": 14,
+        "Amount": 0,
         "Effect1": "Heal",
         "Effect2": "Burn Resist",
+        "Effect3": "None"
+    },
+    "Blue_Flower": {
+        "Name": "Blue Flower",
+        "ImageLocation": "sprites/ingredients/BlueFlower.png",
+        "Category": [
+            "Plant"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
         "Effect3": "None"
     },
     "Lilypad": {
@@ -941,26 +958,9 @@
             192
         ],
         "Value": 10,
-        "Amount": 1,
+        "Amount": 0,
         "Effect1": "None",
         "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Ice": {
-        "Name": "Ice",
-        "ImageLocation": "sprites/UnknownWhite.png",
-        "Category": [
-            ""
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 15,
-        "Amount": 10,
-        "Effect1": "Fire Resistance",
-        "Effect2": "Burn Heal",
         "Effect3": "None"
     }
 }
