@@ -11,7 +11,7 @@
             255
         ],
         "Value": 4,
-        "Amount": 0,
+        "Amount": 5,
         "Effect1": "Fire Resistance",
         "Effect2": "Burn Heal",
         "Effect3": "None"
@@ -118,7 +118,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 9,
         "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
@@ -189,7 +189,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 9,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -225,7 +225,7 @@
             255
         ],
         "Value": 0,
-        "Amount": 664,
+        "Amount": 721,
         "Effect1": "Restore Stamina",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -279,7 +279,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 7,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -297,7 +297,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 2,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -315,7 +315,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 8,
         "Effect1": "Frost Resist",
         "Effect2": "None",
         "Effect3": "None"
@@ -384,7 +384,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 3,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -402,7 +402,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 6,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -472,7 +472,7 @@
             0
         ],
         "Value": 20,
-        "Amount": 0,
+        "Amount": 9,
         "Effect1": "Increase Stamina",
         "Effect2": "Restore Stamina",
         "Effect3": "Speed Up"
@@ -506,7 +506,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 1,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -520,11 +520,11 @@
         ],
         "Color": [
             255,
-            255,
-            255
+            0,
+            0
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 1,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -561,7 +561,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 30,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -579,7 +579,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 2,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -597,7 +597,7 @@
             255
         ],
         "Value": 28,
-        "Amount": 0,
+        "Amount": 3,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "Night Vision"
@@ -614,7 +614,7 @@
             255
         ],
         "Value": 7,
-        "Amount": 0,
+        "Amount": 2,
         "Effect1": "Restore Stamina",
         "Effect2": "Heal",
         "Effect3": "None"
@@ -631,7 +631,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 3,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -700,7 +700,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 2,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -717,7 +717,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 19,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -820,7 +820,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 71,
+        "Amount": 9,
         "Effect1": "Heal",
         "Effect2": "Poison Resistance",
         "Effect3": "None"
@@ -854,7 +854,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 16,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -905,7 +905,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 46,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -941,7 +941,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 7,
         "Effect1": "Water Breathing",
         "Effect2": "None",
         "Effect3": "None"
@@ -958,9 +958,27 @@
             192
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 8,
         "Effect1": "None",
         "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Suppress_Flower": {
+        "Name": "Nellium",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            "Elemental",
+            "Plant"
+        ],
+        "Color": [
+            64,
+            143,
+            173
+        ],
+        "Value": 65,
+        "Amount": 0,
+        "Effect1": "Suppress",
+        "Effect2": "Refresh",
         "Effect3": "None"
     }
 }

@@ -1,4 +1,5 @@
 import json
+import math
 
 from DevTools import DevHelpers
 from constants import *
@@ -15,6 +16,58 @@ def IncreaseVal(num):
 def DecreaseVal(num):
     num[0] -=1
     return num
+
+def randCol():
+    col = [0,0,0]
+    col[0] = int(randrange(0,255))
+    col[1] = int(randrange(0,255))
+    col[2] = int(randrange(0,255))
+    print(col)
+    return col
+
+def addColor(col1, col2):
+    col = [0,0,0]
+    col[0] = col1[0] + col2[0]
+    col[1] = col1[1] + col2[1]
+    col[2] = col1[2] + col2[2]
+    return col
+
+def subColor(col1, col2):
+    col = [0,0,0]
+    col[0] = col1[0] - col2[0]
+    col[1] = col1[1] - col2[1]
+    col[2] = col1[2] - col2[2]
+    return col
+
+def multColor(col, value):
+    col[0] *= value
+    col[1] *= value
+    col[2] *= value
+    return col
+
+def divColor(col, value):
+    col[0] /= value
+    col[1] /= value
+    col[2] /= value
+    return col
+
+def squareCol(col, degree):
+    sqCol = [0,0,0]
+    sqCol[0] = col[0]**degree
+    sqCol[1] = col[1]**degree
+    sqCol[2] = col[2]**degree
+    return sqCol
+
+
+def getCaulColor():
+    col = [0,0,0]
+    for i in config.selectedIngredients:
+        if i != None:
+            col = addColor(col, squareCol(i.getColor(),2))
+    col[0] = int(math.sqrt(col[0] / config.numSelectedIngredients))
+    col[1] = int(math.sqrt(col[1] / config.numSelectedIngredients))
+    col[2] = int(math.sqrt(col[2] / config.numSelectedIngredients))
+    return col
 
 def checkEvents():
     for event in pygame.event.get():
@@ -262,23 +315,6 @@ def saveLocations(Locations):
     with open("locationData.json", "w") as f:  # write to json
         json.dump(prepareData, f, indent=4)
 
-def randomPotionColor():
-    listOfSprites = ["BlackPotion.png",
-                    "BluePotion.png",
-                    "BrownPotion.png",
-                    "CyanPotion.png",
-                    "GreenPotion.png",
-                    "GreyPotion.png",
-                    "MagentaPotion.png",
-                    "NavyPotion.png",
-                    "OlivePotion.png",
-                    "OrangePotion.png",
-                    "PinkPotion.png",
-                    "PurplePotion.png",
-                    "RedPotion.png",
-                    "WhitePotion.png",
-                    "YellowPotion.png"]
-    return listOfSprites[randrange(0,len(listOfSprites))]
 
 
 

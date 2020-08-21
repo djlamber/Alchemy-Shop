@@ -1,1 +1,30 @@
-{}
+{
+    "0.2928637728334995": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/OlivePotion.png",
+        "Ingredient_1_ID": "Wheat",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Brown Mushroom",
+        "Effect": "None",
+        "Color": [
+            255,
+            255,
+            208
+        ],
+        "Value": 31
+    },
+    "0.5683994868065286": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal_Meat",
+        "Ingredient_2_ID": "Water_Dirty",
+        "Ingredient_3_ID": "Dragonfly",
+        "Effect": "None",
+        "Color": [
+            255,
+            208,
+            208
+        ],
+        "Value": 42
+    }
+}

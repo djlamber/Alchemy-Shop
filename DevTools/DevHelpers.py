@@ -55,43 +55,47 @@ def NameFormat(Name):
     return formattedName
 
 def checkColor(color):
-    if type(color) == str:
-        if color.upper() == "WHITE":
-            return WHITE
-        if color.upper() == "SILVER":
-            return SILVER
-        if color.upper() == "GRAY":
-            return GRAY
-        if color.upper() == "BLACK":
-            return BLACK
-        if color.upper() == "RED":
-            return RED
-        if color.upper() == "MAROON":
-            return MAROON
-        if color.upper() == "YELLOW":
-            return YELLOW
-        if color.upper() == "OLIVE":
-            return OLIVE
-        if color.upper() == "LIME":
-            return LIME
-        if color.upper() == "GREEN":
-            return GREEN
-        if color.upper() == "AQUA":
-            return AQUA
-        if color.upper() == "TEAL":
-            return TEAL
-        if color.upper() == "BLUE":
-            return BLUE
-        if color.upper() == "NAVY":
-            return NAVY
-        if color.upper() == "FUCHSIA":
-            return FUCHSIA
-        if color.upper() == "PURPLE":
-            return PURPLE
+    if color == "":
         return None
-    else:
-        RGB = color.split(",")
-    return None # color is equal
+    if color.upper() == "WHITE":
+        return WHITE
+    if color.upper() == "SILVER":
+        return SILVER
+    if color.upper() == "GRAY":
+        return GRAY
+    if color.upper() == "BLACK":
+        return BLACK
+    if color.upper() == "RED":
+        return RED
+    if color.upper() == "MAROON":
+        return MAROON
+    if color.upper() == "YELLOW":
+        return YELLOW
+    if color.upper() == "OLIVE":
+        return OLIVE
+    if color.upper() == "LIME":
+        return LIME
+    if color.upper() == "GREEN":
+        return GREEN
+    if color.upper() == "AQUA":
+        return AQUA
+    if color.upper() == "TEAL":
+        return TEAL
+    if color.upper() == "BLUE":
+        return BLUE
+    if color.upper() == "NAVY":
+        return NAVY
+    if color.upper() == "FUCHSIA":
+        return FUCHSIA
+    if color.upper() == "PURPLE":
+        return PURPLE
+    RGB = color.split(",")
+    for i in range(len(RGB)):
+        RGB[i] = int(RGB[i])
+    print(RGB)
+    if len(RGB) == 3:
+        return RGB
+    return None # color is not valid
 
 def printIngredients(Ingredients):
     igList = ""

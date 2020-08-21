@@ -30,6 +30,54 @@
         "Prereq2": "None",
         "Prereq3": "None"
     },
+    "Forest": {
+        "Name": "Fragrant Woods",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Ingredients": [
+            "Cold_Flower",
+            "Honeycomb",
+            "Tree_Sap",
+            "Red_Mushroom",
+            "Blue_Flower",
+            "Apple"
+        ],
+        "DropRates": [
+            [
+                0.2,
+                3
+            ],
+            [
+                0.05,
+                1
+            ],
+            [
+                0.2,
+                3
+            ],
+            [
+                0.2,
+                1
+            ],
+            [
+                0.5,
+                4
+            ],
+            [
+                0.75,
+                3
+            ]
+        ],
+        "Prereq1": {
+            "Gold": 5
+        },
+        "Prereq2": "None",
+        "Prereq3": "None"
+    },
     "Field": {
         "Name": "Local farm",
         "ImageLocation": "sprites/ingredients/Wheat.png",
@@ -49,12 +97,12 @@
                 1
             ],
             [
-                2.0,
-                2
+                0.75,
+                4
             ],
             [
-                0.5,
-                1
+                0.6,
+                2
             ]
         ],
         "Prereq1": {
@@ -62,39 +110,6 @@
         },
         "Prereq2": "None",
         "Prereq3": "None"
-    },
-    "Mountain": {
-        "Name": "Craggy Pass",
-        "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": [
-            128,
-            128,
-            128
-        ],
-        "Ingredients": [
-            "Metal_Flakes",
-            "Neutral_Powder"
-        ],
-        "DropRates": [
-            [
-                0.5,
-                1
-            ],
-            [
-                2.0,
-                2
-            ]
-        ],
-        "Prereq1": {
-            "Gold": 2000
-        },
-        "Prereq2": "None",
-        "Prereq3": {
-            "Potion": {
-                "Name": "Hollycrass",
-                "ImageLocation": "sprites/UnknownWhite.png"
-            }
-        }
     },
     "Ocean": {
         "Name": "Sandy Shores",
@@ -113,8 +128,8 @@
         ],
         "DropRates": [
             [
-                0.5,
-                1
+                0.4,
+                2
             ],
             [
                 0.2,
@@ -122,11 +137,11 @@
             ],
             [
                 0.5,
-                1
+                4
             ],
             [
-                1.0,
-                10
+                0.9,
+                5
             ],
             [
                 0.3,
@@ -134,83 +149,16 @@
             ]
         ],
         "Prereq1": {
-            "Gold": 1000
+            "Gold": 140
         },
         "Prereq2": {
             "Potion": {
-                "Name": "Fire Resistance",
-                "ImageLocation": "sprites/potions/PinkPotion.png"
-            }
-        },
-        "Prereq3": "None"
-    },
-    "Jungle": {
-        "Name": "Rainforest Depths",
-        "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": [
-            0,
-            255,
-            0
-        ],
-        "Ingredients": [
-            "Purified_Water",
-            "Dragonfly"
-        ],
-        "DropRates": [
-            [
-                2.0,
-                2
-            ],
-            [
-                0.5,
-                1
-            ]
-        ],
-        "Prereq1": {
-            "Gold": 3500
-        },
-        "Prereq2": {
-            "Potion": {
-                "Name": "Bugspray",
-                "ImageLocation": "sprites/potions/CyanPotion.png"
-            }
-        },
-        "Prereq3": "None"
-    },
-    "Tundra": {
-        "Name": "Frozen Forest",
-        "ImageLocation": "sprites/UnknownWhite.png",
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Ingredients": [
-            "Cold_Flower",
-            "Frozen_Powder",
-            "Ice"
-        ],
-        "DropRates": [
-            [
-                0.5,
-                1
-            ],
-            [
-                0.5,
-                1
-            ],
-            [
-                0.85,
-                5
-            ]
-        ],
-        "Prereq1": {
-            "Gold": 4500
-        },
-        "Prereq2": {
-            "Potion": {
-                "Name": "Frost Resistance",
-                "ImageLocation": "sprites/potions/BrownPotion.png"
+                "Name": "Sunscreen",
+                "Color": [
+                    0,
+                    0,
+                    255
+                ]
             }
         },
         "Prereq3": "None"
@@ -243,14 +191,162 @@
             ]
         ],
         "Prereq1": {
-            "Gold": 1000
+            "Gold": 345
         },
         "Prereq2": {
             "Potion": {
-                "Name": "Heavy Water",
-                "ImageLocation": "sprites/potions/CyanPotion.png"
+                "Name": "Refreshing Potion",
+                "Color": [
+                    0,
+                    0,
+                    255
+                ]
             }
         },
+        "Prereq3": "None"
+    },
+    "Mountain": {
+        "Name": "Craggy Pass",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": [
+            127,
+            127,
+            127
+        ],
+        "Ingredients": [
+            "Metal_Flakes",
+            "Neutral_Powder"
+        ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                2.0,
+                2
+            ]
+        ],
+        "Prereq1": {
+            "Gold": 375
+        },
+        "Prereq2": "None",
+        "Prereq3": {
+            "Potion": {
+                "Name": "Hollycrass",
+                "Color": [
+                    0,
+                    128,
+                    0
+                ]
+            }
+        }
+    },
+    "Tundra": {
+        "Name": "Frozen Forest",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Ingredients": [
+            "Cold_Flower",
+            "Frozen_Powder",
+            "Ice"
+        ],
+        "DropRates": [
+            [
+                0.5,
+                1
+            ],
+            [
+                0.5,
+                1
+            ],
+            [
+                0.85,
+                5
+            ]
+        ],
+        "Prereq1": {
+            "Gold": 530
+        },
+        "Prereq2": {
+            "Potion": {
+                "Name": "Frost Resistance",
+                "Color": [
+                    255,
+                    255,
+                    255
+                ]
+            }
+        },
+        "Prereq3": "None"
+    },
+    "Jungle": {
+        "Name": "Rainforest Depths",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": [
+            0,
+            255,
+            0
+        ],
+        "Ingredients": [
+            "Purified_Water",
+            "Dragonfly"
+        ],
+        "DropRates": [
+            [
+                2.0,
+                2
+            ],
+            [
+                0.5,
+                1
+            ]
+        ],
+        "Prereq1": {
+            "Gold": 680
+        },
+        "Prereq2": {
+            "Potion": {
+                "Name": "Bugspray",
+                "Color": [
+                    255,
+                    255,
+                    0
+                ]
+            }
+        },
+        "Prereq3": "None"
+    },
+    "Town": {
+        "Name": "Market Square",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Color": [
+            110,
+            56,
+            15
+        ],
+        "Ingredients": [
+            "Wax",
+            "Water_Dirty"
+        ],
+        "DropRates": [
+            [
+                0.1,
+                1
+            ],
+            [
+                0.9,
+                5
+            ]
+        ],
+        "Prereq1": {
+            "Gold": 20
+        },
+        "Prereq2": "None",
         "Prereq3": "None"
     }
 }

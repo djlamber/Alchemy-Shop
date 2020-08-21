@@ -17,10 +17,17 @@ def draw_text_center(text, fon, color, surface, x, y):
     textrect.center = (x,y)
     surface.blit(textobj, textrect)
 
-def draw_image(x, y, width, height, imagePNG, surface):
-    img = pygame.transform.scale(pygame.image.load(imagePNG).convert_alpha(), (width, height))
-    img.set_colorkey(BLACK, RLEACCEL)
-    surface.blit(img, (x,y))
+def draw_image(x, y, width, height, imagePNG, surface, color = None):
+
+    if color != None:
+        img = pygame.image.load(imagePNG)
+        colImg = pygame.Surface(img.get_size()).convert_alpha()
+        colImg.fill([255,255,255])
+        img.blit(colImg, (x,y), special_flags = pygame.BLEND_RGBA_MULT)
+    else:
+        img = pygame.transform.scale(pygame.image.load(imagePNG).convert_alpha(), (width, height))
+        img.set_colorkey(BLACK, RLEACCEL)
+        surface.blit(img, (x,y))
 
 def draw_image_center(x, y, width, height, imagePNG, surface):
     img = pygame.transform.scale(pygame.image.load(imagePNG).convert_alpha(), (width, height))

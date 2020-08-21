@@ -222,12 +222,9 @@ def changePrereq(ingre, prereq):
     if newReq == "P" or newReq == "POTION":
         potName = input("Potion Name: ")
         potName = DevHelpers.NameFormat(potName)
-        potImg = input("Potion Color/directory: ")
-        # if not checkColor()
-        if not os.path.exists(potImg):
-            print("Path does not exist, setting random color")
-            potImg = "sprites/potions/" + str(helpers.randomPotionColor())
-        prereq = {"Potion": {"Name": potName, "ImageLocation": potImg}}
+        potCol = input("Potion Color: ")
+        potCol = DevHelpers.checkColor(potCol)
+        prereq = {"Potion": {"Name": potName, "Color": potCol}}
 
     if newReq == "N" or newReq == "NONE":
         prereq = "None"
