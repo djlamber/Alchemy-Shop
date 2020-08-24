@@ -10,7 +10,8 @@
         "Ingredients": [
             "Water_River",
             "Red_Flower",
-            "Brown_Mushroom"
+            "Brown_Mushroom",
+            "Herbs"
         ],
         "DropRates": [
             [
@@ -24,6 +25,10 @@
             [
                 1.0,
                 1
+            ],
+            [
+                0.8,
+                4
             ]
         ],
         "Prereq1": "None",
@@ -78,7 +83,7 @@
         "Prereq2": "None",
         "Prereq3": "None"
     },
-    "Field": {
+    "Farm": {
         "Name": "Local farm",
         "ImageLocation": "sprites/ingredients/Wheat.png",
         "Color": [

@@ -594,8 +594,8 @@
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Powdered_Pearl": {
-        "Name": "Powdered Pearl",
+    "Pearl": {
+        "Name": "Pearl",
         "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
         "Category": [
             "Mineral",
