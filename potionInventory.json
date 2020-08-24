@@ -16,8 +16,8 @@
     "0.5683994868065286": {
         "Name": "Potion Name",
         "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Animal_Meat",
-        "Ingredient_2_ID": "Water_Dirty",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Water Dirty",
         "Ingredient_3_ID": "Dragonfly",
         "Effect": "None",
         "Color": [
@@ -26,5 +26,19 @@
             208
         ],
         "Value": 42
+    },
+    "0.3796740382287347": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Water_Salt",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Fire_Powder",
+        "Effect": "None",
+        "Color": [
+            208,
+            208,
+            255
+        ],
+        "Value": 19
     }
 }

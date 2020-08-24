@@ -189,7 +189,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 9,
+        "Amount": 8,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -225,7 +225,7 @@
             255
         ],
         "Value": 0,
-        "Amount": 721,
+        "Amount": 720,
         "Effect1": "Restore Stamina",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -384,7 +384,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 3,
+        "Amount": 2,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -405,6 +405,24 @@
         "Amount": 6,
         "Effect1": "None",
         "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Suppress_Flower": {
+        "Name": "Nellium",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            "Elemental",
+            "Plant"
+        ],
+        "Color": [
+            64,
+            143,
+            173
+        ],
+        "Value": 65,
+        "Amount": 0,
+        "Effect1": "Suppress",
+        "Effect2": "Refresh",
         "Effect3": "None"
     },
     "Noxious_Powder": {
@@ -961,24 +979,6 @@
         "Amount": 8,
         "Effect1": "None",
         "Effect2": "None",
-        "Effect3": "None"
-    },
-    "Suppress_Flower": {
-        "Name": "Nellium",
-        "ImageLocation": "sprites/UnknownWhite.png",
-        "Category": [
-            "Elemental",
-            "Plant"
-        ],
-        "Color": [
-            64,
-            143,
-            173
-        ],
-        "Value": 65,
-        "Amount": 0,
-        "Effect1": "Suppress",
-        "Effect2": "Refresh",
         "Effect3": "None"
     }
 }
