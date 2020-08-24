@@ -1,5 +1,6 @@
 from constants import *
 from helpers import *
+from colorama import Fore, Style
 
 # helper functions for dev tools
 
@@ -103,8 +104,10 @@ def printIngredients(Ingredients):
     for i in Ingredients:
         ingStr = "[" + str(i.getID()) + "], "
         ingStrLen = len(ingStr)
+        if i.getImgLoc() == "sprites/ingredients/UnknownIngredientWhite.png" or i.getImgLoc() == "sprites/UnknownWhite.png":
+            ingStr = Fore.RED + ingStr + Fore.RESET
         igList = igList + ingStr
-        if x + ingStrLen > 200:
+        if x + ingStrLen > 120:
             igList = igList + "\n"
             x = 0
         x += ingStrLen

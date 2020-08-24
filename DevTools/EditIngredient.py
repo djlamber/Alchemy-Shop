@@ -3,6 +3,7 @@ import sys
 import os.path
 from DevTools import DevHelpers
 
+
 def editIngreName(ingre, name):
     print("Current name for ["+str(ingre.getID())+"] : " + str(name))
     newName = input("Input new name or null to go back: ")
@@ -92,6 +93,7 @@ def changeEffect(ingre, effect):
 
 def editIngredient():
     Ingredients = helpers.InitIngredients()
+    Ingredients.sort(key=lambda k: k.getName())
     Running = True
     ingre = None
     while Running:
