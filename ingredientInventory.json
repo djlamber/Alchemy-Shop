@@ -37,7 +37,7 @@
     },
     "Aloe": {
         "Name": "Aloe",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "ImageLocation": "sprites/ingredients/aloe.png",
         "Category": [
             "Plant"
         ],
@@ -317,7 +317,7 @@
     },
     "Fire_Powder": {
         "Name": "Fire Powder",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "ImageLocation": "sprites/ingredients/firepowder.png",
         "Category": [
             "Elemental",
             "Fire"
@@ -352,7 +352,7 @@
     },
     "Frozen_Powder": {
         "Name": "Frozen Powder",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "ImageLocation": "sprites/ingredients/frozenpowder.png",
         "Category": [
             "Cold",
             "Elemental"
@@ -526,7 +526,7 @@
     },
     "Neutral_Powder": {
         "Name": "Neutral Powder",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "ImageLocation": "sprites/ingredients/neutralpowder.png",
         "Category": [
             "Elemental",
             "Mineral"
@@ -544,7 +544,7 @@
     },
     "Noxious_Powder": {
         "Name": "Noxious Powder",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "ImageLocation": "sprites/ingredients/noxiousPowder.png",
         "Category": [
             "Elemental",
             "Poision"
@@ -755,7 +755,7 @@
     },
     "Static_Powder": {
         "Name": "Static Powder",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "ImageLocation": "sprites/ingredients/staticpowder.png",
         "Category": [
             "Elemental",
             "Shock"
