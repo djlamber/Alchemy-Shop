@@ -25,9 +25,9 @@
             "Underwater"
         ],
         "Color": [
-            255,
-            255,
-            255
+            32,
+            99,
+            0
         ],
         "Value": 10,
         "Amount": 7,
@@ -42,9 +42,9 @@
             "Plant"
         ],
         "Color": [
-            255,
-            255,
-            255
+            56,
+            169,
+            0
         ],
         "Value": 10,
         "Amount": 0,
@@ -130,8 +130,8 @@
             "Plant"
         ],
         "Color": [
-            255,
-            255,
+            0,
+            0,
             255
         ],
         "Value": 10,
@@ -147,9 +147,9 @@
             "Fungi"
         ],
         "Color": [
-            255,
-            255,
-            255
+            128,
+            97,
+            7
         ],
         "Value": 7,
         "Amount": 2,
@@ -182,9 +182,9 @@
             "Plant"
         ],
         "Color": [
-            255,
-            255,
-            255
+            56,
+            169,
+            0
         ],
         "Value": 10,
         "Amount": 0,
@@ -201,32 +201,14 @@
         ],
         "Color": [
             255,
-            255,
-            255
+            90,
+            0
         ],
         "Value": 28,
         "Amount": 3,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "Night Vision"
-    },
-    "Soup": {
-        "Name": "Chicken Noodle Soup",
-        "ImageLocation": "sprites/UnknownWhite.png",
-        "Category": [
-            "Animal",
-            "Food"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 0,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
     },
     "Chicken_Egg": {
         "Name": "Chicken_Egg",
@@ -236,9 +218,9 @@
             "Food"
         ],
         "Color": [
-            255,
-            255,
-            255
+            216,
+            213,
+            140
         ],
         "Value": 10,
         "Amount": 0,
@@ -305,9 +287,9 @@
             "Critter"
         ],
         "Color": [
-            255,
-            255,
-            255
+            72,
+            175,
+            18
         ],
         "Value": 10,
         "Amount": 0,
@@ -323,9 +305,9 @@
             "Fire"
         ],
         "Color": [
-            255,
-            255,
-            255
+            219,
+            0,
+            0
         ],
         "Value": 10,
         "Amount": 2,
@@ -358,8 +340,8 @@
             "Elemental"
         ],
         "Color": [
-            255,
-            255,
+            0,
+            221,
             255
         ],
         "Value": 10,
@@ -375,9 +357,9 @@
             "Mineral"
         ],
         "Color": [
-            255,
-            255,
-            255
+            232,
+            226,
+            0
         ],
         "Value": 10,
         "Amount": 0,
@@ -392,9 +374,9 @@
             "Plant"
         ],
         "Color": [
-            255,
-            255,
-            255
+            0,
+            128,
+            0
         ],
         "Value": 10,
         "Amount": 0,
@@ -429,7 +411,7 @@
         "Color": [
             255,
             255,
-            255
+            0
         ],
         "Value": 10,
         "Amount": 1,
@@ -444,9 +426,9 @@
             ""
         ],
         "Color": [
-            255,
-            255,
-            255
+            0,
+            130,
+            160
         ],
         "Value": 4,
         "Amount": 5,
@@ -550,9 +532,9 @@
             "Poision"
         ],
         "Color": [
-            255,
-            255,
-            255
+            107,
+            63,
+            171
         ],
         "Value": 10,
         "Amount": 0,
@@ -567,9 +549,9 @@
             "Base"
         ],
         "Color": [
-            255,
-            255,
-            255
+            24,
+            24,
+            24
         ],
         "Value": 10,
         "Amount": 9,

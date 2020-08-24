@@ -89,7 +89,8 @@
         "Ingredients": [
             "Animal_Meat",
             "Wheat",
-            "Carrot"
+            "Carrot",
+            "Chicken_Egg"
         ],
         "DropRates": [
             [
@@ -103,6 +104,10 @@
             [
                 0.6,
                 2
+            ],
+            [
+                0.7,
+                6
             ]
         ],
         "Prereq1": {
