@@ -174,7 +174,9 @@
         "Ingredients": [
             "Sand",
             "Fire_Powder",
-            "Oil"
+            "Oil",
+            "Cactus",
+            "Aloe"
         ],
         "DropRates": [
             [
@@ -188,6 +190,14 @@
             [
                 0.5,
                 6
+            ],
+            [
+                0.76,
+                3
+            ],
+            [
+                0.15,
+                1
             ]
         ],
         "Prereq1": {
@@ -215,15 +225,25 @@
         ],
         "Ingredients": [
             "Metal_Flakes",
-            "Neutral_Powder"
+            "Neutral_Powder",
+            "Gold_Flakes",
+            "Rust_Flakes"
         ],
         "DropRates": [
             [
-                0.5,
+                0.8,
+                6
+            ],
+            [
+                0.45,
+                2
+            ],
+            [
+                0.1,
                 1
             ],
             [
-                2.0,
+                0.6,
                 2
             ]
         ],
@@ -294,7 +314,8 @@
         ],
         "Ingredients": [
             "Purified_Water",
-            "Dragonfly"
+            "Dragonfly",
+            "Noxious_Powder"
         ],
         "DropRates": [
             [
@@ -304,6 +325,10 @@
             [
                 0.5,
                 1
+            ],
+            [
+                0.22,
+                2
             ]
         ],
         "Prereq1": {
