@@ -1,1 +1,44 @@
-{}
+{
+    "0.2928637728334995": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/potions/OlivePotion.png",
+        "Ingredient_1_ID": "Wheat",
+        "Ingredient_2_ID": "Oil",
+        "Ingredient_3_ID": "Brown Mushroom",
+        "Effect": "None",
+        "Color": [
+            255,
+            255,
+            208
+        ],
+        "Value": 31
+    },
+    "0.5683994868065286": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Water Dirty",
+        "Ingredient_3_ID": "Dragonfly",
+        "Effect": "None",
+        "Color": [
+            255,
+            208,
+            208
+        ],
+        "Value": 42
+    },
+    "0.3796740382287347": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Water_Salt",
+        "Ingredient_2_ID": "Water_River",
+        "Ingredient_3_ID": "Fire_Powder",
+        "Effect": "None",
+        "Color": [
+            208,
+            208,
+            255
+        ],
+        "Value": 19
+    }
+}

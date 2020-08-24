@@ -1,5 +1,7 @@
 import json
+import math
 
+from DevTools import DevHelpers
 from constants import *
 from pygameFunctions import *
 from random import *
@@ -14,6 +16,58 @@ def IncreaseVal(num):
 def DecreaseVal(num):
     num[0] -=1
     return num
+
+def randCol():
+    col = [0,0,0]
+    col[0] = int(randrange(0,255))
+    col[1] = int(randrange(0,255))
+    col[2] = int(randrange(0,255))
+    print(col)
+    return col
+
+def addColor(col1, col2):
+    col = [0,0,0]
+    col[0] = col1[0] + col2[0]
+    col[1] = col1[1] + col2[1]
+    col[2] = col1[2] + col2[2]
+    return col
+
+def subColor(col1, col2):
+    col = [0,0,0]
+    col[0] = col1[0] - col2[0]
+    col[1] = col1[1] - col2[1]
+    col[2] = col1[2] - col2[2]
+    return col
+
+def multColor(col, value):
+    col[0] *= value
+    col[1] *= value
+    col[2] *= value
+    return col
+
+def divColor(col, value):
+    col[0] /= value
+    col[1] /= value
+    col[2] /= value
+    return col
+
+def squareCol(col, degree):
+    sqCol = [0,0,0]
+    sqCol[0] = col[0]**degree
+    sqCol[1] = col[1]**degree
+    sqCol[2] = col[2]**degree
+    return sqCol
+
+
+def getCaulColor():
+    col = [0,0,0]
+    for i in config.selectedIngredients:
+        if i != None:
+            col = addColor(col, squareCol(i.getColor(),2))
+    col[0] = int(math.sqrt(col[0] / config.numSelectedIngredients))
+    col[1] = int(math.sqrt(col[1] / config.numSelectedIngredients))
+    col[2] = int(math.sqrt(col[2] / config.numSelectedIngredients))
+    return col
 
 def checkEvents():
     for event in pygame.event.get():
@@ -103,9 +157,9 @@ def InitIngredients():
                               ingre[1].get("Color"),
                               ingre[1].get("Value"),
                               ingre[1].get("Amount"),
-                              ingre[1].get("Effect1"),
-                              ingre[1].get("Effect2"),
-                              ingre[1].get("Effect3"))
+                              DevHelpers.NameFormat(ingre[1].get("Effect1")),
+                              DevHelpers.NameFormat(ingre[1].get("Effect2")),
+                              DevHelpers.NameFormat(ingre[1].get("Effect3")))
 
         Ingredients.append(newIngre) #add data to list
     return Ingredients
@@ -128,13 +182,15 @@ def saveIngredients(Ingredients):
         json.dump(prepareData, f, indent=4)
 
 class Potion:
-    def __init__(self, ID, name, img, ing1, ing2, ing3, value):
+    def __init__(self, ID, name, img, ing1, ing2, ing3, effect, color, value):
         self.ID = ID
         self.name = name
         self.imgLoc = img
         self.ingredient_1_ID = ing1
         self.ingredient_2_ID = ing2
         self.ingredient_3_ID = ing3
+        self.effect = effect
+        self.color = color
         self.value = value
 
     def getID(self):
@@ -149,6 +205,10 @@ class Potion:
         return self.ingredient_2_ID
     def getIngredient_3_ID(self):
         return self.ingredient_3_ID
+    def getEffect(self):
+        return self.effect
+    def getColor(self):
+        return self.color
     def getValue(self):
         return self.value
 
@@ -161,12 +221,14 @@ def InitPotionList():
         PotionJson = json.load(f)  # load data as dict
     for pot in PotionJson.items():
         newPotion = Potion(pot[0],
-                   pot[1].get("Name"),
-                   pot[1].get("ImageLocation"),
-                   pot[1].get("Ingredient_1_ID"),
-                           pot[1].get("Ingredient_2_ID"),
-                           pot[1].get("Ingredient_3_ID"),
-                        pot[1].get("Value"))
+                            pot[1].get("Name"),
+                            pot[1].get("ImageLocation"),
+                            DevHelpers.NameFormat(pot[1].get("Ingredient_1_ID")),
+                            DevHelpers.NameFormat(pot[1].get("Ingredient_2_ID")),
+                            DevHelpers.NameFormat(pot[1].get("Ingredient_3_ID")),
+                            pot[1].get("Effect"),
+                            pot[1].get("Color"),
+                            pot[1].get("Value"))
         PotionList.append(newPotion)
     return PotionList
 
@@ -178,6 +240,8 @@ def savePotions(PotionList):
                    "Ingredient_1_ID": pot.getIngredient_1_ID(),
                    "Ingredient_2_ID": pot.getIngredient_2_ID(),
                    "Ingredient_3_ID": pot.getIngredient_3_ID(),
+                   "Effect": pot.getEffect(),
+                   "Color": pot.getColor(),
                    "Value" : pot.getValue()}
         prepareData[pot.getID()] = newData  # Add list data to dict
     with open("potionInventory.json", "w") as f: #  write to json
@@ -251,23 +315,6 @@ def saveLocations(Locations):
     with open("locationData.json", "w") as f:  # write to json
         json.dump(prepareData, f, indent=4)
 
-def randomPotionColor():
-    listOfSprites = ["BlackPotion.png",
-                    "BluePotion.png",
-                    "BrownPotion.png",
-                    "CyanPotion.png",
-                    "GreenPotion.png",
-                    "GreyPotion.png",
-                    "MagentaPotion.png",
-                    "NavyPotion.png",
-                    "OlivePotion.png",
-                    "OrangePotion.png",
-                    "PinkPotion.png",
-                    "PurplePotion.png",
-                    "RedPotion.png",
-                    "WhitePotion.png",
-                    "YellowPotion.png"]
-    return listOfSprites[randrange(0,len(listOfSprites))]
 
 
 

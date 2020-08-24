@@ -44,15 +44,17 @@ def createLocation():
 
         # Select Color
         color = input("Input Color: ")
-        if DevHelpers.checkColor(color.upper()) == None:
-            print("Color not recognized, setting to default")
-            color = WHITE
+        if DevHelpers.checkColor(color) == None:
+            print("Color not recognized, setting to random")
+            color = helpers.randCol()
+        else:
+            color = DevHelpers.checkColor(color)
 
         # Select Ingredients
         while True:
             ingredients = input("Input Ingredients, separated by a comma - [ing1, ing2]\nType \"list\" for a list of ingredients: ")
-            if ingredients.upper == "LIST":
-                DevHelpers.printIngredients()
+            if ingredients.upper() == "LIST":
+                DevHelpers.printIngredients(Ingredients)
             else:
                 break
 
@@ -115,12 +117,9 @@ def createLocation():
             elif Type.upper() == "POTION" or Type.upper() == "P" or Type.upper() == "POT":
                 potName = input("Potion Name: ")
                 potName = DevHelpers.NameFormat(potName)
-                potImg = input("Potion Color/directory: ")
-                #if not checkColor()
-                if not os.path.exists(potImg):
-                    print("Path does not exist, setting random color")
-                    potImg = "sprites/potions/" + str(helpers.randomPotionColor())
-                prereqs.append({"Potion":{"Name":potName, "ImageLocation":potImg}})
+                potCol = input("Potion Color: ")
+                potCol = DevHelpers.checkColor(potCol)
+                prereqs.append({"Potion":{"Name":potName, "Color":potCol}})
             else:
                 prereqs.append("None")
 

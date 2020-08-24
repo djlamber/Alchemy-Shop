@@ -52,8 +52,8 @@ def createIngredient():
         #Select Color
         color = input("Input Color: ")
         if DevHelpers.checkColor(color.upper()) == None:
-            print("Color not recognized, setting to default")
-            color = WHITE
+            print("Color not recognized, setting to random")
+            color = helpers.randCol()
 
         #Select Value
         while True:

@@ -17,10 +17,17 @@ def draw_text_center(text, fon, color, surface, x, y):
     textrect.center = (x,y)
     surface.blit(textobj, textrect)
 
-def draw_image(x, y, width, height, imagePNG, surface):
-    img = pygame.transform.scale(pygame.image.load(imagePNG).convert_alpha(), (width, height))
-    img.set_colorkey(BLACK, RLEACCEL)
-    surface.blit(img, (x,y))
+def draw_image(x, y, width, height, imagePNG, surface, color = None):
+
+    if color != None:
+        img = pygame.image.load(imagePNG)
+        colImg = pygame.Surface(img.get_size()).convert_alpha()
+        colImg.fill([255,255,255])
+        img.blit(colImg, (x,y), special_flags = pygame.BLEND_RGBA_MULT)
+    else:
+        img = pygame.transform.scale(pygame.image.load(imagePNG).convert_alpha(), (width, height))
+        img.set_colorkey(BLACK, RLEACCEL)
+        surface.blit(img, (x,y))
 
 def draw_image_center(x, y, width, height, imagePNG, surface):
     img = pygame.transform.scale(pygame.image.load(imagePNG).convert_alpha(), (width, height))
@@ -132,7 +139,7 @@ def button_img_text(x, y, width, height, inactiveImage, activeImage, text, font,
 
     draw_text_center(text, font, color, surface, x+width/2, y+height/2)
 
-def hoverover_text(x,y,width,height,backgroundColor,surface,text,font,color, xDrawOffset=None, yDrawOffset = None, side = None ):
+def hoverover_text(x,y,width,height,backgroundColor,surface,text,font,color, xDrawOffset=None, yDrawOffset = None, side = None, setWidth = None ):
     mouse = pygame.mouse.get_pos()
     if xDrawOffset == None:
         xDrawOffset = 0
@@ -141,6 +148,8 @@ def hoverover_text(x,y,width,height,backgroundColor,surface,text,font,color, xDr
 
     txtlen = len(text)
     drawWidth = txtlen * 12
+    if setWidth != None:
+        drawWidth = setWidth
     drawHeight = 20
 
     if x + width > mouse[0] > x and y + height > mouse[1] > y:
