@@ -14,4 +14,4 @@ Locations = None
 CurrentLocation = None
 gatherDisplayList = []
 marketMode = ""
-
+selectedIndexIngredient = None

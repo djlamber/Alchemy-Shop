@@ -225,7 +225,6 @@ def potionCreation():
         posX = 0
         posY = 0
         displayIngredientNum = 0
-
         amountIngredients = 0
         for ingredient in config.Ingredients: # get num of usable ingredients
             if ingredient.amount > 0:
@@ -694,7 +693,7 @@ def ingredientShop():
             displayIngredientNum += 1
             if displayIngredientNum < pageNum[0] * 48 + 1:
                 continue
-            if displayIngredientNum > pageNum[0] +1 * 48:
+            if displayIngredientNum > (pageNum[0] + 1) * 48:
                 continue
             if entNum % 12 == 0:
                 posX = 0
@@ -733,8 +732,17 @@ def modifyIngredients():
 
 ######################################################
 
+def selectIndexIng(ing):
+    config.selectedIndexIngredient = ing
+
+def deselectIndexIng():
+    config.selectedIndexIngredient = None
+
 #################### Basic Screen ####################
 def ingredientIndex():
+    pageNum = [0]
+    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R","Index", "Index R"]
+    start_time = [0]
     while True:
         # check events
         checkEvents()
@@ -743,6 +751,69 @@ def ingredientIndex():
         config.screen.fill(Back_Color)
 
         button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen, LC, mainMenu)
+
+        indIng = config.selectedIndexIngredient
+        if indIng != None:
+            draw_image_center(SCREEN_WIDTH-480, 220 , 240, 240, indIng.getImgLoc(), config.screen)
+            draw_text_center(indIng.getName(), font72, WHITE, config.screen, SCREEN_WIDTH-480, 40)
+
+            draw_text_center("Active Color", font32, WHITE, config.screen, SCREEN_WIDTH - 180, 120)
+            pygame.draw.rect(config.screen, indIng.getColor(), (SCREEN_WIDTH - 220, 160, 80,80))
+
+            draw_text_center("Value: " + str(indIng.getValue()), font48, WHITE, config.screen, SCREEN_WIDTH - 480, SCREEN_HEIGHT/2)
+            if indIng.getEffect1() != "None":
+                draw_text("Effect 1: " + str(indIng.getEffect1()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 260)
+            if indIng.getEffect2() != "None":
+                draw_text("Effect 2: " + str(indIng.getEffect2()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 220)
+            if indIng.getEffect3() != "None":
+                draw_text("Effect 3: " + str(indIng.getEffect3()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 180)
+
+            draw_text("Categories: " + str(indIng.getCategory()), font32, WHITE, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT - 100)
+
+        entNum = 0
+        posX = 0
+        posY = 0
+        displayIngredientNum = 0
+        amountIngredients = 0
+
+        for ingredient in config.Ingredients: # get num of usable ingredients
+            #if ingredient.amount > 0:
+                amountIngredients +=1
+        numPages = int((amountIngredients-1)/24) #get num of pages
+        if pageNum[0] > numPages: #only allow visit pages with something in it
+            pageNum[0] = numPages
+        if pageNum[0] > 0:
+            button_img(100, 40, 160, 40, "sprites/WideArrowUP.png", "sprites/WideArrowUp.png",config.screen, LC, DecreaseVal, pageNum)
+        if pageNum[0] < numPages:
+            button_img(100, 675, 160, 40, "sprites/WideArrowDown.png", "sprites/WideArrowDown.png", config.screen, LC, IncreaseVal, pageNum)
+
+
+        #Sorting ingredients
+        button_text(100, 5, 170, 40, GRAY, 'Sort Ingredients', font32, WHITE, config.screen, LC, sortListNext, ingSortTypes)
+
+        # display ingredients
+        for ingredient in config.Ingredients:
+            #if ingredient.amount < 1:
+                #continue
+            displayIngredientNum +=1
+            if displayIngredientNum < pageNum[0] * 24 +1:
+                continue
+            if displayIngredientNum > (pageNum[0] + 1) * 24 :
+                continue
+            if entNum % 4 == 0:
+                posX = 0
+                posY += 1
+            if ingredient == config.selectedIndexIngredient:
+                button_img_img(100 * posX, 100 * posY - 20, 80, 80, "sprites/GreenBorder.png", "sprites/RedBorder.png",
+                               ingredient.imgLoc, config.screen, LC, deselectIndexIng)
+            else:
+                button_img_img(100 * posX, 100 * posY - 20, 80, 80, "sprites/Nothing.png", "sprites/GreenBorder.png",
+                           ingredient.imgLoc, config.screen, LC, selectIndexIng, ingredient)
+            draw_text_center(ingredient.name, font16, WHITE, config.screen, 100 * posX + 40, 100 * posY + 70)
+            #draw_text(str(ingredient.amount), font16, WHITE, config.screen, 100 * posX + 5, 100 * posY + 45)
+            posX += 1
+            entNum += 1
+
 
         pygame.display.flip()  # update screen
 
