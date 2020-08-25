@@ -153,7 +153,7 @@ def editIngredient():
                 categoryList = editIngreCategory(ingre, categoryList)
             if attrib == "COLOR" or attrib == "CO":
                 color = editIngreColor(ingre, color)
-            if attrib == "VALUE" or attrib == "VAL":
+            if attrib == "VALUE" or attrib == "VAL" or attrib == "V":
                 value = editIngreValue(ingre, value)
             if attrib == "EFFECT" or attrib == "E":
                 effects = editIngreEffect(ingre, effects)

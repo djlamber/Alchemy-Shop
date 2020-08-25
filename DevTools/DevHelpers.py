@@ -104,7 +104,7 @@ def printIngredients(Ingredients):
     for i in Ingredients:
         ingStr = "[" + str(i.getID()) + "], "
         ingStrLen = len(ingStr)
-        if i.getImgLoc() == "sprites/ingredients/UnknownIngredientWhite.png" or i.getImgLoc() == "sprites/UnknownWhite.png" or i.getColor() == [255,255,255]:
+        if i.getImgLoc() == "sprites/ingredients/UnknownIngredientWhite.png" or i.getImgLoc() == "sprites/UnknownWhite.png" or i.getColor() == [255,255,255] or i.getValue() < 0:
             ingStr = Fore.RED + ingStr + Fore.RESET
         igList = igList + ingStr
         if x + ingStrLen > 120:

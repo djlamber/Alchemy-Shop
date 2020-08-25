@@ -48,7 +48,6 @@ def mainMenu():
     text = config.Player.getShopName()
     modifyingName = False
     while True:
-        # TODO: create and decorate into actual menu
 
         # check events
         #checkEvents()
@@ -511,7 +510,7 @@ def ingredientGather():
         # check events
         checkEvents()
         #TODO: show screen of all gathered Ingredients
-        #TODO: expand upon areas that require specific prereqs
+        #TODO: expand upon prereqs
         Back_Color = TEAL
         config.screen.fill(Back_Color)
 
@@ -622,9 +621,13 @@ def selectMarketIng(ing):
     if config.marketMode == "buy":
         ing.addAmount(1)
         config.Player.subGold(int(ing.getValue() * config.Player.getBuyMarkup()))
+        savePlayer(config.Player)
+        saveIngredients(config.Ingredients)
     if config.marketMode == "sell":
         ing.subAmount(1)
         config.Player.addGold(int(ing.getValue() * config.Player.getSellMarkdown()))
+        savePlayer(config.Player)
+        saveIngredients(config.Ingredients)
 
 
 
@@ -639,8 +642,6 @@ def ingredientShop():
     while True:
         # check events
         checkEvents()
-
-        #TODO: buy and sell ingredients
 
         # draw on screen
         Back_Color = BLACK
