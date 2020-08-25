@@ -7,6 +7,7 @@ from pygameFunctions import *
 from random import *
 from time import *
 import config
+from pygame.locals import *
 
 #Stupid functions made to increment through file and function
 
@@ -69,16 +70,14 @@ def getCaulColor():
     col[2] = int(math.sqrt(col[2] / config.numSelectedIngredients))
     return col
 
-def checkEvents():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit()
-        if event.type == pygame.MOUSEBUTTONUP:
-            config.MUP = True
+
 
 class Player:
-    def __init__(self, gold):
+    def __init__(self, gold, shopName, buyMarkup, sellMarkdown):
         self.Gold = gold
+        self.ShopName = shopName
+        self.BuyMarkup = buyMarkup
+        self.SellMarkdown = sellMarkdown
 
     def getGold(self):
         return self.Gold
@@ -89,18 +88,40 @@ class Player:
     def subGold(self, subVal):
         self.Gold = self.Gold - subVal
 
+    def getShopName(self):
+        return self.ShopName
+    def setShopName(self,name):
+        self.ShopName = name
+
+    def getBuyMarkup(self):
+        return self.BuyMarkup
+    def setBuyMarkup(self, value):
+        self.BuyMarkup = value
+
+    def getSellMarkdown(self):
+        return self.SellMarkdown
+    def setSellMakrdown(self, value):
+        self.SellMarkdown = value
+
 def InitPlayer():
     player = []
     with open("playerData.json") as f:
         PlayerJson = json.load(f)  # load data as dict
-        print(PlayerJson)
-    for data in PlayerJson.items():
-        player = Player(data[1])
+    print(PlayerJson)
+    player = Player(PlayerJson.get("Gold"),
+                    PlayerJson.get("Shop Name"),
+                    PlayerJson.get("Buy Markup"),
+                    PlayerJson.get("Sell Markdown")
+                    )
     return player
 
 def savePlayer(Player):
     prepareData = {}
-    data = {"Gold": Player.getGold()}
+    data = {"Gold": Player.getGold(),
+            "Shop Name": Player.getShopName(),
+            "Buy Markup": Player.getBuyMarkup(),
+            "Sell Markdown": Player.getSellMarkdown()
+            }
     with open("playerData.json", "w") as f: #  write to json
         json.dump(data, f, indent=4)
 

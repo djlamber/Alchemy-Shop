@@ -30,7 +30,7 @@
             0
         ],
         "Value": 10,
-        "Amount": 7,
+        "Amount": 13,
         "Effect1": "Water Breathing",
         "Effect2": "None",
         "Effect3": "None"
@@ -47,7 +47,7 @@
             0
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 1,
         "Effect1": "Heal",
         "Effect2": "Burn Resist",
         "Effect3": "None"
@@ -83,7 +83,7 @@
             0
         ],
         "Value": 10,
-        "Amount": 1,
+        "Amount": 14,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -135,7 +135,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 46,
+        "Amount": 61,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -152,7 +152,7 @@
             7
         ],
         "Value": 7,
-        "Amount": 2,
+        "Amount": 6,
         "Effect1": "Restore Stamina",
         "Effect2": "Heal",
         "Effect3": "None"
@@ -187,7 +187,7 @@
             0
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 30,
         "Effect1": "Heal",
         "Effect2": "None",
         "Effect3": "None"
@@ -205,7 +205,7 @@
             0
         ],
         "Value": 28,
-        "Amount": 3,
+        "Amount": 13,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "Night Vision"
@@ -241,7 +241,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 2,
+        "Amount": 6,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -275,7 +275,7 @@
             192
         ],
         "Value": 10,
-        "Amount": 8,
+        "Amount": 23,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -292,7 +292,7 @@
             18
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 5,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -310,7 +310,7 @@
             0
         ],
         "Value": 10,
-        "Amount": 2,
+        "Amount": 13,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -345,7 +345,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 2,
+        "Amount": 7,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -361,8 +361,8 @@
             226,
             0
         ],
-        "Value": 10,
-        "Amount": 0,
+        "Value": 100,
+        "Amount": 3,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -379,7 +379,7 @@
             0
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 12,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -397,7 +397,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 8,
+        "Amount": 18,
         "Effect1": "Frost Resist",
         "Effect2": "None",
         "Effect3": "None"
@@ -431,7 +431,7 @@
             160
         ],
         "Value": 4,
-        "Amount": 5,
+        "Amount": 34,
         "Effect1": "Fire Resistance",
         "Effect2": "Burn Heal",
         "Effect3": "None"
@@ -483,7 +483,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 2,
+        "Amount": 162,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -519,7 +519,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 6,
+        "Amount": 28,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -537,7 +537,7 @@
             171
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 9,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -554,7 +554,7 @@
             24
         ],
         "Value": 10,
-        "Amount": 9,
+        "Amount": 25,
         "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
@@ -565,6 +565,24 @@
         "Category": [
             "Base",
             "Food"
+        ],
+        "Color": [
+            255,
+            255,
+            255
+        ],
+        "Value": 10,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
+    },
+    "Pearl": {
+        "Name": "Pearl",
+        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
+        "Category": [
+            "Mineral",
+            "Underwater"
         ],
         "Color": [
             255,
@@ -594,24 +612,6 @@
         "Effect2": "None",
         "Effect3": "None"
     },
-    "Pearl": {
-        "Name": "Pearl",
-        "ImageLocation": "sprites/ingredients/UnknownIngredientWhite.png",
-        "Category": [
-            "Mineral",
-            "Underwater"
-        ],
-        "Color": [
-            255,
-            255,
-            255
-        ],
-        "Value": 10,
-        "Amount": 0,
-        "Effect1": "None",
-        "Effect2": "None",
-        "Effect3": "None"
-    },
     "Red_Flower": {
         "Name": "Red Flower",
         "ImageLocation": "sprites/ingredients/RedFlower.png",
@@ -624,7 +624,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 9,
+        "Amount": 14,
         "Effect1": "Heal",
         "Effect2": "Poison Resistance",
         "Effect3": "None"
@@ -658,7 +658,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 49,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -693,7 +693,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 19,
+        "Amount": 86,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -712,7 +712,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 30,
+        "Amount": 60,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -816,7 +816,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 16,
+        "Amount": 24,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -851,7 +851,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 7,
+        "Amount": 116,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -905,7 +905,7 @@
             255
         ],
         "Value": 0,
-        "Amount": 720,
+        "Amount": 737,
         "Effect1": "Restore Stamina",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -924,7 +924,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 8,
+        "Amount": 66,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -941,7 +941,7 @@
             255
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 2,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -958,7 +958,7 @@
             0
         ],
         "Value": 20,
-        "Amount": 9,
+        "Amount": 27,
         "Effect1": "Increase Stamina",
         "Effect2": "Restore Stamina",
         "Effect3": "Speed Up"

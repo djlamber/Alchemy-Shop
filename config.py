@@ -13,3 +13,5 @@ runningTotal = 0
 Locations = None
 CurrentLocation = None
 gatherDisplayList = []
+marketMode = ""
+

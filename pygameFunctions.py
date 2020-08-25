@@ -77,7 +77,7 @@ def button_rect(x,y,width,height,surface, activeColor, inactiveColor, Mbutton, a
 
 def button_rect_center(x,y,width,height,surface, activeColor, inactiveColor, Mbutton, action=None, param = None):
     mouse = pygame.mouse.get_pos()
-    if x + width / 2 > mouse[0] > x - width / 2 and y + height / 2 > mouse[1] > y - width / 2:
+    if x + width / 2 > mouse[0] > x - width / 2 and y + height / 2 > mouse[1] > y - height / 2:
         pygame.draw.rect(surface, activeColor, (x - width / 2, y - height / 2, width, height))
         button(Mbutton, action, param)
     else:
@@ -95,6 +95,29 @@ def button_rect_text_center(x, y, width, height, inactiveColor, activeColor, tex
 
     button_rect_center(x, y, width, height, surface, activeColor, inactiveColor, Mbutton, action, param)
     draw_text_center(text, font, color, surface, x, y)
+
+
+
+def button_text(x, y, width, height, activeColor, text, font, color, surface, Mbutton, action=None, param = None):
+
+    mouse = pygame.mouse.get_pos()
+
+    if x + width > mouse[0] > x and y + height > mouse[1] > y:
+        draw_text(text, font, activeColor, surface, x, y)
+        button(Mbutton, action, param)
+    else:
+        draw_text(text, font, color, surface, x, y)
+
+def button_text_center(x, y, width, height, activeColor, text, font, color, surface, Mbutton, action=None, param = None):
+
+    mouse = pygame.mouse.get_pos()
+
+    if x + width / 2 > mouse[0] > x - width / 2 and y + height / 2 > mouse[1] > y - height / 2:
+        draw_text_center(text, font, activeColor, surface, x, y)
+        button(Mbutton, action, param)
+    else:
+        draw_text_center(text, font, color, surface, x, y)
+
 
 
 def button_img(x, y, width, height, inactiveImage, activeImage, surface, Mbutton, action=None, param = None):

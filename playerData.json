@@ -1,3 +1,6 @@
 {
-    "Gold": 14
+    "Gold": 61124,
+    "Shop Name": "Alchemy Shop",
+    "Buy Markup": 1.2,
+    "Sell Markdown" : 0.7
 }

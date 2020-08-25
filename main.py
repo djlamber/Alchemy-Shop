@@ -13,22 +13,67 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
+def checkEvents():
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+        if event.type == pygame.MOUSEBUTTONUP:
+            config.MUP = True
+        if event.type == KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                mainMenu()
+
+def checkInputTextEvents(text):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+        if event.type == pygame.MOUSEBUTTONUP:
+            config.MUP = True
+        if event.type == KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                mainMenu()
+            elif event.unicode.isalpha():
+                text += event.unicode
+            elif event.key == pygame.K_BACKSPACE:
+                text = text[:-1]
+            elif event.key == pygame.K_RETURN:
+                text = ""
+
+    return text
+
+
 #################### MainMenu Screen ####################
 
 def mainMenu():
+    text = config.Player.getShopName()
+    modifyingName = False
     while True:
-        # TODO: move each screen to separate files, send important info through call
+        # TODO: create and decorate into actual menu
 
         # check events
-        checkEvents()
+        #checkEvents()
+        text = checkInputTextEvents(text)
+        if modifyingName:
+            config.Player.setShopName(text)
+
         # draw on screen
-        Back_Color = WHITE
+        Back_Color = SILVER
         config.screen.fill(Back_Color)
 
-        draw_text_center('Alchemy Shop', font48, BLACK, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 4)
-        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2.5, 80, 40, Back_Color, GREEN, 'Start', font32, BLACK, config.screen, LC, potionCreation)
-        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 100, 40, Back_Color, BLUE, 'Options', font32, BLACK, config.screen, LC, None)
-        button_rect_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 1.67, 60, 40, Back_Color, RED, 'Quit', font32, BLACK, config.screen, LC, exit)
+        draw_text_center(config.Player.getShopName(), font72, BLACK, config.screen, SCREEN_WIDTH / 2 -3, SCREEN_HEIGHT / 8 +3)
+        draw_text_center(config.Player.getShopName(), font72, GOLD, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 8)
+
+        button_text_center(SCREEN_WIDTH * 4 / 16, SCREEN_HEIGHT / 2.5, 210, 40, GREEN, 'Gather Ingredients', font32, BLACK, config.screen, LC, ingredientGather)
+        button_text_center(SCREEN_WIDTH *  8 / 16, SCREEN_HEIGHT / 2.5, 160, 40, PURPLE, 'Create Potion', font32, BLACK, config.screen, LC, potionCreation)
+        button_text_center(SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2.5, 140, 40, YELLOW, 'Potion List', font32, BLACK, config.screen, LC, potionInventory)
+
+        button_text_center(SCREEN_WIDTH *  4 / 16, SCREEN_HEIGHT / 2, 100, 40, TEAL, 'Market', font32, BLACK, config.screen, LC, ingredientShop)
+        button_text_center(SCREEN_WIDTH *  8 / 16, SCREEN_HEIGHT / 2, 220, 40, BROWN, 'Modify Ingredients', font32, BLACK, config.screen, LC, modifyIngredients)
+        button_text_center(SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2, 100, 40, OLIVE, 'Ingredient Index', font32, BLACK, config.screen, LC, ingredientIndex)
+
+
+        button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 120, 100, 40, BLUE, 'Options', font32, BLACK, config.screen, LC, None)
+        button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 60, 60, 40, RED, 'Quit', font32, BLACK, config.screen, LC, exit)
 
         pygame.display.flip()  # update screen
 
@@ -104,28 +149,40 @@ def sortListNext(l):
     first = l.pop(0)
     l.append(first)
 
+    if l[0] == "Name":
+        config.Ingredients.sort(key=lambda k: k.getName())
+    elif l[0] == "Name R":
+        config.Ingredients.sort(reverse=True, key=lambda k: k.getName())
+    elif l[0] == "Category":
+        config.Ingredients.sort(key=lambda k: k.getCategory())
+    elif l[0] == "Category R":
+        config.Ingredients.sort(reverse=True, key=lambda k: k.getCategory())
+    elif l[0] == "Amount":
+        config.Ingredients.sort(key=lambda k: k.getAmount())
+    elif l[0] == "Amount R":
+        config.Ingredients.sort(reverse=True, key=lambda k: k.getAmount())
+    elif l[0] == "Index":
+        config.Ingredients.sort(key=lambda k: k.getID())
+    elif l[0] == "Index R":
+        config.Ingredients.sort(reverse=True, key=lambda k: k.getID())
+
 #################### potionCreation Screen ####################
 def potionCreation():
     pageNum = [0]
-    ingSortTypes = [ "Category", "Category R","Amount R", "Amount", "Name", "Name R", "Index", "Index R"]
+    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R","Index", "Index R"]
     start_time = [0]
     while True:
         # check events
         checkEvents()
 
-        #TODO: buy and sell ingredients
-
         # draw on screen
         Back_Color = BLACK
         config.screen.fill(Back_Color)
 
-        #  buttons to change screens
-        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, config.screen,LC, mainMenu)
-        button_rect_text(SCREEN_WIDTH * 11 / 16 - 24, 0, 140, 40, Back_Color, PURPLE, 'Potion List', font32, WHITE, config.screen, LC, potionInventory)
-        button_rect_text(SCREEN_WIDTH * 6 / 16 - 24, 0, 280, 40, Back_Color, MAROON, 'Gather Ingredients', font32, WHITE, config.screen, LC, ingredientGather)
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen,LC, mainMenu)
 
         #  display player gold
-        draw_text("Gold: " + str(config.Player.getGold()), font32, YELLOW, config.screen, 10, 5)
+        draw_text("Gold: " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
 
         #  display cauldron
         pygame.draw.rect(config.screen, config.cauldronColor, (int((SCREEN_WIDTH - 160) * 6 / 8 + 160*(3/20)), int((SCREEN_HEIGHT - 160) / 2 + 160*(3/20)), int(160*(14/20)), int(160*(4/20)),))
@@ -184,24 +241,7 @@ def potionCreation():
 
 
         #Sorting ingredients
-        button_rect_text(SCREEN_WIDTH * 3 / 16 - 24, 0, 170, 40, Back_Color, GRAY, 'Sort Ingredients', font32, WHITE, config.screen, LC, sortListNext, ingSortTypes)
-
-        if ingSortTypes[0] == "Name":
-            config.Ingredients.sort(key=lambda k: k.getName())
-        elif ingSortTypes[0] == "Name R":
-            config.Ingredients.sort(reverse = True, key=lambda k: k.getName())
-        elif ingSortTypes[0] == "Category":
-            config.Ingredients.sort(key=lambda k: k.getCategory())
-        elif ingSortTypes[0] == "Category R":
-            config.Ingredients.sort(reverse = True, key=lambda k: k.getCategory())
-        elif ingSortTypes[0] == "Amount":
-            config.Ingredients.sort(key=lambda k: k.getAmount())
-        elif ingSortTypes[0] == "Amount R":
-            config.Ingredients.sort(reverse = True, key=lambda k: k.getAmount())
-        elif ingSortTypes[0] == "Index":
-            config.Ingredients.sort(key=lambda k: k.getID())
-        elif ingSortTypes[0] == "Index R":
-            config.Ingredients.sort(reverse=True, key=lambda k: k.getID())
+        button_text(SCREEN_WIDTH * 3 / 16 - 24, 0, 170, 40, GRAY, 'Sort Ingredients', font32, WHITE, config.screen, LC, sortListNext, ingSortTypes)
 
 
         for ingredient in config.Ingredients: # display ingredients
@@ -217,7 +257,7 @@ def potionCreation():
                 posY += 1
             if ingredient in config.selectedIngredients:
                 button_img_img(100 * posX, 100 * posY - 20, 80, 80, "sprites/GreenBorder.png", "sprites/RedBorder.png",
-                               ingredient.imgLoc, config.screen, RC, removeSlot, ingredient)
+                               ingredient.imgLoc, config.screen, LC, removeSlot, ingredient)
             else:
                 button_img_img(100 * posX, 100 * posY - 20, 80, 80, "sprites/Nothing.png", "sprites/GreenBorder.png",
                            ingredient.imgLoc, config.screen, LC, addToEmptySlot, ingredient)
@@ -321,20 +361,19 @@ def potionInventory():
         config.screen.fill(Back_Color)
 
         #  buttons to change screens
-        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, config.screen, LC, mainMenu)
-        button_rect_text(SCREEN_WIDTH * 11 / 16 - 24, 0, 170, 40, Back_Color, PURPLE, 'Potion Creation', font32, WHITE, config.screen, LC, potionCreation)
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen, LC, mainMenu)
 
         # select options
-        button_rect_text(SCREEN_WIDTH * 4 / 16 - 24, 0, 170, 40, Back_Color, RED, 'Deselect all', font32, WHITE, config.screen, LC, deselectAllPots)
-        button_rect_text(SCREEN_WIDTH * 6 / 16 - 24, 0, 170, 40, Back_Color, GREEN, 'Select all', font32, WHITE, config.screen, LC, selectAllPots)
+        button_rect_text(SCREEN_WIDTH * 4 / 16 - 24, 0, 140, 40, Back_Color, RED, 'Deselect all', font32, WHITE, config.screen, LC, deselectAllPots)
+        button_rect_text(SCREEN_WIDTH * 6 / 16 - 24, 0, 140, 40, Back_Color, GREEN, 'Select all', font32, WHITE, config.screen, LC, selectAllPots)
 
         #  Sell button
         button_rect_text_center(SCREEN_WIDTH/2, SCREEN_HEIGHT - 40, 60, 40, Back_Color, GREEN, 'Sell', font32, WHITE, config.screen,LC, sellSelectedPotions)
         button_rect_text_center(SCREEN_WIDTH - 80, SCREEN_HEIGHT - 40, 120, 40, Back_Color, GREEN, 'Sell All', font32, WHITE, config.screen, LC, sellAllPotions)
 
         # Display Player Gold
-        draw_text("Gold: "+ str(config.Player.getGold()), font32, YELLOW, config.screen, 10, 5)
-        draw_text_center("Value: " + str(config.runningTotal), font32, YELLOW, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 80,)
+        draw_text("Gold: "+ str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_text_center("Value: " + str(config.runningTotal), font32, GOLD, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 80,)
 
         entNum = 0
         row_x = 0
@@ -348,14 +387,14 @@ def potionInventory():
             if pot in config.selectedPotions.keys(): # click to remove from selected list
                 pygame.draw.rect(config.screen, pot.getColor(), (int(100 * row_x + 80*(4/20)), int(100 * row_y + 80*(9/20)), int(80*(12/20)), int(80*(7/20))))
                 button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/GreenBorder.png", "sprites/RedBorder.png",
-                                   "sprites/EmptyPotion.png", config.screen, RC, deselectPotion, pot)
+                                   "sprites/EmptyPotion.png", config.screen, LC, deselectPotion, pot)
             else: # click to add to selected list
                 pygame.draw.rect(config.screen, pot.getColor(), (int(100 * row_x + 80*(4/20)), int(100 * row_y + 80*(9/20)), int(80*(12/20)),int(80*(7/20))))
                 button_img_img(100 * row_x, 100 * row_y, 80, 80, "sprites/Nothing.png", "sprites/YellowBorder.png",
                                "sprites/EmptyPotion.png", config.screen, LC, selectPotion, (pot, row_x, row_y))
 
             draw_text_center(pot.name, font16, WHITE, config.screen, 100 * row_x + 40, 100 * row_y - 10)
-            draw_text(str(pot.value), font16, WHITE, config.screen, 100 * row_x + 5, 100 * row_y + 65)
+            draw_text(str(pot.value), font16, GOLD, config.screen, 100 * row_x + 5, 100 * row_y + 65)
             row_x += 1
             entNum += 1
 
@@ -473,15 +512,14 @@ def ingredientGather():
         checkEvents()
         #TODO: show screen of all gathered Ingredients
         #TODO: expand upon areas that require specific prereqs
-        Back_Color = GRAY
+        Back_Color = TEAL
         config.screen.fill(Back_Color)
 
         #  buttons to change screens
-        button_rect_text(SCREEN_WIDTH - 140, 0, 120, 40, Back_Color, GREEN, 'Main Menu', font32, WHITE, config.screen, LC, mainMenu)
-        button_rect_text(SCREEN_WIDTH * 11 / 16 - 24, 0, 170, 40, Back_Color, PURPLE, 'Potion Creation', font32, WHITE, config.screen, LC, potionCreation)
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, BLACK, config.screen, LC, mainMenu)
 
         #  display player gold
-        draw_text("Gold: " + str(config.Player.getGold()), font32, YELLOW, config.screen, 10, 5)
+        draw_text("Gold: " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
 
         #display gather button
         #print(config.CurrentLocation)
@@ -511,7 +549,7 @@ def ingredientGather():
                 draw_text_center("Nothing", font20, BLACK, config.screen, SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + 40 + y_off)
             elif req.get("Gold"):
                 draw_image_center(SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + y_off, 80, 80, "sprites/UnknownBlack.png", config.screen)
-                draw_text_center(str(req.get("Gold"))+" Gold", font20, BLACK,config.screen, SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + 40 + y_off )
+                draw_text_center(str(req.get("Gold"))+" Gold", font20, GOLD,config.screen, SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + 40 + y_off )
             elif req.get("Potion"):
                 pygame.draw.rect(config.screen, req.get("Potion").get("Color"), (int(SCREEN_WIDTH / 2 + x_off - 80 * (12 / 20)/2), int(SCREEN_HEIGHT / 2 + y_off - (80 * (1 / 20))), int(80 * (12 / 20)), int(80 * (7 / 20))))
 
@@ -528,7 +566,7 @@ def ingredientGather():
                 textColor = [255, 255, 255]
 
             if location == config.CurrentLocation:
-                button_img_text(0, x * 40 + 100, 280, 40, "sprites/GreenBorder.png", "sprites/RedBorder.png", location.getName(), font32, textColor, config.screen, RC, deselectLocation, [location, prereqs])
+                button_img_text(0, x * 40 + 100, 280, 40, "sprites/GreenBorder.png", "sprites/RedBorder.png", location.getName(), font32, textColor, config.screen, LC, deselectLocation, [location, prereqs])
 
             else:
                 button_img_text(0, x*40 +100, 280, 40, "sprites/Nothing.png", "sprites/GreenBorder.png", location.getName(), font32, textColor, config.screen, LC, selectLocation, [location,prereqs])
@@ -575,6 +613,137 @@ def ingredientGather():
             entNum += 1
 
         pygame.display.flip()  # update screen
+################### Market Functions #######################
+
+def setMode(mode):
+    config.marketMode = mode
+
+def selectMarketIng(ing):
+    if config.marketMode == "buy":
+        ing.addAmount(1)
+        config.Player.subGold(int(ing.getValue() * config.Player.getBuyMarkup()))
+    if config.marketMode == "sell":
+        ing.subAmount(1)
+        config.Player.addGold(int(ing.getValue() * config.Player.getSellMarkdown()))
+
+
+
+
+#################### Buy/Sell Ingredients ####################
+def ingredientShop():
+    pageNum = [0]
+    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R","Index", "Index R"]
+    start_time = [0]
+    config.marketMode = ""
+
+    while True:
+        # check events
+        checkEvents()
+
+        #TODO: buy and sell ingredients
+
+        # draw on screen
+        Back_Color = BLACK
+        config.screen.fill(Back_Color)
+
+        #  buttons to change screens
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen,LC, mainMenu)
+
+
+
+        #  display player gold
+        draw_text("Gold: " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+
+        if config.marketMode == "buy":
+            button_text(SCREEN_WIDTH * 8 / 16 - 100, 10, 100, 40, RED, 'Buy', font48, GREEN, config.screen, LC, setMode, "")
+            button_text(SCREEN_WIDTH * 8 / 16, 10, 100, 40, YELLOW, 'Sell', font48, WHITE, config.screen, LC, setMode, "sell")
+        elif config.marketMode == "sell":
+            button_text(SCREEN_WIDTH * 8 / 16 - 100, 10, 100, 40, GREEN, 'Buy', font48, WHITE, config.screen, LC, setMode, "buy")
+            button_text(SCREEN_WIDTH * 8 / 16, 10, 100, 40, RED, 'Sell', font48, YELLOW, config.screen, LC, setMode, "")
+        else:
+            button_text(SCREEN_WIDTH * 8 / 16 - 100, 10, 100, 40, GREEN, 'Buy', font48, WHITE, config.screen, LC, setMode, "buy")
+            button_text(SCREEN_WIDTH * 8 / 16, 10, 100, 40, YELLOW, 'Sell', font48, WHITE, config.screen, LC, setMode, "sell")
+
+        entNum = 0
+        posX = 0
+        posY = 0
+        displayIngredientNum = 0
+
+        amountIngredients = 0
+        for ingredient in config.Ingredients:  # get num of usable ingredients
+            if config.marketMode == "sell":
+                if ingredient.amount > 0:
+                    amountIngredients += 1
+            else:
+                amountIngredients += 1
+        numPages = int((amountIngredients - 1) / 48)  # get num of pages
+        if pageNum[0] > numPages:  # only allow visit pages with something in it
+            pageNum[0] = numPages
+        if pageNum[0] > 0:
+            button_img(100, 625, 160, 40, "sprites/WideArrowUP.png", "sprites/WideArrowUp.png", config.screen, LC, DecreaseVal, pageNum)
+        if pageNum[0] < numPages:
+            button_img(100, 675, 160, 40, "sprites/WideArrowDown.png", "sprites/WideArrowDown.png", config.screen, LC, IncreaseVal, pageNum)
+
+        # Sorting ingredients
+        button_text(SCREEN_WIDTH * 3 / 16 - 24, 5 , 170, 40, GRAY, 'Sort Ingredients', font32, WHITE, config.screen, LC, sortListNext, ingSortTypes)
+
+        for ingredient in config.Ingredients:  # display ingredients
+            if ingredient.amount < 1 and config.marketMode == "sell":
+                continue
+            displayIngredientNum += 1
+            if displayIngredientNum < pageNum[0] * 48 + 1:
+                continue
+            if displayIngredientNum > pageNum[0] +1 * 48:
+                continue
+            if entNum % 12 == 0:
+                posX = 0
+                posY += 1
+            button_img_img(100 * posX, 110 * posY - 20, 80, 80, "sprites/Nothing.png", "sprites/GreenBorder.png",
+                               ingredient.imgLoc, config.screen, LC, selectMarketIng, ingredient)
+
+            draw_text_center(ingredient.name, font16, WHITE, config.screen, 100 * posX + 40, 110 * posY + 70)
+            draw_text(str(ingredient.amount), font16, WHITE, config.screen, 100 * posX + 5, 110 * posY + 45)
+            if config.marketMode == "buy":
+                draw_text_center(str(int(ingredient.value * config.Player.getBuyMarkup())) + " Gold", font16, GOLD, config.screen, 100 * posX + 40, 110 * posY + 85)
+            elif config.marketMode == "sell":
+                draw_text_center(str(int(ingredient.value * config.Player.getSellMarkdown())) + " Gold", font16, GOLD, config.screen, 100 * posX + 40, 110 * posY + 85)
+            else:
+                draw_text_center(str(ingredient.value) + " Gold", font16, GOLD, config.screen, 100 * posX + 40, 110 * posY + 85)
+
+            posX += 1
+            entNum += 1
+        pygame.display.flip()  # update screen
+
+
+######################################################
+
+#################### Basic Screen ####################
+def modifyIngredients():
+    while True:
+        # check events
+        checkEvents()
+        # draw on screen
+        Back_Color = BLACK
+        config.screen.fill(Back_Color)
+
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen, LC, mainMenu)
+
+        pygame.display.flip()  # update screen
+
+######################################################
+
+#################### Basic Screen ####################
+def ingredientIndex():
+    while True:
+        # check events
+        checkEvents()
+        # draw on screen
+        Back_Color = BLACK
+        config.screen.fill(Back_Color)
+
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen, LC, mainMenu)
+
+        pygame.display.flip()  # update screen
 
 #################### game init ####################
 pygame.init()
@@ -593,9 +762,10 @@ saveLocations(config.Locations)
 config.NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png",["None"], BLACK, 0, 0, "None", "None", "None" )
 config.selectedIngredients = [config.NoneIngredient, config.NoneIngredient, config.NoneIngredient]
 
-mainMenu()  # start main menu Screen
+mainMenu()  # start mainMenu Screen
 exit()
 
+######################################################
 
 #################### Basic Screen ####################
 def Basic():
@@ -605,5 +775,7 @@ def Basic():
         # draw on screen
         Back_Color = WHITE
         config.screen.fill(Back_Color)
+
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen, LC, mainMenu)
 
         pygame.display.flip()  # update screen

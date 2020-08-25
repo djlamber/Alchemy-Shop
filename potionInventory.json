@@ -1,44 +1,492 @@
 {
-    "0.2928637728334995": {
-        "Name": "Potion Name",
-        "ImageLocation": "sprites/potions/OlivePotion.png",
-        "Ingredient_1_ID": "Wheat",
-        "Ingredient_2_ID": "Oil",
-        "Ingredient_3_ID": "Brown Mushroom",
-        "Effect": "None",
-        "Color": [
-            255,
-            255,
-            208
-        ],
-        "Value": 31
-    },
-    "0.5683994868065286": {
+    "0.9543749282079191": {
         "Name": "Potion Name",
         "ImageLocation": "sprites/EmptyPotion.png",
         "Ingredient_1_ID": "Animal Meat",
-        "Ingredient_2_ID": "Water Dirty",
-        "Ingredient_3_ID": "Dragonfly",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
         "Effect": "None",
         "Color": [
-            255,
-            208,
-            208
+            209,
+            157,
+            147
         ],
-        "Value": 42
+        "Value": 49
     },
-    "0.3796740382287347": {
+    "0.07163206447474624": {
         "Name": "Potion Name",
         "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_Salt",
-        "Ingredient_2_ID": "Water_River",
-        "Ingredient_3_ID": "Fire_Powder",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
         "Effect": "None",
         "Color": [
-            208,
-            208,
-            255
+            209,
+            157,
+            147
+        ],
+        "Value": 31
+    },
+    "0.6738314533607153": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
+        "Effect": "None",
+        "Color": [
+            209,
+            157,
+            147
+        ],
+        "Value": 41
+    },
+    "0.7115250717569421": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
+        "Effect": "None",
+        "Color": [
+            209,
+            157,
+            147
+        ],
+        "Value": 45
+    },
+    "0.03231213709148739": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
+        "Effect": "None",
+        "Color": [
+            209,
+            157,
+            147
+        ],
+        "Value": 29
+    },
+    "0.11059089502014174": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
+        "Effect": "None",
+        "Color": [
+            209,
+            157,
+            147
+        ],
+        "Value": 44
+    },
+    "0.9631953152384765": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Algae",
+        "Ingredient_3_ID": "Water Dirty",
+        "Effect": "None",
+        "Color": [
+            209,
+            157,
+            147
+        ],
+        "Value": 41
+    },
+    "0.8777973925886088": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 16
+    },
+    "0.6558135662804878": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 23
+    },
+    "0.06773317246041599": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 25
+    },
+    "0.6519934590662252": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 27
+    },
+    "0.5487725621587386": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 25
+    },
+    "0.47801804451821917": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 22
+    },
+    "0.6924792727683525": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 23
+    },
+    "0.11066308605894004": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
         ],
         "Value": 19
+    },
+    "0.770719489825209": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 16
+    },
+    "0.2550667310025888": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 18
+    },
+    "0.43225011355079335": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 20
+    },
+    "0.8920350293314957": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 15
+    },
+    "0.7018453816317182": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 27
+    },
+    "0.9059588700666712": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 16
+    },
+    "0.662009814489989": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 16
+    },
+    "0.6261414654173327": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 19
+    },
+    "0.9716106688175805": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 18
+    },
+    "0.10013589614207452": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 26
+    },
+    "0.13172703733843927": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 16
+    },
+    "0.07735341577831745": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 22
+    },
+    "0.4123515141874229": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 21
+    },
+    "0.08782195986594388": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 14
+    },
+    "0.9453714751608123": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 15
+    },
+    "0.5119499084054422": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 19
+    },
+    "0.9538221178502578": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 26
+    },
+    "0.2823187334043482": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 26
+    },
+    "0.6439865384442072": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Oil",
+        "Ingredient_2_ID": "Ice",
+        "Ingredient_3_ID": "Chicken Egg",
+        "Effect": "None",
+        "Color": [
+            125,
+            144,
+            123
+        ],
+        "Value": 20
+    },
+    "0.350831916016617": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Algae",
+        "Ingredient_2_ID": "Aloe",
+        "Ingredient_3_ID": "Apple",
+        "Effect": "None",
+        "Color": [
+            151,
+            113,
+            0
+        ],
+        "Value": 30
     }
 }

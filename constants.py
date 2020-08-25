@@ -16,15 +16,19 @@ font20 = 20
 font24 = 24
 font32 = 32
 font48 = 48
+font60 = 60
+font72 = 72
 
 #Colors
 WHITE = (255, 255, 255)
 SILVER = (192,192,192)
 GRAY = (128,128,128)
 BLACK = (0, 0, 0)
+BROWN = (168,110,18)
 RED = (255, 0, 0)
 MAROON = (128,0,0)
 YELLOW = (255,255,0)
+GOLD = (255, 215, 0)
 OLIVE = (128,128,0)
 LIME = (0,255,0)
 GREEN = (0, 128, 0)
