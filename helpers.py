@@ -177,7 +177,7 @@ def InitIngredients():
                               ingre[1].get("Category"),
                               ingre[1].get("Color"),
                               ingre[1].get("Value"),
-                              ingre[1].get("Amount"),
+                              0,#ingre[1].get("Amount"),
                               DevHelpers.NameFormat(ingre[1].get("Effect1")),
                               DevHelpers.NameFormat(ingre[1].get("Effect2")),
                               DevHelpers.NameFormat(ingre[1].get("Effect3")))

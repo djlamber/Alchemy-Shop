@@ -62,10 +62,14 @@ def checkColor(color):
         return WHITE
     if color.upper() == "SILVER":
         return SILVER
+    if color.upper() == "GOLD":
+        return GOLD
     if color.upper() == "GRAY":
         return GRAY
     if color.upper() == "BLACK":
         return BLACK
+    if color.upper() == "BROWN":
+        return BROWN
     if color.upper() == "RED":
         return RED
     if color.upper() == "MAROON":

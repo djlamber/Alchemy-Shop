@@ -31,7 +31,9 @@
                 4
             ]
         ],
-        "Prereq1": "None",
+        "Prereq1": {
+            "Gold": 2
+        },
         "Prereq2": "None",
         "Prereq3": "None"
     },
@@ -39,9 +41,9 @@
         "Name": "Fragrant Woods",
         "ImageLocation": "sprites/UnknownWhite.png",
         "Color": [
-            255,
-            255,
-            255
+            0,
+            128,
+            0
         ],
         "Ingredients": [
             "Cold_Flower",
@@ -87,9 +89,9 @@
         "Name": "Local farm",
         "ImageLocation": "sprites/ingredients/Wheat.png",
         "Color": [
-            128,
-            128,
-            0
+            168,
+            110,
+            18
         ],
         "Ingredients": [
             "Animal_Meat",
@@ -127,7 +129,7 @@
         "Color": [
             0,
             0,
-            255
+            204
         ],
         "Ingredients": [
             "Algae",
@@ -177,8 +179,8 @@
         "Name": "Sandy Dunes",
         "ImageLocation": "sprites/UnknownWhite.png",
         "Color": [
-            255,
-            255,
+            128,
+            128,
             0
         ],
         "Ingredients": [
@@ -202,7 +204,7 @@
                 6
             ],
             [
-                0.76,
+                0.4,
                 3
             ],
             [
@@ -276,9 +278,9 @@
         "Name": "Frozen Forest",
         "ImageLocation": "sprites/UnknownWhite.png",
         "Color": [
-            255,
-            255,
-            255
+            0,
+            130,
+            160
         ],
         "Ingredients": [
             "Cold_Flower",
@@ -323,13 +325,18 @@
             0
         ],
         "Ingredients": [
-            "Purified_Water",
+            "Water_Filtered",
             "Dragonfly",
-            "Noxious_Powder"
+            "Noxious_Powder",
+            "Butterfly"
         ],
         "DropRates": [
             [
-                2.0,
+                0.5,
+                4
+            ],
+            [
+                0.22,
                 2
             ],
             [
@@ -337,8 +344,8 @@
                 1
             ],
             [
-                0.22,
-                2
+                0.35,
+                1
             ]
         ],
         "Prereq1": {

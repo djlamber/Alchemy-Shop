@@ -34,6 +34,8 @@ def checkInputTextEvents(text):
                 mainMenu()
             elif event.unicode.isalpha():
                 text += event.unicode
+            elif event.key == pygame.K_SPACE:
+                text += " "
             elif event.key == pygame.K_BACKSPACE:
                 text = text[:-1]
             elif event.key == pygame.K_RETURN:
@@ -47,20 +49,32 @@ def checkInputTextEvents(text):
 def mainMenu():
     text = config.Player.getShopName()
     modifyingName = False
+    lastTime = 0
+    addToName = ""
+    flip = True
     while True:
 
         # check events
         #checkEvents()
         text = checkInputTextEvents(text)
+
         if modifyingName:
+            if time_ns() > lastTime + 50000000 :
+                flip = not flip
+                lastTime = time_ns()
+            if flip:
+                addToName = "|"
+            else:
+                addToName = ""
+
             config.Player.setShopName(text)
 
         # draw on screen
         Back_Color = SILVER
         config.screen.fill(Back_Color)
 
-        draw_text_center(config.Player.getShopName(), font72, BLACK, config.screen, SCREEN_WIDTH / 2 -3, SCREEN_HEIGHT / 8 +3)
-        draw_text_center(config.Player.getShopName(), font72, GOLD, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 8)
+        draw_text_center(config.Player.getShopName() + addToName, font72, BLACK, config.screen, SCREEN_WIDTH / 2 -3, SCREEN_HEIGHT / 8 +3)
+        draw_text_center(config.Player.getShopName() + addToName, font72, GOLD, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 8)
 
         button_text_center(SCREEN_WIDTH * 4 / 16, SCREEN_HEIGHT / 2.5, 210, 40, GREEN, 'Gather Ingredients', font32, BLACK, config.screen, LC, ingredientGather)
         button_text_center(SCREEN_WIDTH *  8 / 16, SCREEN_HEIGHT / 2.5, 160, 40, PURPLE, 'Create Potion', font32, BLACK, config.screen, LC, potionCreation)
@@ -121,7 +135,7 @@ def brewPotion(startTime):
     # TODO: add variation in potion brewing based on ingredients
     # Idea: bad potions can be made that take up space in inventory and have to be sold
     if len(config.PotionList)<65:
-        potVal = int((config.selectedIngredients[0].getValue() * 0.3 + config.selectedIngredients[1].getValue() * 0.6 + config.selectedIngredients[2].getValue() * 0.9) * (random()+1)  )
+        potVal = int((config.selectedIngredients[0].getValue() * 0.9 + config.selectedIngredients[1].getValue() * 0.9 + config.selectedIngredients[2].getValue() * 0.9) * (uniform(1,1.3))  )
         effect = "None"
         color = getCaulColor()
         newPotion = Potion(str(random()), "Potion Name", "sprites/EmptyPotion.png", config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), effect, color, potVal)
@@ -160,15 +174,20 @@ def sortListNext(l):
         config.Ingredients.sort(key=lambda k: k.getAmount())
     elif l[0] == "Amount R":
         config.Ingredients.sort(reverse=True, key=lambda k: k.getAmount())
+    elif l[0] == "Value":
+        config.Ingredients.sort(key=lambda k: k.getValue())
+    elif l[0] == "Value R":
+        config.Ingredients.sort(reverse=True, key=lambda k: k.getValue())
     elif l[0] == "Index":
         config.Ingredients.sort(key=lambda k: k.getID())
     elif l[0] == "Index R":
         config.Ingredients.sort(reverse=True, key=lambda k: k.getID())
 
+
 #################### potionCreation Screen ####################
 def potionCreation():
     pageNum = [0]
-    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R","Index", "Index R"]
+    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R", "Value", "Value R", "Index", "Index R"]
     start_time = [0]
     while True:
         # check events
@@ -634,7 +653,7 @@ def selectMarketIng(ing):
 #################### Buy/Sell Ingredients ####################
 def ingredientShop():
     pageNum = [0]
-    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R","Index", "Index R"]
+    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R", "Value", "Value R","Index", "Index R"]
     start_time = [0]
     config.marketMode = ""
 
@@ -741,7 +760,7 @@ def deselectIndexIng():
 #################### Basic Screen ####################
 def ingredientIndex():
     pageNum = [0]
-    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R","Index", "Index R"]
+    ingSortTypes = [ "Name", "Name R","Amount R", "Amount","Category", "Category R", "Value", "Value R", "Index", "Index R"]
     start_time = [0]
     while True:
         # check events
@@ -752,6 +771,7 @@ def ingredientIndex():
 
         button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen, LC, mainMenu)
 
+        #display selected ingredient info
         indIng = config.selectedIndexIngredient
         if indIng != None:
             draw_image_center(SCREEN_WIDTH-480, 220 , 240, 240, indIng.getImgLoc(), config.screen)
