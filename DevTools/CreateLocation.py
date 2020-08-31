@@ -4,7 +4,7 @@ import os.path
 from constants import *
 from DevTools import DevHelpers
 
-#This is a tool that uses the terminal to add new ingredients
+#This is a tool that uses the terminal to add new location
 
 
 def createLocation():

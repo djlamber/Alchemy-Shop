@@ -129,3 +129,16 @@ def printLocations(Locations):
             x = 0
         x += locStrLen
     print("\n" + locList + "\n")
+
+def printTools(Tools):
+    toolList = ""
+    x = 0
+    for i in Tools:
+        toolStr = "[" + str(i.getID()) + "], "
+        toolStrLen = len(toolStr)
+        toolList = toolList + toolStr
+        if x + toolStrLen > 200:
+            toolList = toolList + "\n"
+            x = 0
+        x += toolStrLen
+    print("\n" + toolList + "\n")
