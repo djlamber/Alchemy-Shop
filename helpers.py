@@ -105,7 +105,7 @@ class Player:
 
 def InitPlayer():
     player = []
-    with open("playerData.json") as f:
+    with open("Data/playerData.json") as f:
         PlayerJson = json.load(f)  # load data as dict
     print(PlayerJson)
     player = Player(PlayerJson.get("Gold"),
@@ -122,7 +122,7 @@ def savePlayer(Player):
             "Buy Markup": Player.getBuyMarkup(),
             "Sell Markdown": Player.getSellMarkdown()
             }
-    with open("playerData.json", "w") as f: #  write to json
+    with open("Data/playerData.json", "w") as f: #  write to json
         json.dump(data, f, indent=4)
 
 class Ingredient:
@@ -168,7 +168,7 @@ class Ingredient:
 
 def InitIngredients():
     Ingredients = []
-    with open("ingredientInventory.json") as f:
+    with open("Data/ingredientInventory.json") as f:
         IngredientJson = json.load(f)  # load data as dict
     for ingre in IngredientJson.items():
         newIngre = Ingredient(ingre[0],
@@ -199,7 +199,7 @@ def saveIngredients(Ingredients):
                    "Effect3": ingre.getEffect3()
                    }
         prepareData[ingre.getID()] = newData  # Add list data to dict
-    with open("ingredientInventory.json", "w") as f: #  write to json
+    with open("Data/ingredientInventory.json", "w") as f: #  write to json
         json.dump(prepareData, f, indent=4)
 
 class Potion:
@@ -238,7 +238,7 @@ class Potion:
 
 def InitPotionList():
     PotionList = []
-    with open("potionInventory.json") as f:
+    with open("Data/potionInventory.json") as f:
         PotionJson = json.load(f)  # load data as dict
     for pot in PotionJson.items():
         newPotion = Potion(pot[0],
@@ -265,7 +265,7 @@ def savePotions(PotionList):
                    "Color": pot.getColor(),
                    "Value" : pot.getValue()}
         prepareData[pot.getID()] = newData  # Add list data to dict
-    with open("potionInventory.json", "w") as f: #  write to json
+    with open("Data/potionInventory.json", "w") as f: #  write to json
         json.dump(prepareData, f, indent=4)
 
 
@@ -304,7 +304,7 @@ class Location:
 
 def InitLocations():
     Locations = []
-    with open("locationData.json") as f:
+    with open("Data/locationData.json") as f:
         locJson = json.load(f)  # load data as dict
     for data in locJson.items():
         location = Location(data[0],
@@ -333,9 +333,85 @@ def saveLocations(Locations):
                    "Prereq3": loc.getPrereq3()
                     }
         prepareData[loc.getID()] = newData  # Add list data to dict
-    with open("locationData.json", "w") as f:  # write to json
+    with open("Data/locationData.json", "w") as f:  # write to json
         json.dump(prepareData, f, indent=4)
 
+
+#Tool info
+class tool:
+    def __init__(self, ID, Name, ImgLoc, Use, InSlots, OutSlots, Unlocked):
+        self.ID = ID
+        self.Name = Name
+        self.ImgLoc = ImgLoc
+        self.Use = Use
+        self.InSlots = InSlots
+        self.OutSlots = OutSlots
+        self.Unlocked = Unlocked
+
+    def getID(self):
+        return self.ID
+    def getName(self):
+        return self.Name
+    def setName(self, newName):
+        self.Name = newName
+
+
+def InitJdata():
+    Jdata = []
+    with open("Data/Jdata.json") as f:
+        locJson = json.load(f)  # load data as dict
+    for data in locJson.items():
+        jdataEntry = Location(data[0],
+                              data[1].get("Name")
+                            )
+        Jdata.append(jdataEntry)
+    return Jdata
+
+def saveJdata(Jdata):
+    prepareData = {}
+    for dat in Jdata:
+        newData = {"Name": dat.getName()
+                    }
+        prepareData[dat.getID()] = newData  # Add list data to dict
+    with open("Data/Jdata.json", "w") as f:  # write to json
+        json.dump(prepareData, f, indent=4)
+
+
+
+
+#New object file
+class jdata:
+    def __init__(self, ID, Name):
+        self.ID = ID
+        self.Name = Name
+
+    def getID(self):
+        return self.ID
+    def getName(self):
+        return self.Name
+    def setName(self, newName):
+        self.Name = newName
+
+
+def InitJdata():
+    Jdata = []
+    with open("Data/Jdata.json") as f:
+        locJson = json.load(f)  # load data as dict
+    for data in locJson.items():
+        jdataEntry = Location(data[0],
+                              data[1].get("Name")
+                            )
+        Jdata.append(jdataEntry)
+    return Jdata
+
+def saveJdata(Jdata):
+    prepareData = {}
+    for dat in Jdata:
+        newData = {"Name": dat.getName()
+                    }
+        prepareData[dat.getID()] = newData  # Add list data to dict
+    with open("Data/Jdata.json", "w") as f:  # write to json
+        json.dump(prepareData, f, indent=4)
 
 
 

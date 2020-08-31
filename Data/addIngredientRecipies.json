@@ -1,0 +1,11 @@
+{
+  "Cake": {
+    "Item" : "Cake",
+    "Combiner": "tool",
+    "Requirements": [
+      "Result 1",
+      "Result 2"
+    ],
+    "Unlocked": 1
+  }
+}

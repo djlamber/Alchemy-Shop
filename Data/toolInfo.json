@@ -1,0 +1,10 @@
+{
+  "Hand": {
+    "Name": "Hand",
+    "ImgLoc": "sprites/UnknownWhite.png",
+    "Use": "Extraction",
+    "InSlots": 1,
+    "OutSlots": 1,
+    "Unlocked": 1
+  }
+}
