@@ -1,0 +1,12 @@
+{
+    "Animal_Blood": {
+        "Name": "Animal Blood",
+        "Combiner": "Time",
+        "Requirements": [
+            "Item1",
+            "Item2"
+        ],
+        "Result": "Blood",
+        "Unlocked": false
+    }
+}

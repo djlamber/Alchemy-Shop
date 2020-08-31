@@ -1,12 +1,12 @@
 {
-  "Animal_Blood": {
-    "Name": "Animal Blood",
-    "Item" : "Item",
-    "Extractor": "tool",
-    "Results": [
-      "Result 1",
-      "Result 2"
-    ],
-    "Unlocked": 1
-  }
+    "Animal_Blood": {
+        "Name": "Animal Blood",
+        "Combiner": "Hand",
+        "Requirement": "Item",
+        "Results": [
+            "Result 1",
+            "Result 2"
+        ],
+        "Unlocked": true
+    }
 }

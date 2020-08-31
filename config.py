@@ -15,3 +15,7 @@ CurrentLocation = None
 gatherDisplayList = []
 marketMode = ""
 selectedIndexIngredient = None
+Tools = None
+ExtractRecipies = None
+CreateRecipies = None
+

@@ -51,7 +51,7 @@ def mainMenu():
     modifyingName = False
     lastTime = 0
     addToName = ""
-    flip = True
+    flip = False
     while True:
 
         # check events
@@ -60,7 +60,7 @@ def mainMenu():
 
         if modifyingName:
             if time_ns() > lastTime + 50000000 :
-                flip = not flip
+                #flip = not flip
                 lastTime = time_ns()
             if flip:
                 addToName = "|"
@@ -848,6 +848,11 @@ config.Ingredients = InitIngredients()  # initialize ingredients
 config.PotionList = InitPotionList()  # initialize potions
 config.Player = InitPlayer()  # initialize player
 config.Locations = InitLocations() #initalize locations
+config.Tools = InitTools() #initalize tools
+config.CreateRecipies = InitCreateRecipes() #initalize creation recipes
+config.ExtractRecipies = InitExtractRecipes() #initalize creation recipes
+saveCreateRecipes(config.CreateRecipies)
+saveExtractRecipes(config.ExtractRecipies)
 
 saveLocations(config.Locations)
 

@@ -72,6 +72,8 @@ def getCaulColor():
 
 
 
+#####################################
+
 class Player:
     def __init__(self, gold, shopName, buyMarkup, sellMarkdown):
         self.Gold = gold
@@ -125,6 +127,9 @@ def savePlayer(Player):
     with open("Data/playerData.json", "w") as f: #  write to json
         json.dump(data, f, indent=4)
 
+
+################################
+
 class Ingredient:
     def __init__(self, ID, name, img, category, color, value, amount, effect1, effect2, effect3):
         self.ID = ID
@@ -177,7 +182,7 @@ def InitIngredients():
                               ingre[1].get("Category"),
                               ingre[1].get("Color"),
                               ingre[1].get("Value"),
-                              0,#ingre[1].get("Amount"),
+                              ingre[1].get("Amount"),
                               DevHelpers.NameFormat(ingre[1].get("Effect1")),
                               DevHelpers.NameFormat(ingre[1].get("Effect2")),
                               DevHelpers.NameFormat(ingre[1].get("Effect3")))
@@ -201,6 +206,9 @@ def saveIngredients(Ingredients):
         prepareData[ingre.getID()] = newData  # Add list data to dict
     with open("Data/ingredientInventory.json", "w") as f: #  write to json
         json.dump(prepareData, f, indent=4)
+
+
+#################################
 
 class Potion:
     def __init__(self, ID, name, img, ing1, ing2, ing3, effect, color, value):
@@ -269,6 +277,7 @@ def savePotions(PotionList):
         json.dump(prepareData, f, indent=4)
 
 
+
 #Location Objects
 class Location:
     def __init__(self,ID, name, imgLoc, color, ingredients, dropRates, pre1, pre2, pre3):
@@ -300,7 +309,6 @@ class Location:
         return self.Prerequisite2
     def getPrereq3(self):
         return self.Prerequisite3
-
 
 def InitLocations():
     Locations = []
@@ -338,7 +346,7 @@ def saveLocations(Locations):
 
 
 #Tool info
-class tool:
+class Tool:
     def __init__(self, ID, Name, ImgLoc, Use, InSlots, OutSlots, Unlocked):
         self.ID = ID
         self.Name = Name
@@ -354,28 +362,159 @@ class tool:
         return self.Name
     def setName(self, newName):
         self.Name = newName
+    def getImgLoc(self):
+        return self.ImgLoc
+    def getUse(self):
+        return self.Use
+    def getInSlots(self):
+        return self.InSlots
+    def getOutSlots(self):
+        return self.OutSlots
+    def getUnlocked(self):
+        if self.Unlocked == 0:
+            return False
+        else:
+            return True
 
-
-def InitJdata():
-    Jdata = []
-    with open("Data/Jdata.json") as f:
-        locJson = json.load(f)  # load data as dict
-    for data in locJson.items():
-        jdataEntry = Location(data[0],
-                              data[1].get("Name")
+def InitTools():
+    Tools = []
+    with open("Data/toolInfo.json") as f:
+        toolsJson = json.load(f)  # load data as dict
+    for data in toolsJson.items():
+        toolData = Tool(data[0],
+                            data[1].get("Name"),
+                            data[1].get("ImgLoc"),
+                            data[1].get("Use"),
+                            data[1].get("InSlots"),
+                            data[1].get("OutSlots"),
+                            data[1].get("Unlocked")
                             )
-        Jdata.append(jdataEntry)
-    return Jdata
+        Tools.append(toolData)
+    return Tools
 
-def saveJdata(Jdata):
+def saveTools(Tools):
     prepareData = {}
-    for dat in Jdata:
-        newData = {"Name": dat.getName()
+    for tool in Tools:
+        newData = {"Name": tool.getName(),
+                   "ImgLoc": tool.getImgLoc(),
+                   "Use": tool.getUse(),
+                   "InSlots": tool.getInSlots(),
+                   "OutSlots": tool.getOutSlots(),
+                   "Unlocked": tool.getUnlocked(),
                     }
-        prepareData[dat.getID()] = newData  # Add list data to dict
-    with open("Data/Jdata.json", "w") as f:  # write to json
+        prepareData[tool.getID()] = newData  # Add list data to dict
+    with open("Data/toolInfo.json", "w") as f:  # write to json
         json.dump(prepareData, f, indent=4)
 
+#Create Ingredient Recipes info
+class CreateRecipe:
+    def __init__(self, ID, Name, Combiner, Requirements, Result, Unlocked):
+        self.ID = ID
+        self.Name = Name
+        self.Combiner = Combiner
+        self.Requirements = Requirements
+        self.Result = Result
+        self.Unlocked = Unlocked
+
+    def getID(self):
+        return self.ID
+    def getName(self):
+        return self.Name
+    def setName(self, newName):
+        self.Name = newName
+    def getCombiner(self):
+        return self.Combiner
+    def getRequirements(self):
+        return self.Requirements
+    def getResult(self):
+        return self.Result
+    def getUnlocked(self):
+        return self.Unlocked
+
+
+def InitCreateRecipes():
+    Recipes = []
+    with open("Data/combineIngredientRecipies.json") as f:
+        dataJson = json.load(f)  # load data as dict
+    for data in dataJson.items():
+        recipeData = CreateRecipe(data[0],
+                        data[1].get("Name"),
+                        data[1].get("Combiner"),
+                        data[1].get("Requirements"),
+                        data[1].get("Result"),
+                        data[1].get("Unlocked")
+                        )
+        Recipes.append(recipeData)
+    return Recipes
+
+def saveCreateRecipes(Recipes):
+    prepareData = {}
+    for recipe in Recipes:
+        newData = {"Name": recipe.getName(),
+                   "Combiner": recipe.getCombiner(),
+                   "Requirements": recipe.getRequirements(),
+                   "Result": recipe.getResult(),
+                   "Unlocked": recipe.getUnlocked(),
+                    }
+        prepareData[recipe.getID()] = newData  # Add list data to dict
+    with open("Data/combineIngredientRecipies.json", "w") as f:  # write to json
+        json.dump(prepareData, f, indent=4)
+
+
+
+
+#Extract Ingredient Recipes info
+class ExtractRecipe:
+    def __init__(self, ID, Name, Combiner, Requirement, Results, Unlocked):
+        self.ID = ID
+        self.Name = Name
+        self.Combiner = Combiner
+        self.Requirement = Requirement
+        self.Results = Results
+        self.Unlocked = Unlocked
+
+    def getID(self):
+        return self.ID
+    def getName(self):
+        return self.Name
+    def setName(self, newName):
+        self.Name = newName
+    def getCombiner(self):
+        return self.Combiner
+    def getRequirement(self):
+        return self.Requirement
+    def getResults(self):
+        return self.Results
+    def getUnlocked(self):
+        return self.Unlocked
+
+def InitExtractRecipes():
+    Recipes = []
+    with open("Data/extractIngredientRecipies.json") as f:
+        dataJson = json.load(f)  # load data as dict
+    for data in dataJson.items():
+        recipeData = ExtractRecipe(data[0],
+                        data[1].get("Name"),
+                        data[1].get("Combiner"),
+                        data[1].get("Requirement"),
+                        data[1].get("Results"),
+                        data[1].get("Unlocked")
+                        )
+        Recipes.append(recipeData)
+    return Recipes
+
+def saveExtractRecipes(Recipes):
+    prepareData = {}
+    for recipe in Recipes:
+        newData = {"Name": recipe.getName(),
+                   "Combiner": recipe.getCombiner(),
+                   "Requirement": recipe.getRequirement(),
+                   "Results": recipe.getResults(),
+                   "Unlocked": recipe.getUnlocked(),
+                    }
+        prepareData[recipe.getID()] = newData  # Add list data to dict
+    with open("Data/extractIngredientRecipies.json", "w") as f:  # write to json
+        json.dump(prepareData, f, indent=4)
 
 
 
@@ -392,14 +531,13 @@ class jdata:
     def setName(self, newName):
         self.Name = newName
 
-
 def InitJdata():
     Jdata = []
     with open("Data/Jdata.json") as f:
         locJson = json.load(f)  # load data as dict
     for data in locJson.items():
-        jdataEntry = Location(data[0],
-                              data[1].get("Name")
+        jdataEntry = jdata(data[0],
+                            data[1].get("Name")
                             )
         Jdata.append(jdataEntry)
     return Jdata
