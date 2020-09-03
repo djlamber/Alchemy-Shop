@@ -408,10 +408,10 @@ def saveTools(Tools):
 
 #Create Ingredient Recipes info
 class CreateRecipe:
-    def __init__(self, ID, Name, Combiner, Requirements, Result, Unlocked):
+    def __init__(self, ID, Name, tool, Requirements, Result, Unlocked):
         self.ID = ID
         self.Name = Name
-        self.Combiner = Combiner
+        self.Tool = tool
         self.Requirements = Requirements
         self.Result = Result
         self.Unlocked = Unlocked
@@ -422,8 +422,8 @@ class CreateRecipe:
         return self.Name
     def setName(self, newName):
         self.Name = newName
-    def getCombiner(self):
-        return self.Combiner
+    def getTool(self):
+        return self.Tool
     def getRequirements(self):
         return self.Requirements
     def getResult(self):
@@ -439,7 +439,7 @@ def InitCreateRecipes():
     for data in dataJson.items():
         recipeData = CreateRecipe(data[0],
                         data[1].get("Name"),
-                        data[1].get("Combiner"),
+                        data[1].get("Tool"),
                         data[1].get("Requirements"),
                         data[1].get("Result"),
                         data[1].get("Unlocked")
@@ -451,7 +451,7 @@ def saveCreateRecipes(Recipes):
     prepareData = {}
     for recipe in Recipes:
         newData = {"Name": recipe.getName(),
-                   "Combiner": recipe.getCombiner(),
+                   "Tool": recipe.getTool(),
                    "Requirements": recipe.getRequirements(),
                    "Result": recipe.getResult(),
                    "Unlocked": recipe.getUnlocked(),
@@ -465,10 +465,10 @@ def saveCreateRecipes(Recipes):
 
 #Extract Ingredient Recipes info
 class ExtractRecipe:
-    def __init__(self, ID, Name, Combiner, Requirement, Results, Unlocked):
+    def __init__(self, ID, Name, Tool, Requirement, Results, Unlocked):
         self.ID = ID
         self.Name = Name
-        self.Combiner = Combiner
+        self.Tool = Tool
         self.Requirement = Requirement
         self.Results = Results
         self.Unlocked = Unlocked
@@ -479,8 +479,8 @@ class ExtractRecipe:
         return self.Name
     def setName(self, newName):
         self.Name = newName
-    def getCombiner(self):
-        return self.Combiner
+    def getTool(self):
+        return self.Tool
     def getRequirement(self):
         return self.Requirement
     def getResults(self):
@@ -495,7 +495,7 @@ def InitExtractRecipes():
     for data in dataJson.items():
         recipeData = ExtractRecipe(data[0],
                         data[1].get("Name"),
-                        data[1].get("Combiner"),
+                        data[1].get("Tool"),
                         data[1].get("Requirement"),
                         data[1].get("Results"),
                         data[1].get("Unlocked")
@@ -507,7 +507,7 @@ def saveExtractRecipes(Recipes):
     prepareData = {}
     for recipe in Recipes:
         newData = {"Name": recipe.getName(),
-                   "Combiner": recipe.getCombiner(),
+                   "Tool": recipe.getTool(),
                    "Requirement": recipe.getRequirement(),
                    "Results": recipe.getResults(),
                    "Unlocked": recipe.getUnlocked(),

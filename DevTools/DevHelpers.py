@@ -130,10 +130,13 @@ def printLocations(Locations):
         x += locStrLen
     print("\n" + locList + "\n")
 
-def printTools(Tools):
+def printTools(Tools, Use = None):
     toolList = ""
     x = 0
     for i in Tools:
+        if Use != None:
+            if i.getUse() != Use:
+                continue
         toolStr = "[" + str(i.getID()) + "], "
         toolStrLen = len(toolStr)
         toolList = toolList + toolStr
@@ -142,3 +145,17 @@ def printTools(Tools):
             x = 0
         x += toolStrLen
     print("\n" + toolList + "\n")
+
+
+def printRecipes(Recipes):
+    recipeList = ""
+    x = 0
+    for i in Recipes:
+        recipeStr = "[" + str(i.getID()) + "], "
+        recipeStrLen = len(recipeStr)
+        recipeList = recipeList + recipeStr
+        if x + recipeStrLen > 200:
+            recipeList = recipeList + "\n"
+            x = 0
+        x += recipeStrLen
+    print("\n" + recipeList + "\n")

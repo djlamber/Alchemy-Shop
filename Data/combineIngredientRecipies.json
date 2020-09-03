@@ -1,7 +1,7 @@
 {
     "Animal_Blood": {
         "Name": "Animal Blood",
-        "Combiner": "Time",
+        "Tool": "Hand",
         "Requirements": [
             "Item1",
             "Item2"

@@ -4,7 +4,7 @@
         "ImgLoc": "sprites/UnknownWhite.png",
         "Use": "Extraction",
         "InSlots": 1,
-        "OutSlots": 1,
+        "OutSlots": 2,
         "Unlocked": true
     },
     "Hammer": {

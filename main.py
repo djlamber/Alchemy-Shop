@@ -851,6 +851,7 @@ config.Locations = InitLocations() #initalize locations
 config.Tools = InitTools() #initalize tools
 config.CreateRecipies = InitCreateRecipes() #initalize creation recipes
 config.ExtractRecipies = InitExtractRecipes() #initalize creation recipes
+
 saveCreateRecipes(config.CreateRecipies)
 saveExtractRecipes(config.ExtractRecipies)
 

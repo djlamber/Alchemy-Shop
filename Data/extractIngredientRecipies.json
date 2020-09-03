@@ -1,11 +1,22 @@
 {
     "Animal_Blood": {
         "Name": "Animal Blood",
-        "Combiner": "Hand",
+        "Tool": "Hand",
         "Requirement": "Item",
         "Results": [
             "Result 1",
             "Result 2"
+        ],
+        "Unlocked": true
+    },
+    "Test": {
+        "Name": "Test",
+        "Tool": "Hand",
+        "Requirement": [
+            "Apple"
+        ],
+        "Results": [
+            "Salt"
         ],
         "Unlocked": true
     }

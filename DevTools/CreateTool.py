@@ -11,7 +11,7 @@ from DevTools import DevHelpers
 def createTool():
     Tools = helpers.InitTools()
     Running = True
-    print("=====Create Ingredient=====")
+    print("=====Create Tool=====")
     while Running:
         print("Type q to quit")
 
