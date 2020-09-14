@@ -963,5 +963,22 @@
         "Effect1": "Increase Stamina",
         "Effect2": "Restore Stamina",
         "Effect3": "Speed Up"
+    },
+    "Worm": {
+        "Name": "Worm",
+        "ImageLocation": "sprites/UnknownWhite.png",
+        "Category": [
+            "Animal"
+        ],
+        "Color": [
+            31,
+            166,
+            174
+        ],
+        "Value": 12,
+        "Amount": 0,
+        "Effect1": "None",
+        "Effect2": "None",
+        "Effect3": "None"
     }
 }

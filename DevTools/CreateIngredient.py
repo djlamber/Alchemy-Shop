@@ -87,12 +87,19 @@ def createIngredient():
 
         #Select Effects
         effects = []
+        print("Type \'list\' to print out list of effects")
         for i in range(3):
-            effect = input("Input Effect "+str(i) + ": ")
-            effect = DevHelpers.NameFormat(effect)
-            if effect == "" or effect == " " or effect == "N":
-                effect = "None"
-            effects.append(effect)
+            while True:
+
+                effect = input("Input Effect "+str(i) + ": ")
+                if effect.upper() == "LIST" or effect.upper() == "L":
+                    DevHelpers.printEffects(helpers.InitEffects())
+                    continue
+                effect = DevHelpers.NameFormat(effect)
+                if effect == "" or effect == " " or effect == "N":
+                    effect = "None"
+                effects.append(effect)
+                break
 
         #Create Ingredient
         newIngre = helpers.Ingredient(ID, name, img, categoryList, color, int(value), int(amount), effects[0], effects[1], effects[2])

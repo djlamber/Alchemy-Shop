@@ -79,13 +79,17 @@ def editIngreEffect(ingre, effects):
                 effects[2] = changeEffect(ingre, effects[2])
 
 def changeEffect(ingre, effect):
-    print("\nEnter new effect for [" + str(ingre.getID()) + "]")
-    print("Type null to go back")
-    print("Current effect: "+ str(effect))
-    newEffect = input()
-    if newEffect == "":
-        return effect
-    return newEffect
+    while True:
+        print("\nEnter new effect for [" + str(ingre.getID()) + "]")
+        print("Type \'list\' to print out list of effects, type null to go back")
+        print("Current effect: "+ str(effect))
+        newEffect = input()
+        if newEffect.upper() == "LIST" or newEffect.upper() == "L":
+            DevHelpers.printEffects(helpers.InitEffects())
+            continue
+        if newEffect == "":
+            return effect
+        return newEffect
 
 
 

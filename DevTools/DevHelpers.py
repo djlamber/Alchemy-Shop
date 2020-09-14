@@ -117,6 +117,20 @@ def printIngredients(Ingredients):
         x += ingStrLen
     print("\n" + igList + "\n")
 
+
+def printEffects(Effects):
+    effList = ""
+    x = 0
+    for i in Effects:
+        effStr = "[" + str(i.getID()) + "], "
+        effStrLen = len(effStr)
+        effList = effList + effStr
+        if x + effStrLen > 200:
+            effList = effList + "\n"
+            x = 0
+        x += effStrLen
+    print("\n" + effList + "\n")
+
 def printLocations(Locations):
     locList = ""
     x = 0

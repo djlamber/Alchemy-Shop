@@ -3,5 +3,10 @@
         "Ingredient Name": "Fire Resistance",
         "Potion Name": "Flame Guard",
         "Upgrade Name": "Flame Immunity"
+    },
+    "Frost_Resist": {
+        "Ingredient Name": "Frost Resiliance",
+        "Potion Name": "Cold Guard",
+        "Upgrade Name": "Winter Veil"
     }
 }
