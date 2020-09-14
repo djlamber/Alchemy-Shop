@@ -565,7 +565,7 @@ def ingredientGather():
                 draw_image_center(SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + y_off, 80, 80, "sprites/Nothing.png", config.screen)
                 draw_text_center("Nothing", font20, BLACK, config.screen, SCREEN_WIDTH / 2 + x_off, SCREEN_HEIGHT / 2 + 40 + y_off)
             elif req.get("Gold"):
-                draw_image_center(SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + y_off, 80, 80, "sprites/UnknownBlack.png", config.screen)
+                draw_image_center(SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + y_off, 80, 80, "sprites/Gold.png", config.screen)
                 draw_text_center(str(req.get("Gold"))+" Gold", font20, GOLD,config.screen, SCREEN_WIDTH/2 + x_off, SCREEN_HEIGHT/2 + 40 + y_off )
             elif req.get("Potion"):
                 pygame.draw.rect(config.screen, req.get("Potion").get("Color"), (int(SCREEN_WIDTH / 2 + x_off - 80 * (12 / 20)/2), int(SCREEN_HEIGHT / 2 + y_off - (80 * (1 / 20))), int(80 * (12 / 20)), int(80 * (7 / 20))))
