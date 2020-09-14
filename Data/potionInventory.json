@@ -1,1 +1,310 @@
-{}
+{
+    "0.7415264379841107": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Carrot",
+        "Ingredient_2_ID": "Cactus",
+        "Ingredient_3_ID": "Clam",
+        "Effect": "None",
+        "Color": [
+            209,
+            173,
+            68
+        ],
+        "Value": 87
+    },
+    "0.025452471377653718": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Fire Powder",
+        "Ingredient_2_ID": "Frozen Powder",
+        "Ingredient_3_ID": "Herbs",
+        "Effect": "None",
+        "Color": [
+            126,
+            147,
+            147
+        ],
+        "Value": 339
+    },
+    "0.6063244381467232": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Dragonfly",
+        "Ingredient_2_ID": "Brown Mushroom",
+        "Ingredient_3_ID": "Apple",
+        "Effect": "None",
+        "Color": [
+            169,
+            115,
+            11
+        ],
+        "Value": 238
+    },
+    "0.740418829187074": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Aloe",
+        "Ingredient_2_ID": "Blood",
+        "Ingredient_3_ID": "Biomass",
+        "Effect": "None",
+        "Color": [
+            179,
+            116,
+            10
+        ],
+        "Value": 110
+    },
+    "0.6725744357970455": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Neutral Powder",
+        "Ingredient_2_ID": "Pepper",
+        "Ingredient_3_ID": "Noxious Powder",
+        "Effect": "None",
+        "Color": [
+            216,
+            151,
+            176
+        ],
+        "Value": 348
+    },
+    "0.25294990060749656": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Static Powder",
+        "Ingredient_2_ID": "Slime",
+        "Ingredient_3_ID": "Red Mushroom",
+        "Effect": "None",
+        "Color": [
+            218,
+            172,
+            0
+        ],
+        "Value": 178
+    },
+    "0.4562582614970139": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Vinegar",
+        "Ingredient_2_ID": "Tree Sap",
+        "Ingredient_3_ID": "Sugar",
+        "Effect": "None",
+        "Color": [
+            233,
+            218,
+            157
+        ],
+        "Value": 71
+    },
+    "0.0018155603742172621": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Sulfur",
+        "Ingredient_2_ID": "Slime",
+        "Ingredient_3_ID": "Rust Flakes",
+        "Effect": "None",
+        "Color": [
+            172,
+            158,
+            63
+        ],
+        "Value": 105
+    },
+    "0.9188598556783808": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Noxious Powder",
+        "Ingredient_2_ID": "Pepper",
+        "Ingredient_3_ID": "Oil",
+        "Effect": "None",
+        "Color": [
+            160,
+            38,
+            99
+        ],
+        "Value": 267
+    },
+    "0.014219185457285732": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Ice",
+        "Ingredient_2_ID": "Ichor",
+        "Ingredient_3_ID": "Sulfur",
+        "Effect": "None",
+        "Color": [
+            147,
+            152,
+            115
+        ],
+        "Value": 77
+    },
+    "0.9698292394519774": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Wheat",
+        "Ingredient_2_ID": "Water Filtered",
+        "Ingredient_3_ID": "Metal Flakes",
+        "Effect": "None",
+        "Color": [
+            184,
+            204,
+            138
+        ],
+        "Value": 81
+    },
+    "0.013866816384528136": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Blue Flower",
+        "Ingredient_2_ID": "Blood",
+        "Ingredient_3_ID": "Biomass",
+        "Effect": "None",
+        "Color": [
+            176,
+            63,
+            147
+        ],
+        "Value": 46
+    },
+    "0.6136508641151083": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Biomass",
+        "Ingredient_2_ID": "Blood",
+        "Ingredient_3_ID": "Aloe",
+        "Effect": "None",
+        "Color": [
+            179,
+            116,
+            10
+        ],
+        "Value": 114
+    },
+    "0.5047921266573684": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Ichor",
+        "Ingredient_3_ID": "Rust Flakes",
+        "Effect": "None",
+        "Color": [
+            192,
+            93,
+            31
+        ],
+        "Value": 23
+    },
+    "0.6322636282367831": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Aloe",
+        "Ingredient_3_ID": "Herbs",
+        "Effect": "None",
+        "Color": [
+            150,
+            122,
+            0
+        ],
+        "Value": 116
+    },
+    "0.3318934701123303": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Aloe",
+        "Ingredient_3_ID": "Brown Mushroom",
+        "Effect": "None",
+        "Color": [
+            167,
+            112,
+            4
+        ],
+        "Value": 136
+    },
+    "0.922279787128396": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Brown Mushroom",
+        "Ingredient_2_ID": "Apple",
+        "Ingredient_3_ID": "Animal Meat",
+        "Effect": "None",
+        "Color": [
+            220,
+            56,
+            4
+        ],
+        "Value": 55
+    },
+    "0.13185244949601216": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Aloe",
+        "Ingredient_2_ID": "Animal Meat",
+        "Ingredient_3_ID": "Brown Mushroom",
+        "Effect": "None",
+        "Color": [
+            167,
+            112,
+            4
+        ],
+        "Value": 153
+    },
+    "0.39063238798274424": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Blood",
+        "Ingredient_2_ID": "Rust Flakes",
+        "Ingredient_3_ID": "Noxious Powder",
+        "Effect": "None",
+        "Color": [
+            186,
+            73,
+            99
+        ],
+        "Value": 184
+    },
+    "0.9955557434541359": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Herbs",
+        "Ingredient_2_ID": "Animal Meat",
+        "Ingredient_3_ID": "Red Flower",
+        "Effect": "None",
+        "Color": [
+            208,
+            73,
+            0
+        ],
+        "Value": 60
+    },
+    "0.7186537542936323": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal Meat",
+        "Ingredient_2_ID": "Chicken Egg",
+        "Ingredient_3_ID": "Apple",
+        "Effect": "None",
+        "Color": [
+            242,
+            122,
+            80
+        ],
+        "Value": 51
+    },
+    "0.9927008528611511": {
+        "Name": "Potion Name",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Animal_Meat",
+        "Ingredient_2_ID": "Aloe",
+        "Ingredient_3_ID": "Brown_Mushroom",
+        "Effect": "None",
+        "Color": [
+            167,
+            112,
+            4
+        ],
+        "Value": 136
+    }
+}

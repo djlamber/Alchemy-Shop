@@ -2,6 +2,7 @@
 screen = None
 MUP = True
 Ingredients = None
+Effects = None
 PotionList = None
 Player = None
 selectedPotions = {}

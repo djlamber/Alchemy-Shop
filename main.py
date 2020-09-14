@@ -85,7 +85,7 @@ def mainMenu():
         button_text_center(SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2, 100, 40, OLIVE, 'Ingredient Index', font32, BLACK, config.screen, LC, ingredientIndex)
 
 
-        button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 120, 100, 40, BLUE, 'Options', font32, BLACK, config.screen, LC, None)
+        button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 120, 100, 40, BLUE, 'Options', font32, BLACK, config.screen, LC, Options)
         button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 60, 60, 40, RED, 'Quit', font32, BLACK, config.screen, LC, exit)
 
         pygame.display.flip()  # update screen
@@ -131,14 +131,47 @@ def clearPotionSlots():
     config.cauldronColor = [90,90,90]
     config.numSelectedIngredients = 0
 
+def compareEffects(ing1, ing2, ing3):
+    effects = []
+    ing1Effs = [ing1.getEffect1(), ing1.getEffect2(), ing1.getEffect3()]
+    ing2Effs = [ing2.getEffect1(), ing2.getEffect2(), ing2.getEffect3()]
+    ing3Effs = [ing3.getEffect1(), ing3.getEffect2(), ing3.getEffect3()]
+
+    for i in ing1Effs:
+        for j in ing2Effs:
+            if i == j and i != "None":
+                effects.append(i)
+        for j in ing3Effs:
+            if i == j and i != "None":
+                effects.append(i)
+
+    for i in ing2Effs:
+        for j in ing3Effs:
+            if i == j and i != "None":
+                effects.append(i)
+
+
+    return effects
+
 def brewPotion(startTime):
     # TODO: add variation in potion brewing based on ingredients
     # Idea: bad potions can be made that take up space in inventory and have to be sold
     if len(config.PotionList)<65:
-        potVal = int((config.selectedIngredients[0].getValue() * 0.9 + config.selectedIngredients[1].getValue() * 0.9 + config.selectedIngredients[2].getValue() * 0.9) * (uniform(1,1.3))  )
+        ing1 = config.selectedIngredients[0]
+        ing2 = config.selectedIngredients[1]
+        ing3 = config.selectedIngredients[2]
+        potVal = int((ing1.getValue() * 0.9 + ing2.getValue() * 0.9 + ing3.getValue() * 0.9) * (uniform(1,1.3))  )
+        effects = compareEffects(ing1, ing2, ing3)
+        print(effects)
+
+
         effect = "None"
+        effect = effects
+        name = "Potion Name"
+
+
         color = getCaulColor()
-        newPotion = Potion(str(random()), "Potion Name", "sprites/EmptyPotion.png", config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), effect, color, potVal)
+        newPotion = Potion(str(random()), name, "sprites/EmptyPotion.png", config.selectedIngredients[0].getID(), config.selectedIngredients[1].getID(), config.selectedIngredients[2].getID(), effect, color, potVal)
         config.PotionList.append(newPotion)
         savePotions(config.PotionList)
         saveIngredients(config.Ingredients)
@@ -200,7 +233,8 @@ def potionCreation():
         button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, WHITE, config.screen,LC, mainMenu)
 
         #  display player gold
-        draw_text("Gold: " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_text("     : " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_image(-6,-9,60,60,"sprites/gold.png", config.screen)
 
         #  display cauldron
         pygame.draw.rect(config.screen, config.cauldronColor, (int((SCREEN_WIDTH - 160) * 6 / 8 + 160*(3/20)), int((SCREEN_HEIGHT - 160) / 2 + 160*(3/20)), int(160*(14/20)), int(160*(4/20)),))
@@ -389,7 +423,9 @@ def potionInventory():
         button_rect_text_center(SCREEN_WIDTH - 80, SCREEN_HEIGHT - 40, 120, 40, Back_Color, GREEN, 'Sell All', font32, WHITE, config.screen, LC, sellAllPotions)
 
         # Display Player Gold
-        draw_text("Gold: "+ str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_text("     : "+ str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_image(-6, -9, 60, 60, "sprites/gold.png", config.screen)
+
         draw_text_center("Value: " + str(config.runningTotal), font32, GOLD, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 80,)
 
         entNum = 0
@@ -536,7 +572,8 @@ def ingredientGather():
         button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, BLACK, config.screen, LC, mainMenu)
 
         #  display player gold
-        draw_text("Gold: " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_text("     : " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_image(-6, -9, 60, 60, "sprites/gold.png", config.screen)
 
         #display gather button
         #print(config.CurrentLocation)
@@ -671,7 +708,8 @@ def ingredientShop():
 
 
         #  display player gold
-        draw_text("Gold: " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_text("     : " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_image(-6, -9, 60, 60, "sprites/gold.png", config.screen)
 
         if config.marketMode == "buy":
             button_text(SCREEN_WIDTH * 8 / 16 - 100, 10, 100, 40, RED, 'Buy', font48, GREEN, config.screen, LC, setMode, "")
@@ -684,7 +722,7 @@ def ingredientShop():
             button_text(SCREEN_WIDTH * 8 / 16, 10, 100, 40, YELLOW, 'Sell', font48, WHITE, config.screen, LC, setMode, "sell")
 
         entNum = 0
-        posX = 0
+        posX = 1
         posY = 0
         displayIngredientNum = 0
 
@@ -695,7 +733,7 @@ def ingredientShop():
                     amountIngredients += 1
             else:
                 amountIngredients += 1
-        numPages = int((amountIngredients - 1) / 48)  # get num of pages
+        numPages = int((amountIngredients - 1) / 44)  # get num of pages
         if pageNum[0] > numPages:  # only allow visit pages with something in it
             pageNum[0] = numPages
         if pageNum[0] > 0:
@@ -710,12 +748,12 @@ def ingredientShop():
             if ingredient.amount < 1 and config.marketMode == "sell":
                 continue
             displayIngredientNum += 1
-            if displayIngredientNum < pageNum[0] * 48 + 1:
+            if displayIngredientNum < pageNum[0] * 44 + 1:
                 continue
-            if displayIngredientNum > (pageNum[0] + 1) * 48:
+            if displayIngredientNum > (pageNum[0] + 1) * 44:
                 continue
-            if entNum % 12 == 0:
-                posX = 0
+            if entNum % 11 == 0:
+                posX = 1
                 posY += 1
             button_img_img(100 * posX, 110 * posY - 20, 80, 80, "sprites/Nothing.png", "sprites/GreenBorder.png",
                                ingredient.imgLoc, config.screen, LC, selectMarketIng, ingredient)
@@ -837,6 +875,43 @@ def ingredientIndex():
 
         pygame.display.flip()  # update screen
 
+######################################################
+
+def noGold():
+    config.Player.setGold(0)
+
+def infGold():
+    config.Player.setGold(1000000)
+def noIngre():
+    for i in config.Ingredients:
+        i.setAmount(0)
+
+def infIngre():
+    for i in config.Ingredients:
+        i.setAmount(1000)
+
+#################### Basic Screen ####################
+def Options():
+    while True:
+        # check events
+        checkEvents()
+        # draw on screen
+        Back_Color = SILVER
+        config.screen.fill(Back_Color)
+
+        #  display player gold
+        draw_text("     : " + str(config.Player.getGold()), font32, GOLD, config.screen, 10, 5)
+        draw_image(-6, -9, 60, 60, "sprites/gold.png", config.screen)
+
+        button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, BLACK, config.screen, LC, mainMenu)
+
+        button_text(SCREEN_WIDTH/2, 100, 140, 40, GOLD, 'Set gold to 0', font32, BLACK, config.screen, LC, noGold)
+        button_text(SCREEN_WIDTH / 2, 150, 180, 40, GOLD, 'Set gold to inf', font32, BLACK, config.screen, LC, infGold)
+        button_text(SCREEN_WIDTH / 2, 200, 180, 40, GOLD, 'Set ingre amounts to 0', font32, BLACK, config.screen, LC, noIngre)
+        button_text(SCREEN_WIDTH / 2, 250, 180, 40, GOLD, 'Set ingre amounts to inf', font32, BLACK, config.screen, LC, infIngre)
+
+        pygame.display.flip()  # update screen
+
 #################### game init ####################
 pygame.init()
 pygame.display.set_caption("Alchemy Shop")
@@ -845,6 +920,7 @@ pygame.display.set_icon(icon)
 config.screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
 config.Ingredients = InitIngredients()  # initialize ingredients
+config.Effects = InitEffects()
 config.PotionList = InitPotionList()  # initialize potions
 config.Player = InitPlayer()  # initialize player
 config.Locations = InitLocations() #initalize locations
@@ -852,6 +928,7 @@ config.Tools = InitTools() #initalize tools
 config.CreateRecipies = InitCreateRecipes() #initalize creation recipes
 config.ExtractRecipies = InitExtractRecipes() #initalize creation recipes
 
+saveEffects(config.Effects)
 saveCreateRecipes(config.CreateRecipies)
 saveExtractRecipes(config.ExtractRecipies)
 

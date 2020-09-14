@@ -208,6 +208,53 @@ def saveIngredients(Ingredients):
         json.dump(prepareData, f, indent=4)
 
 
+############################################# Effects
+class Effect:
+    def __init__(self, ID, ingName, potName, upName):
+        self.ID = ID
+        self.IngredientName = ingName
+        self.PotionName = potName
+        self.UpgradeName = upName
+
+    def getID(self):
+        return self.ID
+    def getIngName(self):
+        return self.IngredientName
+    def setIngName(self, newName):
+        self.IngredientName = newName
+    def getPotName(self):
+        return self.PotionName
+    def setPotName(self, newName):
+        self.PotionName = newName
+    def getUpName(self):
+        return self.UpgradeName
+    def setUpName(self, newName):
+        self.UpgradeName = newName
+
+def InitEffects():
+    Effects = []
+    with open("Data/effectsInfo.json") as f:
+        locJson = json.load(f)  # load data as dict
+    for data in locJson.items():
+        jdataEntry = Effect(data[0],
+                            data[1].get("Ingredient Name"),
+                            data[1].get("Potion Name"),
+                            data[1].get("Upgrade Name")
+                            )
+        Effects.append(jdataEntry)
+    return Effects
+
+def saveEffects(Effects):
+    prepareData = {}
+    for dat in Effects:
+        newData = {"Ingredient Name": dat.getIngName(),
+                   "Potion Name": dat.getPotName(),
+                   "Upgrade Name": dat.getUpName()
+                    }
+        prepareData[dat.getID()] = newData  # Add list data to dict
+    with open("Data/effectsInfo.json", "w") as f:  # write to json
+        json.dump(prepareData, f, indent=4)
+
 #################################
 
 class Potion:

@@ -13,7 +13,7 @@
             255
         ],
         "Value": -1,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "",
         "Effect2": "",
         "Effect3": ""
@@ -31,7 +31,7 @@
             0
         ],
         "Value": 7,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Water Breathing",
         "Effect2": "None",
         "Effect3": "None"
@@ -48,7 +48,7 @@
             0
         ],
         "Value": 81,
-        "Amount": 0,
+        "Amount": 994,
         "Effect1": "Heal",
         "Effect2": "Burn Resist",
         "Effect3": "None"
@@ -66,7 +66,7 @@
             0
         ],
         "Value": 39,
-        "Amount": 0,
+        "Amount": 993,
         "Effect1": "Heal",
         "Effect2": "Defense Up",
         "Effect3": "None"
@@ -84,7 +84,7 @@
             0
         ],
         "Value": 5,
-        "Amount": 0,
+        "Amount": 997,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "None"
@@ -101,7 +101,7 @@
             18
         ],
         "Value": 20,
-        "Amount": 0,
+        "Amount": 997,
         "Effect1": "Energize",
         "Effect2": "None",
         "Effect3": "None"
@@ -119,7 +119,7 @@
             0
         ],
         "Value": 4,
-        "Amount": 0,
+        "Amount": 995,
         "Effect1": "Toxic",
         "Effect2": "None",
         "Effect3": "None"
@@ -136,7 +136,7 @@
             255
         ],
         "Value": 22,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Sun Resistance",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -153,7 +153,7 @@
             7
         ],
         "Value": 13,
-        "Amount": 0,
+        "Amount": 995,
         "Effect1": "Restore Stamina",
         "Effect2": "Heal",
         "Effect3": "None"
@@ -170,7 +170,7 @@
             128
         ],
         "Value": 28,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -188,7 +188,7 @@
             0
         ],
         "Value": 35,
-        "Amount": 3,
+        "Amount": 999,
         "Effect1": "Heal",
         "Effect2": "Sun Resistance",
         "Effect3": "None"
@@ -206,7 +206,7 @@
             0
         ],
         "Value": 28,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Restore Stamina",
         "Effect2": "Night Vision",
         "Effect3": "None"
@@ -224,7 +224,7 @@
             140
         ],
         "Value": 12,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Defense Up",
         "Effect2": "Heal",
         "Effect3": "None"
@@ -242,7 +242,7 @@
             119
         ],
         "Value": 30,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Restore Health",
         "Effect2": "None",
         "Effect3": "None"
@@ -259,7 +259,7 @@
             128
         ],
         "Value": 200,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Bolster",
         "Effect2": "None",
         "Effect3": "None"
@@ -276,7 +276,7 @@
             169
         ],
         "Value": 72,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Refresh",
         "Effect2": "None",
         "Effect3": "None"
@@ -293,7 +293,7 @@
             18
         ],
         "Value": 200,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Toxin Resistance",
         "Effect2": "None",
         "Effect3": "None"
@@ -311,7 +311,7 @@
             0
         ],
         "Value": 170,
-        "Amount": 1,
+        "Amount": 999,
         "Effect1": "Flame",
         "Effect2": "None",
         "Effect3": "None"
@@ -328,7 +328,7 @@
             255
         ],
         "Value": 21,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Illumination",
         "Effect2": "None",
         "Effect3": "None"
@@ -346,7 +346,7 @@
             255
         ],
         "Value": 170,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Freeze",
         "Effect2": "None",
         "Effect3": "None"
@@ -363,7 +363,7 @@
             0
         ],
         "Value": 250,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Glisten",
         "Effect2": "None",
         "Effect3": "None"
@@ -380,7 +380,7 @@
             0
         ],
         "Value": 9,
-        "Amount": 15,
+        "Amount": 997,
         "Effect1": "Poison Resist",
         "Effect2": "Heal",
         "Effect3": "None"
@@ -398,7 +398,7 @@
             255
         ],
         "Value": 58,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Frost Resist",
         "Effect2": "None",
         "Effect3": "None"
@@ -415,7 +415,7 @@
             0
         ],
         "Value": 112,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Sweeten",
         "Effect2": "None",
         "Effect3": "None"
@@ -432,7 +432,7 @@
             160
         ],
         "Value": 4,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Fire Resistance",
         "Effect2": "Burn Heal",
         "Effect3": "None"
@@ -449,7 +449,7 @@
             52
         ],
         "Value": 0,
-        "Amount": 0,
+        "Amount": 998,
         "Effect1": "Toxic",
         "Effect2": "None",
         "Effect3": "None"
@@ -467,7 +467,7 @@
             0
         ],
         "Value": 18,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Water Breathing",
         "Effect2": "None",
         "Effect3": "None"
@@ -484,7 +484,7 @@
             192
         ],
         "Value": 40,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Defense Up",
         "Effect2": "Bolster",
         "Effect3": "None"
@@ -502,7 +502,7 @@
             173
         ],
         "Value": 65,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Suppress",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -520,7 +520,7 @@
             254
         ],
         "Value": 170,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Suppress",
         "Effect2": "Refresh",
         "Effect3": "Elemental Dilution"
@@ -538,7 +538,7 @@
             171
         ],
         "Value": 170,
-        "Amount": 0,
+        "Amount": 997,
         "Effect1": "Toxic",
         "Effect2": "None",
         "Effect3": "None"
@@ -555,7 +555,7 @@
             24
         ],
         "Value": 25,
-        "Amount": 8,
+        "Amount": 999,
         "Effect1": "Fire Vulnerability",
         "Effect2": "None",
         "Effect3": "None"
@@ -573,7 +573,7 @@
             0
         ],
         "Value": 30,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Fire Weakness",
         "Effect2": "None",
         "Effect3": "None"
@@ -591,7 +591,7 @@
             255
         ],
         "Value": 140,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Glisten",
         "Effect2": "None",
         "Effect3": "None"
@@ -608,7 +608,7 @@
             0
         ],
         "Value": 38,
-        "Amount": 0,
+        "Amount": 998,
         "Effect1": "Fire Resistance",
         "Effect2": "Spicy",
         "Effect3": "None"
@@ -625,7 +625,7 @@
             0
         ],
         "Value": 15,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Heal",
         "Effect2": "Poison Resistance",
         "Effect3": "None"
@@ -642,7 +642,7 @@
             0
         ],
         "Value": 17,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Restore Health",
         "Effect2": "None",
         "Effect3": "None"
@@ -659,7 +659,7 @@
             18
         ],
         "Value": 17,
-        "Amount": 0,
+        "Amount": 997,
         "Effect1": "Toxic",
         "Effect2": "None",
         "Effect3": "None"
@@ -677,7 +677,7 @@
             254
         ],
         "Value": 32,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Edible",
         "Effect2": "None",
         "Effect3": "None"
@@ -694,7 +694,7 @@
             0
         ],
         "Value": 16,
-        "Amount": 14,
+        "Amount": 1000,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -713,7 +713,7 @@
             21
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "None"
@@ -731,7 +731,7 @@
             0
         ],
         "Value": 8,
-        "Amount": 0,
+        "Amount": 998,
         "Effect1": "Toxic",
         "Effect2": "None",
         "Effect3": "None"
@@ -749,7 +749,7 @@
             0
         ],
         "Value": 170,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Shock",
         "Effect2": "None",
         "Effect3": "None"
@@ -766,7 +766,7 @@
             240
         ],
         "Value": 43,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Sweeten",
         "Effect2": "None",
         "Effect3": "None"
@@ -783,7 +783,7 @@
             108
         ],
         "Value": 67,
-        "Amount": 0,
+        "Amount": 998,
         "Effect1": "Fire Resistance",
         "Effect2": "None",
         "Effect3": "None"
@@ -800,7 +800,7 @@
             255
         ],
         "Value": 46,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Fire Weakness",
         "Effect2": "None",
         "Effect3": "None"
@@ -817,7 +817,7 @@
             0
         ],
         "Value": 4,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Restore Stamina",
         "Effect2": "None",
         "Effect3": "None"
@@ -834,7 +834,7 @@
             131
         ],
         "Value": 17,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Ferment",
         "Effect2": "None",
         "Effect3": "None"
@@ -852,7 +852,7 @@
             58
         ],
         "Value": 0,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "Toxic",
         "Effect2": "None",
         "Effect3": "None"
@@ -870,7 +870,7 @@
             196
         ],
         "Value": 15,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -888,7 +888,7 @@
             145
         ],
         "Value": 10,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -906,7 +906,7 @@
             255
         ],
         "Value": 2,
-        "Amount": 68,
+        "Amount": 1000,
         "Effect1": "Restore Stamina",
         "Effect2": "Refresh",
         "Effect3": "None"
@@ -925,7 +925,7 @@
             101
         ],
         "Value": 1,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -942,7 +942,7 @@
             255
         ],
         "Value": 75,
-        "Amount": 0,
+        "Amount": 1000,
         "Effect1": "None",
         "Effect2": "None",
         "Effect3": "None"
@@ -959,7 +959,7 @@
             0
         ],
         "Value": 20,
-        "Amount": 0,
+        "Amount": 999,
         "Effect1": "Increase Stamina",
         "Effect2": "Restore Stamina",
         "Effect3": "Speed Up"
