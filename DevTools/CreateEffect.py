@@ -37,11 +37,11 @@ def createEffect():
 
         # Select Potion Name
         potName = input("Input Name Stylized for Potion Effect: ")
-        ingName = DevHelpers.NameFormat(ingName)
+        potName = DevHelpers.NameFormat(potName)
 
         # Select Upgrade Name
         upName = input("Input Name Stylized for Upgrade Effect: ")
-        ingName = DevHelpers.NameFormat(ingName)
+        upName = DevHelpers.NameFormat(upName)
 
         #Create Ingredient
         newEffect = helpers.Effect(ID, ingName, potName, upName)

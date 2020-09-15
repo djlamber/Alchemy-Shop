@@ -131,6 +131,7 @@ def savePlayer(Player):
 ################################
 
 class Ingredient:
+    #TODO: Add ingredient potion/poison shop
     def __init__(self, ID, name, img, category, color, value, amount, effect1, effect2, effect3):
         self.ID = ID
         self.name = name
@@ -183,9 +184,9 @@ def InitIngredients():
                               ingre[1].get("Color"),
                               ingre[1].get("Value"),
                               ingre[1].get("Amount"),
-                              DevHelpers.NameFormat(ingre[1].get("Effect1")),
-                              DevHelpers.NameFormat(ingre[1].get("Effect2")),
-                              DevHelpers.NameFormat(ingre[1].get("Effect3")))
+                              DevHelpers.IDFormat(ingre[1].get("Effect1")),
+                              DevHelpers.IDFormat(ingre[1].get("Effect2")),
+                              DevHelpers.IDFormat(ingre[1].get("Effect3")))
 
         Ingredients.append(newIngre) #add data to list
     return Ingredients
@@ -258,6 +259,8 @@ def saveEffects(Effects):
 #################################
 
 class Potion:
+    #TODO: Add potion/poison type
+    #TODO: poisons can have a different bottle sprite
     def __init__(self, ID, name, img, ing1, ing2, ing3, effect, color, value):
         self.ID = ID
         self.name = name

@@ -170,7 +170,7 @@ def hoverover_text(x,y,width,height,backgroundColor,surface,text,font,color, xDr
         yDrawOffset = 0
 
     txtlen = len(text)
-    drawWidth = txtlen * 12
+    drawWidth = txtlen * 9
     if setWidth != None:
         drawWidth = setWidth
     drawHeight = 20

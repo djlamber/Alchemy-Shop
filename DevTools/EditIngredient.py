@@ -2,6 +2,7 @@ import helpers
 import sys
 import os.path
 from DevTools import DevHelpers
+from DevTools.CreateEffect import createEffect
 
 
 def editIngreName(ingre, name):
@@ -64,12 +65,15 @@ def editIngreValue(ingre, value):
             return int(newValue)
 
 def editIngreEffect(ingre, effects):
+    print("Type \'list\' to list out effects, null to go back")
     while True:
         print("Current effects for [" + str(ingre.getID()) + "] :")
         print("Effect 1: " + str(effects[0]) + " | Effect 2: " + str(effects[1]) + " | Effect 3: " + str(effects[2]) )
-        selection = input("Select Effect to edit or null to go back: ").upper()
+        selection = input("Select Effect to edit: ").upper()
         if selection == "":
             return effects
+        if selection == "LIST":
+            DevHelpers.printEffects(helpers.InitEffects())
         else:
             if selection == "1" or selection == "EFFECT1" or selection == "EFFECT 1":
                 effects[0] = changeEffect(ingre, effects[0])
@@ -77,6 +81,7 @@ def editIngreEffect(ingre, effects):
                 effects[1] = changeEffect(ingre, effects[1])
             if selection == "3" or selection == "EFFECT3" or selection == "EFFECT 3":
                 effects[2] = changeEffect(ingre, effects[2])
+        print("Type \'list\' to list out effects, null to go back")
 
 def changeEffect(ingre, effect):
     while True:
@@ -89,6 +94,14 @@ def changeEffect(ingre, effect):
             continue
         if newEffect == "":
             return effect
+        newEffect = DevHelpers.IDFormat(newEffect)
+        for i in helpers.InitEffects():
+            if i.getID() == newEffect:
+                return newEffect
+        opt = input("This effect is not an existing effect, would you like to create a new one? (y|n)").upper()
+        if opt == "Y" or "YES":
+            createEffect()
+            continue
         return newEffect
 
 

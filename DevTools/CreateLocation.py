@@ -119,7 +119,9 @@ def createLocation():
                 potName = DevHelpers.NameFormat(potName)
                 potCol = input("Potion Color: ")
                 potCol = DevHelpers.checkColor(potCol)
-                prereqs.append({"Potion":{"Name":potName, "Color":potCol}})
+                potEff = input("Potion Effect: ")
+                # potEff = DevHelpers.checkEffect(potEff)
+                prereq = {"Potion": {"Name": potName, "Color": potCol, "Effect": potEff}}
             else:
                 prereqs.append("None")
 

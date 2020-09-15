@@ -224,7 +224,9 @@ def changePrereq(ingre, prereq):
         potName = DevHelpers.NameFormat(potName)
         potCol = input("Potion Color: ")
         potCol = DevHelpers.checkColor(potCol)
-        prereq = {"Potion": {"Name": potName, "Color": potCol}}
+        potEff = input("Potion Effect: ")
+        #potEff = DevHelpers.checkEffect(potEff)
+        prereq = {"Potion": {"Name": potName, "Color": potCol, "Effect": potEff}}
 
     if newReq == "N" or newReq == "NONE":
         prereq = "None"

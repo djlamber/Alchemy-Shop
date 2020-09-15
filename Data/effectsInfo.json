@@ -1,12 +1,142 @@
 {
-    "Fire_Resist": {
+    "": {
+        "Ingredient Name": "",
+        "Potion Name": "",
+        "Upgrade Name": ""
+    },
+    "Cold_Resistance": {
+        "Ingredient Name": "Cold Resistance",
+        "Potion Name": "Warming",
+        "Upgrade Name": "Steaming Aura"
+    },
+    "Defense_Up": {
+        "Ingredient Name": "Defense Up",
+        "Potion Name": "Bolster",
+        "Upgrade Name": "Iron Skin"
+    },
+    "Elemental_Dilution": {
+        "Ingredient Name": "Elemental Dilution",
+        "Potion Name": "Weak",
+        "Upgrade Name": "Weak"
+    },
+    "Ferment": {
+        "Ingredient Name": "Ferment",
+        "Potion Name": "Fermented",
+        "Upgrade Name": "Fermented"
+    },
+    "Flame": {
+        "Ingredient Name": "Flame",
+        "Potion Name": "Ignition",
+        "Upgrade Name": "Ignition"
+    },
+    "Flame_Heal": {
+        "Ingredient Name": "Burn Heal",
+        "Potion Name": "Burn Soothing",
+        "Upgrade Name": "Burn Sooth"
+    },
+    "Flame_Resist": {
         "Ingredient Name": "Fire Resistance",
         "Potion Name": "Flame Guard",
         "Upgrade Name": "Flame Immunity"
     },
+    "Flame_Weakness": {
+        "Ingredient Name": "Fire Vulnerability",
+        "Potion Name": "Fire Weakness",
+        "Upgrade Name": "Fire Weakness"
+    },
+    "Freeze": {
+        "Ingredient Name": "Freeze",
+        "Potion Name": "Chilling",
+        "Upgrade Name": "Chilling"
+    },
+    "Freeze_Heal": {
+        "Ingredient Name": "Frostbite Heal",
+        "Potion Name": "Freeze Soothing",
+        "Upgrade Name": "Freeze Sooth"
+    },
     "Frost_Resist": {
         "Ingredient Name": "Frost Resiliance",
         "Potion Name": "Cold Guard",
+        "Upgrade Name": "Freeze Immunity"
+    },
+    "Fuel": {
+        "Ingredient Name": "Energize",
+        "Potion Name": "Revitalization",
+        "Upgrade Name": "Rejuvinate"
+    },
+    "Heal": {
+        "Ingredient Name": "Restore Health",
+        "Potion Name": "Healing",
+        "Upgrade Name": "Health Recovery"
+    },
+    "Heat_Resistance": {
+        "Ingredient Name": "Heat Resistance",
+        "Potion Name": "Cooling",
         "Upgrade Name": "Winter Veil"
+    },
+    "Increase_Stamina": {
+        "Ingredient Name": "Increase Stamina",
+        "Potion Name": "Stamina Bolstering",
+        "Upgrade Name": "Stamina Flood"
+    },
+    "Night_Vision": {
+        "Ingredient Name": "Night Vision",
+        "Potion Name": "Night Eye",
+        "Upgrade Name": "Illumination"
+    },
+    "None": {
+        "Ingredient Name": "None",
+        "Potion Name": "None",
+        "Upgrade Name": "None"
+    },
+    "Refresh": {
+        "Ingredient Name": "Refresh",
+        "Potion Name": "Refreshing",
+        "Upgrade Name": "Relaxing"
+    },
+    "Restore_Stamina": {
+        "Ingredient Name": "Restore Stamina",
+        "Potion Name": "Stamina Recovery",
+        "Upgrade Name": "Stamina Refresh"
+    },
+    "Shiny": {
+        "Ingredient Name": "Glisten",
+        "Potion Name": "Shiny",
+        "Upgrade Name": "Glimmering"
+    },
+    "Shock": {
+        "Ingredient Name": "Shock",
+        "Potion Name": "Electrifying",
+        "Upgrade Name": "Shocking"
+    },
+    "Speed_Up": {
+        "Ingredient Name": "Speed Up",
+        "Potion Name": "Hasten",
+        "Upgrade Name": "Speedy"
+    },
+    "Suppress": {
+        "Ingredient Name": "Suppress",
+        "Potion Name": "Nullify",
+        "Upgrade Name": "Negate"
+    },
+    "Sweet": {
+        "Ingredient Name": "Sweeten",
+        "Potion Name": "Sweet",
+        "Upgrade Name": "Sweet"
+    },
+    "Toxic": {
+        "Ingredient Name": "Poison",
+        "Potion Name": "Poisonous",
+        "Upgrade Name": "Toxicity"
+    },
+    "Toxic_Resistance": {
+        "Ingredient Name": "Poison Resistance",
+        "Potion Name": "Antidote",
+        "Upgrade Name": "Toxin Leech"
+    },
+    "Water_Breathing": {
+        "Ingredient Name": "Water Breathing",
+        "Potion Name": "Water Breathing",
+        "Upgrade Name": "Aqua Lung"
     }
 }

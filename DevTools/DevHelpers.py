@@ -1,3 +1,4 @@
+import helpers
 from constants import *
 from helpers import *
 from colorama import Fore, Style
@@ -108,8 +109,20 @@ def printIngredients(Ingredients):
     for i in Ingredients:
         ingStr = "[" + str(i.getID()) + "], "
         ingStrLen = len(ingStr)
+
+        #check to see if ingredient is fully valid
         if i.getImgLoc() == "sprites/ingredients/UnknownIngredientWhite.png" or i.getImgLoc() == "sprites/UnknownWhite.png" or i.getColor() == [255,255,255] or i.getValue() < 0:
             ingStr = Fore.RED + ingStr + Fore.RESET
+        else:
+            red = True
+            for eff in helpers.InitEffects():
+                if i.getEffect1() == eff.getID() or i.getEffect2() == eff.getID() or i.getEffect3() == eff.getID() :
+                    red = False
+                    break
+            if red:
+                ingStr = Fore.RED + ingStr + Fore.RESET
+        # stop checking
+
         igList = igList + ingStr
         if x + ingStrLen > 120:
             igList = igList + "\n"

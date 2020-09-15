@@ -165,11 +165,14 @@
         },
         "Prereq2": {
             "Potion": {
-                "Name": "Sunscreen",
+                "Name": "Potion of Refreshing",
                 "Color": [
                     0,
                     0,
                     255
+                ],
+                "Effect": [
+                    "Refresh"
                 ]
             }
         },
@@ -188,7 +191,8 @@
             "Fire_Powder",
             "Oil",
             "Cactus",
-            "Aloe"
+            "Aloe",
+            "Sulfur"
         ],
         "DropRates": [
             [
@@ -210,6 +214,10 @@
             [
                 0.15,
                 1
+            ],
+            [
+                0.34,
+                4
             ]
         ],
         "Prereq1": {
@@ -217,11 +225,14 @@
         },
         "Prereq2": {
             "Potion": {
-                "Name": "Refreshing Potion",
+                "Name": "Potion of Cooling",
                 "Color": [
                     0,
                     0,
                     255
+                ],
+                "Effect": [
+                    "Heat_Resistance"
                 ]
             }
         },
@@ -265,11 +276,14 @@
         "Prereq2": "None",
         "Prereq3": {
             "Potion": {
-                "Name": "Hollycrass",
+                "Name": "Potion of Stamina Recovery",
                 "Color": [
-                    0,
-                    128,
-                    0
+                    255,
+                    255,
+                    255
+                ],
+                "Effect": [
+                    "Restore_Stamina"
                 ]
             }
         }
@@ -306,11 +320,14 @@
         },
         "Prereq2": {
             "Potion": {
-                "Name": "Frost Resistance",
+                "Name": "Potion of Cold Guard",
                 "Color": [
-                    255,
-                    255,
-                    255
+                    0,
+                    128,
+                    0
+                ],
+                "Effect": [
+                    "Frost_Reisist"
                 ]
             }
         },
@@ -353,11 +370,14 @@
         },
         "Prereq2": {
             "Potion": {
-                "Name": "Bugspray",
+                "Name": "Potion of Antidote",
                 "Color": [
                     255,
                     255,
                     0
+                ],
+                "Effect": [
+                    "Toxic_Resistance"
                 ]
             }
         },

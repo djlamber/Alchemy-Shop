@@ -76,6 +76,11 @@ def mainMenu():
         draw_text_center(config.Player.getShopName() + addToName, font72, BLACK, config.screen, SCREEN_WIDTH / 2 -3, SCREEN_HEIGHT / 8 +3)
         draw_text_center(config.Player.getShopName() + addToName, font72, GOLD, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 8)
 
+        #TODO: add active values for:
+        # gold,
+        # potion inventory size
+        # Known Ingredients
+
         button_text_center(SCREEN_WIDTH * 4 / 16, SCREEN_HEIGHT / 2.5, 210, 40, GREEN, 'Gather Ingredients', font32, BLACK, config.screen, LC, ingredientGather)
         button_text_center(SCREEN_WIDTH *  8 / 16, SCREEN_HEIGHT / 2.5, 160, 40, PURPLE, 'Create Potion', font32, BLACK, config.screen, LC, potionCreation)
         button_text_center(SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2.5, 140, 40, YELLOW, 'Potion List', font32, BLACK, config.screen, LC, potionInventory)
@@ -160,14 +165,26 @@ def brewPotion(startTime):
         ing1 = config.selectedIngredients[0]
         ing2 = config.selectedIngredients[1]
         ing3 = config.selectedIngredients[2]
+
         potVal = int((ing1.getValue() * 0.9 + ing2.getValue() * 0.9 + ing3.getValue() * 0.9) * (uniform(1,1.3))  )
         effects = compareEffects(ing1, ing2, ing3)
-        print(effects)
+        #print(effects)
+        stripEffects = list(dict.fromkeys(effects))
+        effect = ""
+        namedEffects = ""
+        for i in stripEffects:
+            for j in config.Effects:
+                if j.getID() == i:
+                    effect += j.getIngName() + " "
+                    if effects.count(i) > 1:
+                        namedEffects += j.getUpName() + " "
+                        potVal = int(potVal * 1.5)
+                    else:
+                        namedEffects += j.getPotName() + " "
 
+                        potVal = int(potVal * 1.2)
 
-        effect = "None"
-        effect = effects
-        name = "Potion Name"
+        name = "Potion of " + namedEffects
 
 
         color = getCaulColor()
@@ -184,7 +201,7 @@ def brewMultiPotion(info):
     ig2 = config.selectedIngredients[1]
     ig3 = config.selectedIngredients[2]
     for m in range(n):
-        print(m)
+       #print(m)
         addToEmptySlot(ig1)
         addToEmptySlot(ig2)
         addToEmptySlot(ig3)
@@ -335,13 +352,27 @@ def potionCreation():
                 posX = 0
                 posY += 1
 
-            textlen = max(len(ingredient.effect_1) * 12, len(ingredient.effect_2) * 12, len(ingredient.effect_3) * 12)
+            ingEf1 = config.NoneEffect
+            ingEf2 = config.NoneEffect
+            ingEf3 = config.NoneEffect
+            for x in config.Effects:
+                xID = x.getID()
+                if xID == ingredient.getEffect1():
+                    ingEf1 = x
+                if xID == ingredient.getEffect2():
+                    ingEf2 = x
+                if xID == ingredient.getEffect3():
+                    ingEf3 = x
+
+            textlen = max(len(ingEf1.getIngName()), len(ingEf2.getIngName()), len(ingEf3.getIngName()))
+            textlen *= 9
+
             if ingredient.effect_1 != "None":
-                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_1, font20, BLACK, 10, 0, setWidth=textlen)
+                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingEf1.getIngName(), font20, BLACK, 10, 0, setWidth=textlen)
             if ingredient.effect_2 != "None":
-                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_2, font20, BLACK, 10, 20, setWidth=textlen)
+                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingEf2.getIngName(), font20, BLACK, 10, 20, setWidth=textlen)
             if ingredient.effect_3 != "None":
-                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingredient.effect_3, font20, BLACK, 10, 40, setWidth=textlen)
+                hoverover_text(100 * posX, 100 * posY - 20, 80, 80, SILVER, config.screen, ingEf3.getIngName(), font20, BLACK, 10, 40, setWidth=textlen)
             posX += 1
             entNum += 1
         pygame.display.flip() # update screen
@@ -656,13 +687,28 @@ def ingredientGather():
             draw_text(str(item.amount), font16, WHITE, config.screen,SCREEN_WIDTH - 400 +  (100 * posX)+ 5, 100 * posY + 45)
             draw_text_center("(" + str(itemDropRate[0]*100) + "%|" + str(itemDropRate[1]) + ")", font16, WHITE, config.screen, SCREEN_WIDTH - 400 + (100 * posX) + 40, 100 * posY + 83)
             #hoverover text
-            textlen = max(len(item.effect_1) * 12, len(item.effect_2) * 12, len(item.effect_3) * 12)
+
+
+            ingEf1 = config.NoneEffect
+            ingEf2 = config.NoneEffect
+            ingEf3 = config.NoneEffect
+            for x in config.Effects:
+                xID = x.getID()
+                if xID == item.getEffect1():
+                    ingEf1 = x
+                if xID == item.getEffect2():
+                    ingEf2 = x
+                if xID == item.getEffect3():
+                    ingEf3 = x
+
+            textlen = max(len(ingEf1.getIngName()) * 12, len(ingEf2.getIngName()) * 12, len(ingEf3.getIngName()) * 12)
+
             if item.effect_1 != "None":
-                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_1, font20, BLACK,10,0, "Left", textlen)
+                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, ingEf1.getIngName(), font20, BLACK,10,0, "Left", textlen)
             if item.effect_2 != "None":
-                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_2, font20, BLACK,10,20, "Left",textlen)
+                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, ingEf2.getIngName(), font20, BLACK,10,20, "Left",textlen)
             if item.effect_3 != "None":
-                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, item.effect_3, font20, BLACK,10,40, "Left",textlen)
+                hoverover_text(SCREEN_WIDTH - 400 + (100 * posX), 100 * posY - 20, 80, 80, SILVER, config.screen, ingEf3.getIngName(), font20, BLACK,10,40, "Left",textlen)
             posX += 1
             entNum += 1
 
@@ -819,12 +865,26 @@ def ingredientIndex():
             pygame.draw.rect(config.screen, indIng.getColor(), (SCREEN_WIDTH - 220, 160, 80,80))
 
             draw_text_center("Value: " + str(indIng.getValue()), font48, WHITE, config.screen, SCREEN_WIDTH - 480, SCREEN_HEIGHT/2)
-            if indIng.getEffect1() != "None":
-                draw_text("Effect 1: " + str(indIng.getEffect1()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 260)
-            if indIng.getEffect2() != "None":
-                draw_text("Effect 2: " + str(indIng.getEffect2()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 220)
-            if indIng.getEffect3() != "None":
-                draw_text("Effect 3: " + str(indIng.getEffect3()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 180)
+
+            ingEf1 = config.NoneEffect
+            ingEf2 = config.NoneEffect
+            ingEf3 = config.NoneEffect
+            for x in config.Effects:
+                xID = x.getID()
+                if xID == indIng.getEffect1():
+                    ingEf1 = x
+                if xID == indIng.getEffect2():
+                    ingEf2 = x
+                if xID == indIng.getEffect3():
+                    ingEf3 = x
+
+
+            if ingEf1.getIngName() != "None":
+                draw_text("Effect 1: " + str(ingEf1.getIngName()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 260)
+            if ingEf2.getIngName() != "None":
+                draw_text("Effect 2: " + str(ingEf2.getIngName()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 220)
+            if ingEf3.getIngName() != "None":
+                draw_text("Effect 3: " + str(ingEf3.getIngName()), font, WHITE, config.screen, SCREEN_WIDTH/2, SCREEN_HEIGHT - 180)
 
             draw_text("Categories: " + str(indIng.getCategory()), font32, WHITE, config.screen, SCREEN_WIDTH / 2, SCREEN_HEIGHT - 100)
 
@@ -879,7 +939,8 @@ def ingredientIndex():
 
 def noGold():
     config.Player.setGold(0)
-
+def someGold():
+    config.Player.setGold(100)
 def infGold():
     config.Player.setGold(1000000)
 def noIngre():
@@ -906,9 +967,11 @@ def Options():
         button_text(SCREEN_WIDTH - 140, 0, 140, 40, GOLD, 'Shop Front', font32, BLACK, config.screen, LC, mainMenu)
 
         button_text(SCREEN_WIDTH/2, 100, 140, 40, GOLD, 'Set gold to 0', font32, BLACK, config.screen, LC, noGold)
-        button_text(SCREEN_WIDTH / 2, 150, 180, 40, GOLD, 'Set gold to inf', font32, BLACK, config.screen, LC, infGold)
-        button_text(SCREEN_WIDTH / 2, 200, 180, 40, GOLD, 'Set ingre amounts to 0', font32, BLACK, config.screen, LC, noIngre)
-        button_text(SCREEN_WIDTH / 2, 250, 180, 40, GOLD, 'Set ingre amounts to inf', font32, BLACK, config.screen, LC, infIngre)
+        button_text(SCREEN_WIDTH / 2, 150, 140, 40, GOLD, 'Set gold to 100', font32, BLACK, config.screen, LC, someGold)
+        button_text(SCREEN_WIDTH / 2, 200, 180, 40, GOLD, 'Set gold to inf', font32, BLACK, config.screen, LC, infGold)
+
+        button_text(SCREEN_WIDTH / 4, 100, 180, 40, GOLD, 'Set ingre amounts to 0', font32, BLACK, config.screen, LC, noIngre)
+        button_text(SCREEN_WIDTH / 4, 150, 180, 40, GOLD, 'Set ingre amounts to inf', font32, BLACK, config.screen, LC, infIngre)
 
         pygame.display.flip()  # update screen
 
@@ -928,14 +991,19 @@ config.Tools = InitTools() #initalize tools
 config.CreateRecipies = InitCreateRecipes() #initalize creation recipes
 config.ExtractRecipies = InitExtractRecipes() #initalize creation recipes
 
+
+config.Effects.sort(key=lambda k: k.getID())
+
 saveEffects(config.Effects)
 saveCreateRecipes(config.CreateRecipies)
 saveExtractRecipes(config.ExtractRecipies)
+
 
 saveLocations(config.Locations)
 
 config.NoneIngredient = Ingredient("NoneIngredient", "None", "sprites/Nothing.png",["None"], BLACK, 0, 0, "None", "None", "None" )
 config.selectedIngredients = [config.NoneIngredient, config.NoneIngredient, config.NoneIngredient]
+config.NoneEffect = Effect("None", "None", "None", "None")
 
 mainMenu()  # start mainMenu Screen
 exit()

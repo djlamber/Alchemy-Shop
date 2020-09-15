@@ -7,6 +7,7 @@ PotionList = None
 Player = None
 selectedPotions = {}
 NoneIngredient = None
+NoneEffect = None
 selectedIngredients = None
 numSelectedIngredients = 0
 cauldronColor = [90,90,90]
