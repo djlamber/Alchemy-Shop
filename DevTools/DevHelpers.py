@@ -115,11 +115,21 @@ def printIngredients(Ingredients):
             ingStr = Fore.RED + ingStr + Fore.RESET
         else:
             red = True
+            E1Check = False
+            E2Check = False
+            E3Check = False
+
             for eff in helpers.InitEffects():
-                if i.getEffect1() == eff.getID() or i.getEffect2() == eff.getID() or i.getEffect3() == eff.getID() :
-                    red = False
-                    break
-            if red:
+                print(i.getEffect1() + " " + i.getEffect2() + " " + i.getEffect3())
+                print(eff.getID())
+                if i.getEffect1() == eff.getID():
+                    E1Check = True
+                if i.getEffect2() == eff.getID():
+                    E2Check = True
+                if i.getEffect3() == eff.getID():
+                    E3Check = True
+
+            if not E1Check or not E2Check or not E3Check:
                 ingStr = Fore.RED + ingStr + Fore.RESET
         # stop checking
 

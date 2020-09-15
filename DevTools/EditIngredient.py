@@ -1,3 +1,5 @@
+from colorama import Fore
+
 import helpers
 import sys
 import os.path
@@ -68,7 +70,17 @@ def editIngreEffect(ingre, effects):
     print("Type \'list\' to list out effects, null to go back")
     while True:
         print("Current effects for [" + str(ingre.getID()) + "] :")
-        print("Effect 1: " + str(effects[0]) + " | Effect 2: " + str(effects[1]) + " | Effect 3: " + str(effects[2]) )
+        strE1 = Fore.RED + str(effects[0]) + Fore.RESET
+        strE2 = Fore.RED + str(effects[1]) + Fore.RESET
+        strE3 = Fore.RED + str(effects[2]) + Fore.RESET
+        for eff in helpers.InitEffects():
+            if eff.getID() == effects[0]:
+                strE1 = str(effects[0])
+            if eff.getID() == effects[1]:
+                strE2 = str(effects[1])
+            if eff.getID() == effects[2]:
+                strE3 = str(effects[2])
+        print("Effect 1: " + strE1 + " | Effect 2: " + strE2 + " | Effect 3: " + strE3 )
         selection = input("Select Effect to edit: ").upper()
         if selection == "":
             return effects
@@ -99,7 +111,7 @@ def changeEffect(ingre, effect):
             if i.getID() == newEffect:
                 return newEffect
         opt = input("This effect is not an existing effect, would you like to create a new one? (y|n)").upper()
-        if opt == "Y" or "YES":
+        if opt == "Y" or opt == "YES":
             createEffect()
             continue
         return newEffect

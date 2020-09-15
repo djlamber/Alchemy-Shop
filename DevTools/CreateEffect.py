@@ -13,15 +13,19 @@ def createEffect():
     Running = True
     print("=====Create Effect=====")
     while Running:
-        print("Type q to quit")
+        print("Type \'list\' to list out effects, q to quit")
 
         # Select ID
         ID = input("Input ID: ")
         ID = DevHelpers.IDFormat(ID)
         option = ID.upper()
-        if option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END":
+        if option == "Q" or option == "EXIT" or option == "QUIT" or option == "STOP" or option == "END" or option == "":
             Running = False
             break
+        if option == "LIST" or option == "L":
+            setContinue = True
+            DevHelpers.printEffects(Effects)
+            continue
         setContinue = False
         for I in Effects:
             if I.getID() == ID:
@@ -33,19 +37,29 @@ def createEffect():
 
         #Select Ingredient Name
         ingName = input("Input Name Stylized for Ingredient Effect: ")
-        ingName = DevHelpers.NameFormat(ingName)
+        if ingName == "":
+            ingName = ID
+        else:
+            ingName = DevHelpers.NameFormat(ingName)
 
         # Select Potion Name
         potName = input("Input Name Stylized for Potion Effect: ")
-        potName = DevHelpers.NameFormat(potName)
+        if potName == "":
+            potName = ID
+        else:
+            potName = DevHelpers.NameFormat(potName)
 
         # Select Upgrade Name
         upName = input("Input Name Stylized for Upgrade Effect: ")
-        upName = DevHelpers.NameFormat(upName)
+        if upName == "":
+            upName = ID
+        else:
+            upName = DevHelpers.NameFormat(upName)
 
         #Create Ingredient
         newEffect = helpers.Effect(ID, ingName, potName, upName)
         Effects.append(newEffect)
+        Effects.sort(key=lambda k: k.getID())
         ans = input("Sucessfully added to list, continue? (y/n): ")
         if ans.upper() != 'Y':
             Running = False

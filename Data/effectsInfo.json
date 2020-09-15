@@ -4,15 +4,50 @@
         "Potion Name": "",
         "Upgrade Name": ""
     },
+    "Bitter": {
+        "Ingredient Name": "Bitter",
+        "Potion Name": "Bitter",
+        "Upgrade Name": "Bitter"
+    },
+    "Boost": {
+        "Ingredient Name": "Boost",
+        "Potion Name": "Boost",
+        "Upgrade Name": "Boost"
+    },
     "Cold_Resistance": {
         "Ingredient Name": "Cold Resistance",
         "Potion Name": "Warming",
         "Upgrade Name": "Steaming Aura"
     },
+    "Defense_Down": {
+        "Ingredient Name": "Defense Down",
+        "Potion Name": "Vulnerable",
+        "Upgrade Name": "Vulnerable"
+    },
     "Defense_Up": {
         "Ingredient Name": "Defense Up",
         "Potion Name": "Bolster",
         "Upgrade Name": "Iron Skin"
+    },
+    "Dim": {
+        "Ingredient Name": "Dim",
+        "Potion Name": "Dim",
+        "Upgrade Name": "Dim"
+    },
+    "Diminish": {
+        "Ingredient Name": "Diminish",
+        "Potion Name": "Diminish",
+        "Upgrade Name": "Diminish"
+    },
+    "Dry": {
+        "Ingredient Name": "Dry",
+        "Potion Name": "Dry",
+        "Upgrade Name": "Dry"
+    },
+    "Elemental_Concentration": {
+        "Ingredient Name": "Elemental_Concentration",
+        "Potion Name": "Elemental_Concentration",
+        "Upgrade Name": "Elemental_Concentration"
     },
     "Elemental_Dilution": {
         "Ingredient Name": "Elemental Dilution",
@@ -54,9 +89,9 @@
         "Potion Name": "Freeze Soothing",
         "Upgrade Name": "Freeze Sooth"
     },
-    "Frost_Resist": {
-        "Ingredient Name": "Frost Resiliance",
-        "Potion Name": "Cold Guard",
+    "Freeze_Resist": {
+        "Ingredient Name": "Freeze Resist",
+        "Potion Name": "Freeze Guard",
         "Upgrade Name": "Freeze Immunity"
     },
     "Fuel": {
@@ -64,20 +99,50 @@
         "Potion Name": "Revitalization",
         "Upgrade Name": "Rejuvinate"
     },
-    "Heal": {
-        "Ingredient Name": "Restore Health",
-        "Potion Name": "Healing",
+    "Health_Down": {
+        "Ingredient Name": "Health Down",
+        "Potion Name": "Weakened",
+        "Upgrade Name": "Weakness"
+    },
+    "Health_Drain": {
+        "Ingredient Name": "Health_Drain",
+        "Potion Name": "Health_Drain",
+        "Upgrade Name": "Health_Drain"
+    },
+    "Health_Recovery": {
+        "Ingredient Name": "Heal",
+        "Potion Name": "Health Recovery",
         "Upgrade Name": "Health Recovery"
     },
-    "Heat_Resistance": {
+    "Health_Up": {
+        "Ingredient Name": "Health Up",
+        "Potion Name": "Healthy",
+        "Upgrade Name": "Healthy"
+    },
+    "Heat_Resist": {
         "Ingredient Name": "Heat Resistance",
         "Potion Name": "Cooling",
         "Upgrade Name": "Winter Veil"
     },
-    "Increase_Stamina": {
-        "Ingredient Name": "Increase Stamina",
-        "Potion Name": "Stamina Bolstering",
-        "Upgrade Name": "Stamina Flood"
+    "Magic_Down": {
+        "Ingredient Name": "Magic_Down",
+        "Potion Name": "Magic_Down",
+        "Upgrade Name": "Magic_Down"
+    },
+    "Magic_Drain": {
+        "Ingredient Name": "Magic_Drain",
+        "Potion Name": "Magic_Drain",
+        "Upgrade Name": "Magic_Drain"
+    },
+    "Magic_Recovery": {
+        "Ingredient Name": "Magic_Recovery",
+        "Potion Name": "Magic_Recovery",
+        "Upgrade Name": "Magic_Recovery"
+    },
+    "Magic_Up": {
+        "Ingredient Name": "Magic_Up",
+        "Potion Name": "Magic_Up",
+        "Upgrade Name": "Magic_Up"
     },
     "Night_Vision": {
         "Ingredient Name": "Night Vision",
@@ -94,10 +159,15 @@
         "Potion Name": "Refreshing",
         "Upgrade Name": "Relaxing"
     },
-    "Restore_Stamina": {
-        "Ingredient Name": "Restore Stamina",
-        "Potion Name": "Stamina Recovery",
-        "Upgrade Name": "Stamina Refresh"
+    "Savory": {
+        "Ingredient Name": "Savory",
+        "Potion Name": "Savory",
+        "Upgrade Name": "Savory"
+    },
+    "Seasoning": {
+        "Ingredient Name": "Seasoning",
+        "Potion Name": "Seasoned",
+        "Upgrade Name": "Flavorful"
     },
     "Shiny": {
         "Ingredient Name": "Glisten",
@@ -109,10 +179,55 @@
         "Potion Name": "Electrifying",
         "Upgrade Name": "Shocking"
     },
+    "Shock_Heal": {
+        "Ingredient Name": "Shock_Heal",
+        "Potion Name": "Shock_Heal",
+        "Upgrade Name": "Shock_Heal"
+    },
+    "Shock_Resist": {
+        "Ingredient Name": "Shock_Resist",
+        "Potion Name": "Shock_Resist",
+        "Upgrade Name": "Shock_Resist"
+    },
+    "Shock_Weakness": {
+        "Ingredient Name": "Shock_Weakness",
+        "Potion Name": "Shock_Weakness",
+        "Upgrade Name": "Shock_Weakness"
+    },
+    "Speed_Down": {
+        "Ingredient Name": "Speed_Down",
+        "Potion Name": "Slowness",
+        "Upgrade Name": "Anchoring"
+    },
     "Speed_Up": {
         "Ingredient Name": "Speed Up",
         "Potion Name": "Hasten",
         "Upgrade Name": "Speedy"
+    },
+    "Spicy": {
+        "Ingredient Name": "Spicy",
+        "Potion Name": "Spicy",
+        "Upgrade Name": "Spicy"
+    },
+    "Stamina_Down": {
+        "Ingredient Name": "Stamina Down",
+        "Potion Name": "Stamina Decrease",
+        "Upgrade Name": "Stamina Weaken"
+    },
+    "Stamina_Drain": {
+        "Ingredient Name": "Stamina_Drain",
+        "Potion Name": "Stamina_Drain",
+        "Upgrade Name": "Stamina_Drain"
+    },
+    "Stamina_Recovery": {
+        "Ingredient Name": "Stamina Recovery",
+        "Potion Name": "Stamina Restoration",
+        "Upgrade Name": "Stamina Recovery"
+    },
+    "Stamina_Up": {
+        "Ingredient Name": "Stamina Up",
+        "Potion Name": "Stamina Increase",
+        "Upgrade Name": "Stamina Bolster"
     },
     "Suppress": {
         "Ingredient Name": "Suppress",
@@ -129,10 +244,15 @@
         "Potion Name": "Poisonous",
         "Upgrade Name": "Toxicity"
     },
-    "Toxic_Resistance": {
+    "Toxic_Resist": {
         "Ingredient Name": "Poison Resistance",
         "Potion Name": "Antidote",
         "Upgrade Name": "Toxin Leech"
+    },
+    "Toxic_Weakness": {
+        "Ingredient Name": "Toxic Weakness",
+        "Potion Name": "Toxic Weakness",
+        "Upgrade Name": "Toxic Weakness"
     },
     "Water_Breathing": {
         "Ingredient Name": "Water Breathing",

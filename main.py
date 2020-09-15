@@ -81,14 +81,17 @@ def mainMenu():
         # potion inventory size
         # Known Ingredients
 
+        draw_text("     : " + str(config.Player.getGold()), font32, GOLD, config.screen, SCREEN_WIDTH * 4 / 16 - 30, SCREEN_HEIGHT / 2.25 - 5)
+        draw_image(SCREEN_WIDTH * 4 / 16 - 50, SCREEN_HEIGHT / 2.25 - 25, 60, 60, "sprites/gold.png", config.screen)
         button_text_center(SCREEN_WIDTH * 4 / 16, SCREEN_HEIGHT / 2.5, 210, 40, GREEN, 'Gather Ingredients', font32, BLACK, config.screen, LC, ingredientGather)
         button_text_center(SCREEN_WIDTH *  8 / 16, SCREEN_HEIGHT / 2.5, 160, 40, PURPLE, 'Create Potion', font32, BLACK, config.screen, LC, potionCreation)
         button_text_center(SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2.5, 140, 40, YELLOW, 'Potion List', font32, BLACK, config.screen, LC, potionInventory)
+        draw_text_center(str(len(config.PotionList)) + "/65", font32, BLACK, config.screen, SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2.25)
 
         button_text_center(SCREEN_WIDTH *  4 / 16, SCREEN_HEIGHT / 2, 100, 40, TEAL, 'Market', font32, BLACK, config.screen, LC, ingredientShop)
         button_text_center(SCREEN_WIDTH *  8 / 16, SCREEN_HEIGHT / 2, 220, 40, BROWN, 'Modify Ingredients', font32, BLACK, config.screen, LC, modifyIngredients)
         button_text_center(SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 2, 100, 40, OLIVE, 'Ingredient Index', font32, BLACK, config.screen, LC, ingredientIndex)
-
+        draw_text_center(str(len(config.Ingredients)) + " Ingredients", font32, BLACK, config.screen, SCREEN_WIDTH * 12 / 16, SCREEN_HEIGHT / 1.85)
 
         button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 120, 100, 40, BLUE, 'Options', font32, BLACK, config.screen, LC, Options)
         button_text_center(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 60, 60, 40, RED, 'Quit', font32, BLACK, config.screen, LC, exit)
