@@ -22,6 +22,7 @@ def editIngreImgLoc(ingre, img):
         if newImg == "":
             return img
         else:
+            newImg = "sprites/ingredients/" + newImg
             if not os.path.exists(newImg):
                 print("Path does not exist")
             else:
