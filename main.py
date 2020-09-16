@@ -173,12 +173,12 @@ def brewPotion(startTime):
         effects = compareEffects(ing1, ing2, ing3)
         #print(effects)
         stripEffects = list(dict.fromkeys(effects))
-        effect = ""
+        effect = []
         namedEffects = ""
         for i in stripEffects:
             for j in config.Effects:
                 if j.getID() == i:
-                    effect += j.getIngName() + " "
+                    effect.append(j.getIngName())
                     if effects.count(i) > 1:
                         namedEffects += j.getUpName() + " "
                         potVal = int(potVal * 1.5)
@@ -494,10 +494,16 @@ def potionInventory():
                 row_x = 0
                 row_y += 1
             if pot.effect != "None":
+                tOff = 0
+                textlen = len(max(pot.effect, key=len)) * 9
                 if row_x > 6:
-                    hoverover_text(100 * row_x, 100 * row_y - 20, 80, 80, SILVER, config.screen, pot.effect, font20, BLACK, 0, 0, "Left")
+                    for i in pot.effect:
+                        hoverover_text(100 * row_x, 100 * row_y - 20, 80, 80, SILVER, config.screen, i, font20, BLACK, 0, 20*tOff, "Left", setWidth=textlen)
+                        tOff +=1
                 else:
-                    hoverover_text(100 * row_x, 100 * row_y - 20, 80, 80, SILVER, config.screen, pot.effect, font20, BLACK, 10, 0)
+                    for i in pot.effect:
+                        hoverover_text(100 * row_x, 100 * row_y - 20, 80, 80, SILVER, config.screen, i, font20, BLACK, 10, 20*tOff, setWidth=textlen)
+                        tOff +=1
 
             row_x += 1
             entNum += 1
@@ -522,8 +528,29 @@ def checkPrereqs():
         if list(req.keys())[0] == "Gold": # prereq = gold
             if config.Player.getGold() < req.get(list(req.keys())[0]):
                 return False
+            #TODO: Work on and fix checking
         if list(req.keys())[0] == "Potion":  # prereq = potion
-            #TODO: Add how potions are checked
+            potExists = False
+            for pot in config.PotionList: #check all potion in pit list
+                potEffInfo = None
+                for potEff in pot.getEffect(): #check all effects for selected potion
+                    for eff in config.Effects: #search through all known effects
+                        if eff.getIngName() == potEff: #check if effect exists
+                            #print(eff.getID())
+                            potEffInfo = eff #if it does set potEffInfo to effect to get all data about effect
+                            break
+                #print(potEffInfo)
+                #print(req)
+                #print(req.get("Potion").get("Effect")[0])
+                if potEffInfo == None:
+                    continue
+                if potEffInfo.getID() == req.get("Potion").get("Effect")[0]: #if "potion" effect is equal to prereq
+                    print("Potion found")
+                    potExists = True
+                else:
+                    return False
+            if not potExists:
+                return False
             continue
     return True
 
@@ -541,6 +568,7 @@ def gatherIngredient():
         if list(req.keys())[0] == "Gold":  # prereq = gold
             config.Player.subGold(req.get(list(req.keys())[0]))
         if list(req.keys())[0] == "Potion":  # prereq = potion
+            #TODO: remove selected potion
             continue
 
 
@@ -612,6 +640,7 @@ def ingredientGather():
         #display gather button
         #print(config.CurrentLocation)
         if checkPrereqs():
+            #TODO: make it remove potion/choose potion to remove
             button_rect_text_center(SCREEN_WIDTH/2, SCREEN_HEIGHT-40, 280, 40, Back_Color, MAROON, 'Gather Ingredients', font32, WHITE, config.screen, LC, gatherIngredient)
 
         x = 0

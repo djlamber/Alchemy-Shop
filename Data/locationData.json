@@ -283,7 +283,7 @@
                     255
                 ],
                 "Effect": [
-                    "Restore_Stamina"
+                    "Stamina_Recovery"
                 ]
             }
         }

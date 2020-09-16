@@ -38,21 +38,21 @@ def createEffect():
         #Select Ingredient Name
         ingName = input("Input Name Stylized for Ingredient Effect: ")
         if ingName == "":
-            ingName = ID
+            ingName = DevHelpers.NameFormat(ID)
         else:
             ingName = DevHelpers.NameFormat(ingName)
 
         # Select Potion Name
         potName = input("Input Name Stylized for Potion Effect: ")
         if potName == "":
-            potName = ID
+            potName = DevHelpers.NameFormat(ID)
         else:
             potName = DevHelpers.NameFormat(potName)
 
         # Select Upgrade Name
         upName = input("Input Name Stylized for Upgrade Effect: ")
         if upName == "":
-            upName = ID
+            upName = DevHelpers.NameFormat(ID)
         else:
             upName = DevHelpers.NameFormat(upName)
 

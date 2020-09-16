@@ -1,156 +1,19 @@
 {
-    "0.1699028736714978": {
-        "Name": "Potion of Stamina Recovery Refreshing ",
+    "0.8923782881741033": {
+        "Name": "Potion of Stamina Restoration Health Recovery ",
         "ImageLocation": "sprites/EmptyPotion.png",
         "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Brown_Mushroom",
-        "Effect": "Restore Stamina Refresh ",
+        "Ingredient_2_ID": "Brown_Mushroom",
+        "Ingredient_3_ID": "Herbs",
+        "Effect": [
+            "Stamina Recovery",
+            "Heal"
+        ],
         "Color": [
             73,
-            56,
-            208
+            92,
+            147
         ],
-        "Value": 48
-    },
-    "0.7989190954909735": {
-        "Name": "Potion of Stamina Recovery Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Brown_Mushroom",
-        "Effect": "Restore Stamina Refresh ",
-        "Color": [
-            73,
-            56,
-            208
-        ],
-        "Value": 58
-    },
-    "0.5859554087766681": {
-        "Name": "Potion of Stamina Recovery Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Brown_Mushroom",
-        "Effect": "Restore Stamina Refresh ",
-        "Color": [
-            73,
-            56,
-            208
-        ],
-        "Value": 58
-    },
-    "0.1088286888318345": {
-        "Name": "Potion of Stamina Recovery Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Brown_Mushroom",
-        "Effect": "Restore Stamina Refresh ",
-        "Color": [
-            73,
-            56,
-            208
-        ],
-        "Value": 57
-    },
-    "0.2669825535561867": {
-        "Name": "Potion of Stamina Recovery Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Brown_Mushroom",
-        "Effect": "Restore Stamina Refresh ",
-        "Color": [
-            73,
-            56,
-            208
-        ],
-        "Value": 55
-    },
-    "0.6521946374415968": {
-        "Name": "Potion of Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Cold_Flower",
-        "Effect": "Refresh ",
-        "Color": [
-            147,
-            147,
-            255
-        ],
-        "Value": 96
-    },
-    "0.8330292197940415": {
-        "Name": "Potion of Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Cold_Flower",
-        "Effect": "Refresh ",
-        "Color": [
-            147,
-            147,
-            255
-        ],
-        "Value": 111
-    },
-    "0.47727141715401744": {
-        "Name": "Potion of Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Cold_Flower",
-        "Effect": "Refresh ",
-        "Color": [
-            147,
-            147,
-            255
-        ],
-        "Value": 111
-    },
-    "0.4822501772234703": {
-        "Name": "Potion of Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Cold_Flower",
-        "Effect": "Refresh ",
-        "Color": [
-            147,
-            147,
-            255
-        ],
-        "Value": 94
-    },
-    "0.2161636417252557": {
-        "Name": "Potion of Refreshing ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Blue_Flower",
-        "Ingredient_3_ID": "Cold_Flower",
-        "Effect": "Refresh ",
-        "Color": [
-            147,
-            147,
-            255
-        ],
-        "Value": 105
-    },
-    "0.2637135565690406": {
-        "Name": "Potion of Stamina Recovery ",
-        "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Apple",
-        "Ingredient_2_ID": "Animal_Meat",
-        "Ingredient_3_ID": "Tree_Sap",
-        "Effect": "Restore Stamina ",
-        "Color": [
-            255,
-            124,
-            0
-        ],
-        "Value": 66
+        "Value": 36
     }
 }
