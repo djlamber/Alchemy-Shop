@@ -2,8 +2,8 @@
     "0.8923782881741033": {
         "Name": "Potion of Stamina Restoration Health Recovery ",
         "ImageLocation": "sprites/EmptyPotion.png",
-        "Ingredient_1_ID": "Water_River",
-        "Ingredient_2_ID": "Brown_Mushroom",
+        "Ingredient_1_ID": "Water River",
+        "Ingredient_2_ID": "Brown Mushroom",
         "Ingredient_3_ID": "Herbs",
         "Effect": [
             "Stamina Recovery",
@@ -15,5 +15,22 @@
             147
         ],
         "Value": 36
+    },
+    "0.16451758284395468": {
+        "Name": "Potion of Stamina Restoration Health Recovery ",
+        "ImageLocation": "sprites/EmptyPotion.png",
+        "Ingredient_1_ID": "Water_River",
+        "Ingredient_2_ID": "Brown_Mushroom",
+        "Ingredient_3_ID": "Cactus",
+        "Effect": [
+            "Stamina Recovery",
+            "Heal"
+        ],
+        "Color": [
+            80,
+            112,
+            147
+        ],
+        "Value": 67
     }
 }
